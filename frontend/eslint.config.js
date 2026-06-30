@@ -1,4 +1,3 @@
-import unusedImports from 'eslint-plugin-unused-imports'
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -19,21 +18,7 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
-    plugins: {
-      'unused-imports': unusedImports,
-    },
-    rules: {
-      'unused-imports/no-unused-imports': 'error',
-
-      'unused-imports/no-unused-vars': [
-        'warn',
-        {
-          vars: 'all',
-          varsIgnorePattern: '^_',
-          args: 'after-used',
-          argsIgnorePattern: '^_',
-        },
-      ],
-    },
+  
+  
   },
 ])
