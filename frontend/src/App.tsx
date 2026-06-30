@@ -1,10 +1,7 @@
+import AppRouter from "@/routes/AppRouter";
+
 function App() {
-  return (
-    <div>
-      <h1>QRHub</h1>
-      <p>Forever Free. Never Expires. Privacy First.</p>
-    </div>
-  );
+  return <AppRouter />;
 }
 
 export default App;
