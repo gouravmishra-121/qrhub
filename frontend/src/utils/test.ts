@@ -1,1 +1,1 @@
-export const appName = "QRHub";
+export const appName = 'QRHub'
