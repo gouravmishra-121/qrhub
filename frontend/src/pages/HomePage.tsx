@@ -1,9 +1,17 @@
-function HomePage() {
+import { Hero } from '@/components/landing/Hero'
+import { Features } from '@/components/landing/Features'
+import { Generators } from '@/components/landing/Generators'
+import { Templates } from '@/components/landing/Templates'
+import { Footer } from '@/components/landing/Footer'
+
+export default function HomePage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950">
-      <h1 className="text-5xl font-bold text-white">QRHub</h1>
-    </div>
+    <>
+      <Hero />
+      <Features />
+      <Generators />
+      <Templates />
+      <Footer />
+    </>
   )
 }
-
-export default HomePage
