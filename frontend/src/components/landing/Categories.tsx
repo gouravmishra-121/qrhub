@@ -1,0 +1,92 @@
+import {
+  Globe,
+  Wifi,
+  IndianRupee,
+  MessageCircle,
+  Mail,
+  MessageSquare,
+  User,
+  MapPin,
+  FileText,
+} from 'lucide-react'
+
+import { Container } from '@/components/layout/Container'
+import { Section } from '@/components/layout/Section'
+
+import { CategoryCard } from './CategoryCard'
+
+const categories = [
+  {
+    icon: <Globe className="h-8 w-8" />,
+    title: 'Website',
+    description: 'Convert any URL into a QR code.',
+  },
+  {
+    icon: <Wifi className="h-8 w-8" />,
+    title: 'WiFi',
+    description: 'Share WiFi credentials instantly.',
+  },
+  {
+    icon: <IndianRupee className="h-8 w-8" />,
+    title: 'UPI',
+    description: 'Accept digital payments with ease.',
+  },
+  {
+    icon: <MessageCircle className="h-8 w-8" />,
+    title: 'WhatsApp',
+    description: 'Start chats with one scan.',
+  },
+  {
+    icon: <Mail className="h-8 w-8" />,
+    title: 'Email',
+    description: 'Generate email QR codes.',
+  },
+  {
+    icon: <MessageSquare className="h-8 w-8" />,
+    title: 'SMS',
+    description: 'Open prefilled text messages.',
+  },
+  {
+    icon: <User className="h-8 w-8" />,
+    title: 'vCard',
+    description: 'Share contact details instantly.',
+  },
+  {
+    icon: <MapPin className="h-8 w-8" />,
+    title: 'Maps',
+    description: 'Navigate to any location.',
+  },
+  {
+    icon: <FileText className="h-8 w-8" />,
+    title: 'PDF',
+    description: 'Share documents easily.',
+  },
+]
+
+export function Categories() {
+  return (
+    <Section id="categories">
+      <Container>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-4xl font-bold tracking-tight">QR Codes for Every Need</h2>
+
+          <p className="mt-4 text-lg text-muted-foreground">
+            Choose from multiple QR code types designed for businesses, creators, events and
+            everyday use.
+          </p>
+        </div>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {categories.map((category) => (
+            <CategoryCard
+              key={category.title}
+              icon={category.icon}
+              title={category.title}
+              description={category.description}
+            />
+          ))}
+        </div>
+      </Container>
+    </Section>
+  )
+}

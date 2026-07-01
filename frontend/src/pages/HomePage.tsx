@@ -1,16 +1,31 @@
+import { Navbar } from '@/components/layout/Navbar'
 import { Hero } from '@/components/landing/Hero'
-import { Features } from '@/components/landing/Features'
-import { Generators } from '@/components/landing/Generators'
-import { Templates } from '@/components/landing/Templates'
+import { Categories } from '@/components/landing/Categories'
+import { TrustStats } from '@/components/landing/TrustStats'
+import { WhyQRHub } from '@/components/landing/WhyQRHub'
+import { HowItWorks } from '@/components/landing/HowItWorks'
+import { LivePreview } from '@/components/landing/LivePreview'
+import { FAQ } from '@/components/landing/FAQ'
 import { Footer } from '@/components/landing/Footer'
 
 export default function HomePage() {
   return (
     <>
+      <Navbar />
+
       <Hero />
-      <Features />
-      <Generators />
-      <Templates />
+      <Categories />
+
+      <TrustStats />
+
+      <WhyQRHub />
+
+      <HowItWorks />
+
+      <LivePreview />
+
+      <FAQ />
+
       <Footer />
     </>
   )
