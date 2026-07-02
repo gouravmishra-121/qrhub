@@ -246,14 +246,60 @@ Decision:
 
 ## Sprint 8 — Product Cleanup and Reusable Form Improvements
 
+Status: Complete
+
+Completed:
+
+- Task 8.1 — Created reusable QRCustomizationPanel
+- Task 8.2 — Applied QRCustomizationPanel to all QR pages
+- Task 8.3 — Created shared QR constants
+- Task 8.4 — Sprint 8 review and commit
+
+Reusable QR components:
+
+- QRPreview
+- QRDownload
+- QRSizeSelector
+- QRColorPicker
+- QRCustomizationPanel
+
+Shared QR constants:
+
+- DEFAULT_QR_SIZE
+- DEFAULT_FOREGROUND_COLOR
+- DEFAULT_BACKGROUND_COLOR
+
+Updated pages:
+
+- Website QR
+- UPI QR
+- WiFi QR
+- WhatsApp QR
+- Email QR
+- vCard QR
+- Phone QR
+- SMS QR
+- Text QR
+- Maps QR
+
+Decision:
+
+- QR engine remains in src/components/qr
+- Shared QR UI should be reused by all current and future QR pages
+- Generator pages should focus only on form inputs, validation, and QR value generation
+
+---
+
+## Sprint 9 — QR Types Page and Navigation Polish
+
 Status: Next
 
 Planned:
 
-- Reduce duplicate code across QR pages
-- Create shared customization panel
-- Create shared page layout wrapper
-- Create reusable text area component
-- Improve QR Types page structure
-- Improve empty/coming soon states
-- Final MVP review
+- Improve QR Types page layout
+- Separate available QR types from upcoming QR types
+- Make unavailable cards visibly disabled
+- Add better descriptions for each QR type
+- Improve homepage category links
+- Add consistent navigation labels
+- Final MVP navigation review

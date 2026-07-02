@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
 
-import { QRColorPicker, QRDownload, QRPreview, QRSizeSelector, type QRSize } from '@/components/qr'
+import {
+  DEFAULT_BACKGROUND_COLOR,
+  DEFAULT_FOREGROUND_COLOR,
+  DEFAULT_QR_SIZE,
+  QRCustomizationPanel,
+  QRDownload,
+  QRPreview,
+  type QRSize,
+} from '@/components/qr'
 import { Button } from '@/components/ui/button'
-
-const DEFAULT_QR_SIZE: QRSize = 1024
-const DEFAULT_FOREGROUND_COLOR = '#000000'
-const DEFAULT_BACKGROUND_COLOR = '#ffffff'
 
 function createSafeFileName(value: string) {
   const safeValue = value
@@ -117,38 +121,17 @@ export default function TextQR() {
               </div>
             </div>
 
-            <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <h2 className="text-lg font-semibold">Customize QR</h2>
-
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Adjust size and colors before downloading.
-                  </p>
-                </div>
-
-                <Button variant="outline" size="sm" onClick={resetCustomization}>
-                  Reset
-                </Button>
-              </div>
-
-              <QRSizeSelector value={qrSize} onChange={setQrSize} />
-
-              <QRColorPicker
-                foregroundColor={foregroundColor}
-                backgroundColor={backgroundColor}
-                onForegroundChange={setForegroundColor}
-                onBackgroundChange={setBackgroundColor}
-              />
-
-              <div className="mt-6 rounded-xl bg-muted/40 p-4">
-                <p className="text-sm font-medium">Text tip</p>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Keep text short for faster scanning. Very long text creates a denser QR code.
-                </p>
-              </div>
-            </div>
+            <QRCustomizationPanel
+              qrSize={qrSize}
+              foregroundColor={foregroundColor}
+              backgroundColor={backgroundColor}
+              onSizeChange={setQrSize}
+              onForegroundChange={setForegroundColor}
+              onBackgroundChange={setBackgroundColor}
+              onReset={resetCustomization}
+              tipTitle="Text tip"
+              tipDescription="Keep text short for faster scanning. Very long text creates a denser QR code."
+            />
           </div>
         </section>
 

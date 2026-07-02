@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
 
-import { QRColorPicker, QRDownload, QRPreview, QRSizeSelector, type QRSize } from '@/components/qr'
+import {
+  DEFAULT_BACKGROUND_COLOR,
+  DEFAULT_FOREGROUND_COLOR,
+  DEFAULT_QR_SIZE,
+  QRCustomizationPanel,
+  QRDownload,
+  QRPreview,
+  type QRSize,
+} from '@/components/qr'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-
-const DEFAULT_QR_SIZE: QRSize = 1024
-const DEFAULT_FOREGROUND_COLOR = '#000000'
-const DEFAULT_BACKGROUND_COLOR = '#ffffff'
 
 type WiFiSecurity = 'WPA' | 'WEP' | 'nopass'
 
@@ -236,38 +240,17 @@ export default function WiFiQR() {
               </div>
             </div>
 
-            <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <h2 className="text-lg font-semibold">Customize QR</h2>
-
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Adjust size and colors before downloading.
-                  </p>
-                </div>
-
-                <Button variant="outline" size="sm" onClick={resetCustomization}>
-                  Reset
-                </Button>
-              </div>
-
-              <QRSizeSelector value={qrSize} onChange={setQrSize} />
-
-              <QRColorPicker
-                foregroundColor={foregroundColor}
-                backgroundColor={backgroundColor}
-                onForegroundChange={setForegroundColor}
-                onBackgroundChange={setBackgroundColor}
-              />
-
-              <div className="mt-6 rounded-xl bg-muted/40 p-4">
-                <p className="text-sm font-medium">WiFi tip</p>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Test your QR with a phone camera before printing it for guests or office visitors.
-                </p>
-              </div>
-            </div>
+            <QRCustomizationPanel
+              qrSize={qrSize}
+              foregroundColor={foregroundColor}
+              backgroundColor={backgroundColor}
+              onSizeChange={setQrSize}
+              onForegroundChange={setForegroundColor}
+              onBackgroundChange={setBackgroundColor}
+              onReset={resetCustomization}
+              tipTitle="WiFi tip"
+              tipDescription="Test your QR with a phone camera before printing it for guests or office visitors."
+            />
           </div>
         </section>
 

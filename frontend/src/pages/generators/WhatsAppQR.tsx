@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
 
-import { QRColorPicker, QRDownload, QRPreview, QRSizeSelector, type QRSize } from '@/components/qr'
+import { QRCustomizationPanel, QRDownload, QRPreview, type QRSize } from '@/components/qr'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
@@ -160,38 +160,17 @@ export default function WhatsAppQR() {
               </div>
             </div>
 
-            <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <h2 className="text-lg font-semibold">Customize QR</h2>
-
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Adjust size and colors before downloading.
-                  </p>
-                </div>
-
-                <Button variant="outline" size="sm" onClick={resetCustomization}>
-                  Reset
-                </Button>
-              </div>
-
-              <QRSizeSelector value={qrSize} onChange={setQrSize} />
-
-              <QRColorPicker
-                foregroundColor={foregroundColor}
-                backgroundColor={backgroundColor}
-                onForegroundChange={setForegroundColor}
-                onBackgroundChange={setBackgroundColor}
-              />
-
-              <div className="mt-6 rounded-xl bg-muted/40 p-4">
-                <p className="text-sm font-medium">WhatsApp tip</p>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Use country code in the number so the QR works correctly for everyone.
-                </p>
-              </div>
-            </div>
+            <QRCustomizationPanel
+              qrSize={qrSize}
+              foregroundColor={foregroundColor}
+              backgroundColor={backgroundColor}
+              onSizeChange={setQrSize}
+              onForegroundChange={setForegroundColor}
+              onBackgroundChange={setBackgroundColor}
+              onReset={resetCustomization}
+              tipTitle="WhatsApp tip"
+              tipDescription="Use country code in the number so the QR works correctly for everyone."
+            />
           </div>
         </section>
 
