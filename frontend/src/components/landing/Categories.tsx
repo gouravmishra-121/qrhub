@@ -1,13 +1,14 @@
+import { Link } from 'react-router-dom'
 import {
+  FileText,
   Globe,
-  Wifi,
   IndianRupee,
-  MessageCircle,
   Mail,
+  MapPin,
+  MessageCircle,
   MessageSquare,
   User,
-  MapPin,
-  FileText,
+  Wifi,
 } from 'lucide-react'
 
 import { Container } from '@/components/layout/Container'
@@ -20,26 +21,31 @@ const categories = [
     icon: <Globe className="h-8 w-8" />,
     title: 'Website',
     description: 'Convert any URL into a QR code.',
+    href: '/website',
   },
   {
     icon: <Wifi className="h-8 w-8" />,
     title: 'WiFi',
     description: 'Share WiFi credentials instantly.',
+    href: '/wifi',
   },
   {
     icon: <IndianRupee className="h-8 w-8" />,
     title: 'UPI',
     description: 'Accept digital payments with ease.',
+    href: '/upi',
   },
   {
     icon: <MessageCircle className="h-8 w-8" />,
     title: 'WhatsApp',
     description: 'Start chats with one scan.',
+    href: '/whatsapp',
   },
   {
     icon: <Mail className="h-8 w-8" />,
     title: 'Email',
     description: 'Generate email QR codes.',
+    href: '/email',
   },
   {
     icon: <MessageSquare className="h-8 w-8" />,
@@ -50,6 +56,7 @@ const categories = [
     icon: <User className="h-8 w-8" />,
     title: 'vCard',
     description: 'Share contact details instantly.',
+    href: '/vcard',
   },
   {
     icon: <MapPin className="h-8 w-8" />,
@@ -77,14 +84,28 @@ export function Categories() {
         </div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
-            <CategoryCard
-              key={category.title}
-              icon={category.icon}
-              title={category.title}
-              description={category.description}
-            />
-          ))}
+          {categories.map((category) =>
+            category.href ? (
+              <Link
+                key={category.title}
+                to={category.href}
+                className="block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
+                <CategoryCard
+                  icon={category.icon}
+                  title={category.title}
+                  description={category.description}
+                />
+              </Link>
+            ) : (
+              <CategoryCard
+                key={category.title}
+                icon={category.icon}
+                title={category.title}
+                description={category.description}
+              />
+            )
+          )}
         </div>
       </Container>
     </Section>
