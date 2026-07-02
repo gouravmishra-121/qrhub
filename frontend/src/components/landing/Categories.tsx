@@ -51,6 +51,7 @@ const categories = [
     icon: <MessageSquare className="h-8 w-8" />,
     title: 'SMS',
     description: 'Open prefilled text messages.',
+    href: '/sms',
   },
   {
     icon: <User className="h-8 w-8" />,
@@ -62,6 +63,7 @@ const categories = [
     icon: <MapPin className="h-8 w-8" />,
     title: 'Maps',
     description: 'Navigate to any location.',
+    href: '/maps',
   },
   {
     icon: <FileText className="h-8 w-8" />,

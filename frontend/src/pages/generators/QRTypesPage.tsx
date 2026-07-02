@@ -37,6 +37,30 @@ const qrTypes = [
     href: '/email',
     icon: '✉️',
   },
+  {
+    title: 'SMS QR',
+    description: 'Send an SMS instantly.',
+    href: '/sms',
+    icon: '✉️',
+  },
+  {
+    title: 'Phone QR',
+    description: 'Dial a phone number instantly.',
+    href: '/phone',
+    icon: '📞',
+  },
+  {
+    title: 'Text QR',
+    description: 'Share plain text, notes, or instructions.',
+    href: '/text',
+    icon: '📝',
+  },
+  {
+    title: 'Maps QR',
+    description: 'Share location information.',
+    href: '/maps',
+    icon: '📍',
+  },
 ]
 
 export default function GeneratorsPage() {

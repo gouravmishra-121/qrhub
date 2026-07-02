@@ -185,15 +185,75 @@ Decision:
 
 ## Sprint 7 — Utility QR Pack
 
+Status: Complete
+
+Completed:
+
+- Task 7.1 — Build Phone QR page
+- Task 7.2 — Build SMS QR page
+- Task 7.3 — Build Text QR page
+- Task 7.4 — Build Maps QR page
+- Task 7.5 — Sprint 7 review and commit
+
+Final Phone QR features:
+
+- Phone number input
+- tel QR generation
+- Strict phone validation
+- PNG download
+- SVG download
+- Size selector
+- Color customization
+
+Final SMS QR features:
+
+- Phone number input
+- Optional pre-filled message
+- sms QR generation
+- PNG download
+- SVG download
+- Size selector
+- Color customization
+
+Final Text QR features:
+
+- Plain text input
+- Text stored directly inside QR
+- Character count
+- PNG download
+- SVG download
+- Size selector
+- Color customization
+
+Final Maps QR features:
+
+- Location input
+- Address/place/coordinates support
+- Full maps URL support
+- Google Maps search link generation
+- PNG download
+- SVG download
+- Size selector
+- Color customization
+
+Decision:
+
+- Phone, SMS, Text, and Maps reuse the shared QR engine.
+- Maps QR accepts either a full URL or a location query.
+- Text QR stores text directly inside the QR code.
+
+---
+
+## Sprint 8 — Product Cleanup and Reusable Form Improvements
+
 Status: Next
 
 Planned:
 
-- Phone QR
-- SMS QR
-- Maps QR
-- Text QR
-
-## Sprint 8 — More QR Types
-
-Status: Pending
+- Reduce duplicate code across QR pages
+- Create shared customization panel
+- Create shared page layout wrapper
+- Create reusable text area component
+- Improve QR Types page structure
+- Improve empty/coming soon states
+- Final MVP review

@@ -8,6 +8,10 @@ import WiFiQR from '@/pages/generators/WiFiQR'
 import EmailQR from '@/pages/generators/EmailQR'
 import WhatsAppQR from '@/pages/generators/WhatsAppQR'
 import VCardQR from '@/pages/generators/VCardQR'
+import PhoneQR from '@/pages/generators/PhoneQR'
+import SMSQR from '@/pages/generators/SMSQR'
+import MapsQR from '@/pages/generators/MapsQR'
+import TextQR from '@/pages/generators/TextQR'
 
 function AppRouter() {
   return (
@@ -28,6 +32,14 @@ function AppRouter() {
         <Route path="/whatsapp" element={<WhatsAppQR />} />
 
         <Route path="/vcard" element={<VCardQR />} />
+
+        <Route path="/phone" element={<PhoneQR />} />
+
+        <Route path="/sms" element={<SMSQR />} />
+
+        <Route path="/maps" element={<MapsQR />} />
+
+        <Route path="/text" element={<TextQR />} />
       </Routes>
     </BrowserRouter>
   )
