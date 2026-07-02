@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
 
-const generators = ['Website QR', 'WiFi QR', 'UPI QR', 'WhatsApp QR']
+const qrTypes = ['Website QR', 'WiFi QR', 'UPI QR', 'WhatsApp QR']
 
 const resources = ['About', 'Privacy Policy', 'Terms of Service', 'Contact']
 
@@ -27,12 +27,9 @@ export function Footer() {
             <h4 className="font-semibold">Generators</h4>
 
             <ul className="mt-4 space-y-2">
-              {generators.map((item) => (
+              {qrTypes.map((item) => (
                 <li key={item}>
-                  <Link
-                    to="/generators"
-                    className="text-sm text-muted-foreground hover:text-primary"
-                  >
+                  <Link to="/qr-types" className="text-sm text-muted-foreground hover:text-primary">
                     {item}
                   </Link>
                 </li>

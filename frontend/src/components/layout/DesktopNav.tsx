@@ -1,5 +1,5 @@
 const navItems = [
-  { label: 'Generators', href: '#generators' },
+  { label: 'QR Types', href: '#qr-types' },
   { label: 'Templates', href: '#templates' },
   { label: 'Features', href: '#features' },
   { label: 'FAQ', href: '#faq' },

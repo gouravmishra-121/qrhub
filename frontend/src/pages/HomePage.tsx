@@ -4,7 +4,6 @@ import { Categories } from '@/components/landing/Categories'
 import { TrustStats } from '@/components/landing/TrustStats'
 import { WhyQRHub } from '@/components/landing/WhyQRHub'
 import { HowItWorks } from '@/components/landing/HowItWorks'
-import { LivePreview } from '@/components/landing/LivePreview'
 import { FAQ } from '@/components/landing/FAQ'
 import { Footer } from '@/components/landing/Footer'
 
@@ -21,8 +20,6 @@ export default function HomePage() {
       <WhyQRHub />
 
       <HowItWorks />
-
-      <LivePreview />
 
       <FAQ />
 
