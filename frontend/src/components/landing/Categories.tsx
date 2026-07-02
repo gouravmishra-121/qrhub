@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
+  BadgeIndianRupee,
+  BriefcaseBusiness,
   FileText,
   Globe,
   IndianRupee,
@@ -7,16 +10,19 @@ import {
   MapPin,
   MessageCircle,
   MessageSquare,
+  Store,
   User,
+  Utensils,
   Wifi,
 } from 'lucide-react'
 
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
+import { Button } from '@/components/ui/button'
 
 import { CategoryCard } from './CategoryCard'
 
-const categories = [
+const qrCategories = [
   {
     icon: <Globe className="h-8 w-8" />,
     title: 'Website',
@@ -67,27 +73,81 @@ const categories = [
   },
   {
     icon: <FileText className="h-8 w-8" />,
-    title: 'PDF',
-    description: 'Share documents easily.',
+    title: 'Text',
+    description: 'Share plain text, notes or instructions.',
+    href: '/text',
+  },
+]
+
+const templates = [
+  {
+    icon: <BadgeIndianRupee className="h-8 w-8" />,
+    title: 'UPI Payment Template',
+    description: 'Print-ready payment QR layouts for shops and stalls.',
+  },
+  {
+    icon: <Store className="h-8 w-8" />,
+    title: 'Business Template',
+    description: 'Professional QR layouts for stores and service providers.',
+  },
+  {
+    icon: <Utensils className="h-8 w-8" />,
+    title: 'Restaurant Template',
+    description: 'Menu and table QR layouts for cafes and restaurants.',
+  },
+  {
+    icon: <BriefcaseBusiness className="h-8 w-8" />,
+    title: 'Contact Card Template',
+    description: 'Modern vCard QR layouts for business cards.',
   },
 ]
 
 export function Categories() {
+  const [activeTab, setActiveTab] = useState<'qr-types' | 'templates'>('qr-types')
+
+  const isQrTypesActive = activeTab === 'qr-types'
+
   return (
     <Section id="categories">
       <Container>
+        <div id="templates" className="scroll-mt-24" />
+
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-4xl font-bold tracking-tight">QR Codes for Every Need</h2>
 
           <p className="mt-4 text-lg text-muted-foreground">
-            Choose from multiple QR code types designed for businesses, creators, events and
-            everyday use.
+            Choose a QR type to create a free QR code, or explore upcoming templates for branded and
+            print-ready designs.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) =>
-            category.href ? (
+        <div className="mt-8 flex justify-center">
+          <div className="inline-flex rounded-full border bg-background p-1">
+            <Button
+              type="button"
+              size="sm"
+              variant={isQrTypesActive ? 'default' : 'ghost'}
+              className="rounded-full"
+              onClick={() => setActiveTab('qr-types')}
+            >
+              QR Types
+            </Button>
+
+            <Button
+              type="button"
+              size="sm"
+              variant={!isQrTypesActive ? 'default' : 'ghost'}
+              className="rounded-full"
+              onClick={() => setActiveTab('templates')}
+            >
+              Templates
+            </Button>
+          </div>
+        </div>
+
+        {isQrTypesActive ? (
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {qrCategories.map((category) => (
               <Link
                 key={category.title}
                 to={category.href}
@@ -99,16 +159,43 @@ export function Categories() {
                   description={category.description}
                 />
               </Link>
-            ) : (
-              <CategoryCard
-                key={category.title}
-                icon={category.icon}
-                title={category.title}
-                description={category.description}
-              />
-            )
-          )}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-12">
+            <div className="mb-6 rounded-2xl border bg-muted/40 p-5 text-center">
+              <p className="text-sm font-medium">Templates are coming soon</p>
+
+              <p className="mt-1 text-sm text-muted-foreground">
+                Basic QR generation will stay free. Templates will help businesses create branded,
+                print-ready QR designs.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {templates.map((template) => (
+                <div
+                  key={template.title}
+                  className="rounded-2xl border bg-background p-6 shadow-sm"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-muted">
+                    {template.icon}
+                  </div>
+
+                  <div className="mt-5 flex items-center justify-between gap-3">
+                    <h3 className="text-lg font-semibold">{template.title}</h3>
+
+                    <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+                      Soon
+                    </span>
+                  </div>
+
+                  <p className="mt-2 text-sm text-muted-foreground">{template.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </Container>
     </Section>
   )
