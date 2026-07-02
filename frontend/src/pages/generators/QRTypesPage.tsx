@@ -22,7 +22,7 @@ const qrTypes = [
   {
     title: 'UPI QR',
     description: 'Accept payments instantly.',
-    href: '#',
+    href: '/upi',
     icon: '💳',
   },
   {
