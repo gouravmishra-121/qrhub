@@ -323,13 +323,42 @@ Decision:
 
 ## Sprint 10 — Template Gallery MVP
 
+Status: Complete
+
+Completed:
+
+- Task 10.1 — Created Templates page
+- Task 10.2 — Added /templates route
+- Task 10.3 — Connected navbar and footer Templates links
+- Task 10.4 — Connected homepage Templates tab to gallery
+- Task 10.5 — Reused shared template data
+- Task 10.6 — Final review and commit
+
+Final updates:
+
+- Created /templates page
+- Added template categories for UPI, Business, Restaurant, vCard, WiFi, and WhatsApp
+- Homepage Templates tab now links to full template gallery
+- Navbar and footer now link to /templates
+- Template data is centralized in src/data/templateGroups.tsx
+
+Decision:
+
+- Basic QR generation remains free.
+- Templates are the future monetization layer.
+- Current template gallery is informational only.
+- Payment/premium logic will not be added yet.
+
+---
+
+## Sprint 11 — Template Builder MVP
+
 Status: Next
 
 Planned:
 
-- Create Templates page or expanded template gallery
-- Add UPI payment templates
-- Add business QR templates
-- Add restaurant/menu QR templates
-- Add vCard/contact templates
-- Keep templates as future monetization layer
+- Create basic template preview component
+- Add simple template layouts
+- Allow user to choose a template style
+- Connect templates to generated QR pages later
+- Keep download/export simple for MVP

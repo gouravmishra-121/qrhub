@@ -13,7 +13,6 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
-
 function isFullUrl(value: string) {
   if (!value.startsWith('http://') && !value.startsWith('https://')) {
     return false
