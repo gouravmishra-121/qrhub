@@ -10,13 +10,13 @@ const qrTypes = [
   {
     title: 'WiFi QR',
     description: 'Share your WiFi without typing passwords.',
-    href: '#',
+    href: '/wifi',
     icon: '📶',
   },
   {
     title: 'WhatsApp QR',
     description: 'Start chats instantly.',
-    href: '#',
+    href: '/whatsapp',
     icon: '💬',
   },
   {
@@ -28,13 +28,13 @@ const qrTypes = [
   {
     title: 'vCard QR',
     description: 'Share your contact information.',
-    href: '#',
+    href: '/vcard',
     icon: '👤',
   },
   {
     title: 'Email QR',
     description: 'Open an email draft instantly.',
-    href: '#',
+    href: '/email',
     icon: '✉️',
   },
 ]

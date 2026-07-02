@@ -113,25 +113,86 @@ Decision:
 
 ---
 
-## Sprint 6 — WiFi QR
+## Sprint 6 — Communication QR Pack
+
+Status: Complete
+
+Completed:
+
+- Task 6.1 — Build WiFi QR page
+- Task 6.2 — Add /wifi route
+- Task 6.3 — Connect WiFi card on QR Types page
+- Task 6.4 — Build WhatsApp QR page
+- Task 6.5 — Build Email QR page
+- Task 6.6 — Build vCard QR page
+- Task 6.7 — Sprint 6 review and commit
+
+Final WiFi QR features:
+
+- Network name input
+- Security type selection
+- Password input
+- Hidden network option
+- WiFi QR string generation
+- PNG download
+- SVG download
+- Size selector
+- Color customization
+
+Final WhatsApp QR features:
+
+- WhatsApp number input
+- Optional pre-filled message
+- WhatsApp link QR generation
+- PNG download
+- SVG download
+- Size selector
+- Color customization
+
+Final Email QR features:
+
+- Email address input
+- Optional subject
+- Optional message body
+- mailto QR generation
+- PNG download
+- SVG download
+- Size selector
+- Color customization
+
+Final vCard QR features:
+
+- Full name input
+- Phone input
+- Email input
+- Company input
+- Job title input
+- Website input
+- Address input
+- vCard 3.0 QR generation
+- PNG download
+- SVG download
+- Size selector
+- Color customization
+
+Decision:
+
+- WiFi, WhatsApp, Email, and vCard all reuse the shared QR engine.
+- vCard QR stores contact data directly inside the QR.
+- User must save the contact manually after scanning.
+
+---
+
+## Sprint 7 — Utility QR Pack
 
 Status: Next
 
 Planned:
 
-- Network name input
-- Password input
-- Security type selection
-- Hidden network option
-- WiFi QR string generation
-- Reuse QRPreview
-- Reuse QRDownload
-- Reuse QRSizeSelector
-- Reuse QRColorPicker
-
-## Sprint 7 — WhatsApp QR
-
-Status: Pending
+- Phone QR
+- SMS QR
+- Maps QR
+- Text QR
 
 ## Sprint 8 — More QR Types
 
