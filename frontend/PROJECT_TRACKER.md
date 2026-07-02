@@ -292,14 +292,44 @@ Decision:
 
 ## Sprint 9 — QR Types Page and Navigation Polish
 
+Status: Complete
+
+Completed:
+
+- Task 9.1 — Audited QR Types and navigation
+- Task 9.2 — Improved QR Types page structure
+- Task 9.3 — Fixed footer QR links
+- Task 9.4 — Restored Templates as future monetization layer
+- Task 9.5 — Final navigation review and commit
+
+Final navigation updates:
+
+- Navbar links to QR Types, Templates, How It Works, and FAQ
+- Homepage QR section now supports QR Types and Templates tabs
+- QR Types tab links to working QR generators
+- Templates tab shows future monetization categories
+- Footer QR links point to real generator pages
+- QR Types page groups QR tools by category
+- Coming Soon QR types are shown as disabled cards
+
+Decision:
+
+- Basic QR generation remains free.
+- Templates remain part of future monetization.
+- Templates are shown as a homepage tab, not a separate low-priority section.
+- QR Types page is the main catalog for all QR generators.
+
+---
+
+## Sprint 10 — Template Gallery MVP
+
 Status: Next
 
 Planned:
 
-- Improve QR Types page layout
-- Separate available QR types from upcoming QR types
-- Make unavailable cards visibly disabled
-- Add better descriptions for each QR type
-- Improve homepage category links
-- Add consistent navigation labels
-- Final MVP navigation review
+- Create Templates page or expanded template gallery
+- Add UPI payment templates
+- Add business QR templates
+- Add restaurant/menu QR templates
+- Add vCard/contact templates
+- Keep templates as future monetization layer
