@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  BadgeIndianRupee,
-  BriefcaseBusiness,
   FileText,
   Globe,
   IndianRupee,
@@ -10,12 +8,10 @@ import {
   MapPin,
   MessageCircle,
   MessageSquare,
-  Store,
   User,
-  Utensils,
   Wifi,
 } from 'lucide-react'
-
+import { templateGroups } from '@/data/templateGroups'
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
 import { Button } from '@/components/ui/button'
@@ -76,29 +72,6 @@ const qrCategories = [
     title: 'Text',
     description: 'Share plain text, notes or instructions.',
     href: '/text',
-  },
-]
-
-const templates = [
-  {
-    icon: <BadgeIndianRupee className="h-8 w-8" />,
-    title: 'UPI Payment Template',
-    description: 'Print-ready payment QR layouts for shops and stalls.',
-  },
-  {
-    icon: <Store className="h-8 w-8" />,
-    title: 'Business Template',
-    description: 'Professional QR layouts for stores and service providers.',
-  },
-  {
-    icon: <Utensils className="h-8 w-8" />,
-    title: 'Restaurant Template',
-    description: 'Menu and table QR layouts for cafes and restaurants.',
-  },
-  {
-    icon: <BriefcaseBusiness className="h-8 w-8" />,
-    title: 'Contact Card Template',
-    description: 'Modern vCard QR layouts for business cards.',
   },
 ]
 
@@ -179,7 +152,7 @@ export function Categories() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {templates.map((template) => (
+              {templateGroups.slice(0, 4).map((template) => (
                 <div
                   key={template.title}
                   className="rounded-2xl border bg-background p-6 shadow-sm"
