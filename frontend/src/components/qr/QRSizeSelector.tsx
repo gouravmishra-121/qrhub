@@ -14,12 +14,13 @@ export function QRSizeSelector({ value, onChange }: QRSizeSelectorProps) {
     <div className="mt-8 space-y-3">
       <div>
         <h3 className="text-sm font-medium">Download Size</h3>
+
         <p className="mt-1 text-xs text-muted-foreground">
           Choose the output size for your QR code.
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="grid grid-cols-3 gap-2">
         {QR_SIZES.map((size) => (
           <Button
             key={size}
@@ -27,6 +28,7 @@ export function QRSizeSelector({ value, onChange }: QRSizeSelectorProps) {
             size="sm"
             variant={value === size ? 'default' : 'outline'}
             onClick={() => onChange(size)}
+            className="w-full"
           >
             {size}px
           </Button>

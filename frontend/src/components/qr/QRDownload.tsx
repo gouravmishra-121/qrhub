@@ -108,12 +108,22 @@ export function QRDownload({
   }
 
   return (
-    <div className="mt-8 flex justify-center gap-3">
-      <Button variant="outline" disabled={!isValid} onClick={downloadPNG}>
+    <div className="mt-8 grid gap-3 sm:flex sm:justify-center">
+      <Button
+        variant="outline"
+        disabled={!isValid}
+        onClick={downloadPNG}
+        className="w-full sm:w-auto"
+      >
         Download PNG
       </Button>
 
-      <Button variant="outline" disabled={!isValid} onClick={downloadSVG}>
+      <Button
+        variant="outline"
+        disabled={!isValid}
+        onClick={downloadSVG}
+        className="w-full sm:w-auto"
+      >
         Download SVG
       </Button>
     </div>

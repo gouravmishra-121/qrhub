@@ -2,15 +2,33 @@ import { Link } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
 
 import { QRColorPicker, QRDownload, QRPreview, QRSizeSelector, type QRSize } from '@/components/qr'
-
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
+const DEFAULT_QR_SIZE: QRSize = 1024
+const DEFAULT_FOREGROUND_COLOR = '#000000'
+const DEFAULT_BACKGROUND_COLOR = '#ffffff'
+
+function createSafeFileName(value: string) {
+  try {
+    const hostname = new URL(value).hostname.replace(/^www\./, '')
+
+    const safeHostname = hostname
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+
+    return safeHostname ? `website-qr-${safeHostname}` : 'website-qr'
+  } catch {
+    return 'website-qr'
+  }
+}
+
 export default function WebsiteQR() {
   const [url, setUrl] = useState('')
-  const [qrSize, setQrSize] = useState<QRSize>(1024)
-  const [foregroundColor, setForegroundColor] = useState('#000000')
-  const [backgroundColor, setBackgroundColor] = useState('#ffffff')
+  const [qrSize, setQrSize] = useState<QRSize>(DEFAULT_QR_SIZE)
+  const [foregroundColor, setForegroundColor] = useState(DEFAULT_FOREGROUND_COLOR)
+  const [backgroundColor, setBackgroundColor] = useState(DEFAULT_BACKGROUND_COLOR)
 
   const qrRef = useRef<HTMLDivElement>(null)
 
@@ -32,8 +50,20 @@ export default function WebsiteQR() {
     }
   }, [cleanUrl])
 
+  const downloadFileName = useMemo(() => {
+    if (!isValidUrl) return 'website-qr'
+
+    return createSafeFileName(cleanUrl)
+  }, [cleanUrl, isValidUrl])
+
+  function resetCustomization() {
+    setQrSize(DEFAULT_QR_SIZE)
+    setForegroundColor(DEFAULT_FOREGROUND_COLOR)
+    setBackgroundColor(DEFAULT_BACKGROUND_COLOR)
+  }
+
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
+    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
       <Link
         to="/qr-types"
         className="mb-8 inline-block text-sm text-muted-foreground hover:text-foreground"
@@ -41,57 +71,103 @@ export default function WebsiteQR() {
         ← Back to QR Types
       </Link>
 
-      <div className="grid gap-16 lg:grid-cols-[1.2fr_420px]">
+      <div className="grid gap-8 lg:grid-cols-[1.2fr_420px] lg:gap-16">
         {/* LEFT */}
         <section>
-          <h1 className="text-4xl font-bold">Website QR Code</h1>
+          <div>
+            <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-          <p className="mt-3 text-muted-foreground">Generate QR codes for any website instantly.</p>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Website QR Code</h1>
 
-          <div className="mt-10 space-y-3">
-            <label className="text-sm font-medium">Website URL</label>
+            <p className="mt-3 max-w-2xl text-muted-foreground">
+              Create a QR code for any website URL. Enter the complete URL, customize the design,
+              and download it as PNG or SVG.
+            </p>
+          </div>
 
-            <Input
-              autoFocus
-              value={url}
-              placeholder="https://example.com"
-              onChange={(event) => setUrl(event.target.value)}
-              className={
-                url.length > 0 && !isValidUrl ? 'border-red-500 focus-visible:ring-red-500' : ''
-              }
-            />
+          <div className="mt-10 space-y-6">
+            <div className="rounded-2xl border bg-background p-5 sm:p-6 shadow-sm">
+              <div>
+                <h2 className="text-lg font-semibold">Enter Website URL</h2>
 
-            {url.length > 0 &&
-              (isValidUrl ? (
-                <p className="text-sm font-medium text-green-600">✓ Ready to generate</p>
-              ) : (
-                <p className="text-sm font-medium text-red-600">
-                  Enter a valid website URL starting with http:// or https://
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Use a full URL starting with http:// or https://.
                 </p>
-              ))}
+              </div>
 
-            <p className="text-xs text-muted-foreground">Example: https://google.com</p>
+              <div className="mt-5 space-y-3">
+                <label className="text-sm font-medium">Website URL</label>
 
-            {url && (
-              <Button variant="ghost" size="sm" onClick={() => setUrl('')}>
-                Clear
-              </Button>
-            )}
+                <Input
+                  autoFocus
+                  value={url}
+                  placeholder="https://example.com"
+                  onChange={(event) => setUrl(event.target.value)}
+                  className={
+                    url.length > 0 && !isValidUrl ? 'border-red-500 focus-visible:ring-red-500' : ''
+                  }
+                />
 
-            <QRSizeSelector value={qrSize} onChange={setQrSize} />
+                {url.length > 0 &&
+                  (isValidUrl ? (
+                    <p className="text-sm font-medium text-green-600">✓ Ready to generate</p>
+                  ) : (
+                    <p className="text-sm font-medium text-red-600">
+                      Enter a valid website URL starting with http:// or https://
+                    </p>
+                  ))}
 
-            <QRColorPicker
-              foregroundColor={foregroundColor}
-              backgroundColor={backgroundColor}
-              onForegroundChange={setForegroundColor}
-              onBackgroundChange={setBackgroundColor}
-            />
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="text-xs text-muted-foreground">Example: https://google.com</p>
+
+                  {url && (
+                    <Button variant="ghost" size="sm" onClick={() => setUrl('')}>
+                      Clear URL
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border bg-background p-5 sm:p-6 shadow-sm">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h2 className="text-lg font-semibold">Customize QR</h2>
+
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Adjust size and colors before downloading.
+                  </p>
+                </div>
+
+                <Button variant="outline" size="sm" onClick={resetCustomization}>
+                  Reset
+                </Button>
+              </div>
+
+              <QRSizeSelector value={qrSize} onChange={setQrSize} />
+
+              <QRColorPicker
+                foregroundColor={foregroundColor}
+                backgroundColor={backgroundColor}
+                onForegroundChange={setForegroundColor}
+                onBackgroundChange={setBackgroundColor}
+              />
+
+              <div className="mt-6 rounded-xl bg-muted/40 p-4">
+                <p className="text-sm font-medium">Scanning tip</p>
+
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Keep strong contrast between the QR color and background. Black on white gives the
+                  best scanning reliability.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* RIGHT */}
-        <section>
-          <div className="rounded-2xl border bg-background p-8 shadow-sm">
+        <section className="lg:sticky lg:top-24 lg:self-start">
+          <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-8">
             <QRPreview
               ref={qrRef}
               value={cleanUrl}
@@ -104,7 +180,7 @@ export default function WebsiteQR() {
             <QRDownload
               isValid={isValidUrl}
               qrRef={qrRef}
-              fileName="website-qr"
+              fileName={downloadFileName}
               downloadSize={qrSize}
               backgroundColor={backgroundColor}
             />

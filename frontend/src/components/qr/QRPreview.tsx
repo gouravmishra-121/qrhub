@@ -23,16 +23,30 @@ export const QRPreview = forwardRef<HTMLDivElement, QRPreviewProps>(function QRP
 ) {
   return (
     <>
-      <h2 className="mb-8 text-center text-xl font-semibold">Live Preview</h2>
+      <h2 className="mb-6 text-center text-lg font-semibold sm:mb-8 sm:text-xl">Live Preview</h2>
 
-      <div className="flex min-h-[270px] items-center justify-center">
+      <div className="flex min-h-[250px] items-center justify-center sm:min-h-[270px]">
         {isValid ? (
-          <div ref={ref} className="rounded-xl p-4" style={{ backgroundColor }}>
-            <QRCode value={value} size={size} fgColor={foregroundColor} bgColor={backgroundColor} />
+          <div
+            ref={ref}
+            className="flex w-full max-w-[240px] items-center justify-center rounded-xl p-3 sm:p-4"
+            style={{ backgroundColor }}
+          >
+            <QRCode
+              value={value}
+              size={size}
+              fgColor={foregroundColor}
+              bgColor={backgroundColor}
+              style={{
+                height: 'auto',
+                maxWidth: '100%',
+                width: '100%',
+              }}
+            />
           </div>
         ) : (
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 text-6xl">🌐</div>
+          <div className="flex h-[220px] w-full max-w-[240px] flex-col items-center justify-center rounded-xl border-2 border-dashed border-muted px-4 text-center sm:h-[240px]">
+            <div className="mb-4 text-5xl sm:text-6xl">🌐</div>
 
             <h3 className="font-semibold">QR Preview</h3>
 
