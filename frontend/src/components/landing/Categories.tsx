@@ -170,6 +170,12 @@ export function Categories() {
                 Basic QR generation will stay free. Templates will help businesses create branded,
                 print-ready QR designs.
               </p>
+              <Link
+                to="/templates"
+                className="mt-4 inline-flex text-sm font-medium text-primary hover:underline"
+              >
+                View template gallery →
+              </Link>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

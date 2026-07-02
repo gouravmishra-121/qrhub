@@ -14,7 +14,7 @@ const qrTypes = [
 
 const resources = [
   { label: 'All QR Types', href: '/qr-types' },
-  { label: 'Templates', href: '/#templates' },
+  { label: 'Templates', href: '/templates' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'How It Works', href: '/#how-it-works' },
   { label: 'Home', href: '/' },

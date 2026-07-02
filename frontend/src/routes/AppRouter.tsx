@@ -12,6 +12,7 @@ import PhoneQR from '@/pages/generators/PhoneQR'
 import SMSQR from '@/pages/generators/SMSQR'
 import MapsQR from '@/pages/generators/MapsQR'
 import TextQR from '@/pages/generators/TextQR'
+import TemplatesPage from '@/pages/TemplatesPage'
 
 function AppRouter() {
   return (
@@ -40,6 +41,8 @@ function AppRouter() {
         <Route path="/maps" element={<MapsQR />} />
 
         <Route path="/text" element={<TextQR />} />
+
+        <Route path="/templates" element={<TemplatesPage />} />
       </Routes>
     </BrowserRouter>
   )
