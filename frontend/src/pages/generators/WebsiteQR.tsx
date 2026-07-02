@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
 
-import { QRCustomizationPanel, QRDownload, QRPreview, type QRSize } from '@/components/qr'
+import {
+  DEFAULT_BACKGROUND_COLOR,
+  DEFAULT_FOREGROUND_COLOR,
+  DEFAULT_QR_SIZE,
+  QRCustomizationPanel,
+  QRDownload,
+  QRPreview,
+  type QRSize,
+} from '@/components/qr'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-
-const DEFAULT_QR_SIZE: QRSize = 1024
-const DEFAULT_FOREGROUND_COLOR = '#000000'
-const DEFAULT_BACKGROUND_COLOR = '#ffffff'
 
 function createSafeFileName(value: string) {
   try {
