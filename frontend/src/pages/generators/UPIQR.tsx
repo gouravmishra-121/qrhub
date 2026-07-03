@@ -14,6 +14,9 @@ import { TemplateFlowBanner } from '@/components/templates/TemplateFlowBanner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
+import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
+import { generatorSeoContent } from '@/data/generatorSeoContent'
+
 function createUPIString({
   upiId,
   payeeName,
@@ -300,6 +303,7 @@ export default function UPIQR() {
           </div>
         </section>
       </div>
+      <GeneratorSeoContent {...generatorSeoContent.upi} />
     </main>
   )
 }

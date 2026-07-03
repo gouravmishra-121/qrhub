@@ -13,7 +13,8 @@ import {
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-
+import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
+import { generatorSeoContent } from '@/data/generatorSeoContent'
 function normalizePhoneNumber(value: string) {
   return value.replace(/\D/g, '')
 }
@@ -201,6 +202,7 @@ export default function WhatsAppQR() {
           </div>
         </section>
       </div>
+      <GeneratorSeoContent {...generatorSeoContent.whatsapp} />
     </main>
   )
 }
