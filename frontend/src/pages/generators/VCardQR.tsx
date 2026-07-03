@@ -12,6 +12,8 @@ import {
 } from '@/components/qr'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
+import { generatorSeoContent } from '@/data/generatorSeoContent'
 
 function escapeVCardValue(value: string) {
   return value
@@ -381,6 +383,7 @@ export default function VCardQR() {
           </div>
         </section>
       </div>
+      <GeneratorSeoContent {...generatorSeoContent.vcard} />
     </main>
   )
 }

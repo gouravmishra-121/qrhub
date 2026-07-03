@@ -11,6 +11,8 @@ import {
   type QRSize,
 } from '@/components/qr'
 import { Button } from '@/components/ui/button'
+import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
+import { generatorSeoContent } from '@/data/generatorSeoContent'
 
 function createSafeFileName(value: string) {
   const safeValue = value
@@ -156,6 +158,7 @@ export default function TextQR() {
           </div>
         </section>
       </div>
+      <GeneratorSeoContent {...generatorSeoContent.text} />
     </main>
   )
 }

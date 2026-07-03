@@ -12,6 +12,8 @@ import {
 } from '@/components/qr'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
+import { generatorSeoContent } from '@/data/generatorSeoContent'
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())
@@ -226,6 +228,7 @@ export default function EmailQR() {
           </div>
         </section>
       </div>
+      <GeneratorSeoContent {...generatorSeoContent.email} />
     </main>
   )
 }

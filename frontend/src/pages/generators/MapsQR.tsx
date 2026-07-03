@@ -12,7 +12,8 @@ import {
 } from '@/components/qr'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-
+import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
+import { generatorSeoContent } from '@/data/generatorSeoContent'
 function isFullUrl(value: string) {
   if (!value.startsWith('http://') && !value.startsWith('https://')) {
     return false
@@ -196,6 +197,7 @@ export default function MapsQR() {
           </div>
         </section>
       </div>
+      <GeneratorSeoContent {...generatorSeoContent.maps} />
     </main>
   )
 }

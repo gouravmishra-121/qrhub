@@ -12,6 +12,8 @@ import {
 } from '@/components/qr'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
+import { generatorSeoContent } from '@/data/generatorSeoContent'
 
 function normalizePhoneNumber(value: string) {
   return value.replace(/[^\d+]/g, '')
@@ -198,6 +200,7 @@ export default function SMSQR() {
           </div>
         </section>
       </div>
+      <GeneratorSeoContent {...generatorSeoContent.sms} />
     </main>
   )
 }
