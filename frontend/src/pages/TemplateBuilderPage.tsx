@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { toPng } from 'html-to-image'
 
@@ -7,32 +7,16 @@ import { Input } from '@/components/ui/input'
 import { templateDesignPreviews } from '@/data/templateDesignPreviews'
 import { createTemplateGeneratorPath } from '@/lib/templateFlow'
 
+type SelectedTemplate = (typeof templateDesignPreviews)[number]
+
 export default function TemplateBuilderPage() {
   const { templateId } = useParams()
   const [searchParams] = useSearchParams()
 
-  const templateDownloadRef = useRef<HTMLDivElement>(null)
-  const [isDownloading, setIsDownloading] = useState(false)
-
   const template = templateDesignPreviews.find((item) => item.id === templateId)
-
-  const [templateTitle, setTemplateTitle] = useState(template?.title ?? '')
-  const [templateSubtitle, setTemplateSubtitle] = useState(template?.subtitle ?? '')
-  const [templateCtaText, setTemplateCtaText] = useState(template?.ctaText ?? '')
-  const [templateFooterText, setTemplateFooterText] = useState(template?.footerText ?? '')
 
   const qrType = searchParams.get('qrType')
   const qrValue = searchParams.get('qrValue')
-  const hasConnectedQr = Boolean(qrType && qrValue)
-
-  useEffect(() => {
-    if (!template) return
-
-    setTemplateTitle(template.title)
-    setTemplateSubtitle(template.subtitle)
-    setTemplateCtaText(template.ctaText)
-    setTemplateFooterText(template.footerText)
-  }, [template?.id])
 
   if (!template) {
     return (
@@ -55,6 +39,34 @@ export default function TemplateBuilderPage() {
     )
   }
 
+  return (
+    <TemplateBuilderContent
+      key={template.id}
+      template={template}
+      qrType={qrType}
+      qrValue={qrValue}
+    />
+  )
+}
+
+function TemplateBuilderContent({
+  template,
+  qrType,
+  qrValue,
+}: {
+  template: SelectedTemplate
+  qrType: string | null
+  qrValue: string | null
+}) {
+  const templateDownloadRef = useRef<HTMLDivElement>(null)
+  const [isDownloading, setIsDownloading] = useState(false)
+
+  const [templateTitle, setTemplateTitle] = useState(template.title)
+  const [templateSubtitle, setTemplateSubtitle] = useState(template.subtitle)
+  const [templateCtaText, setTemplateCtaText] = useState(template.ctaText)
+  const [templateFooterText, setTemplateFooterText] = useState(template.footerText)
+
+  const hasConnectedQr = Boolean(qrType && qrValue)
   const templateFileName = `${template.id}-qrhub-free-template.png`
 
   async function downloadTemplatePng() {
@@ -79,8 +91,6 @@ export default function TemplateBuilderPage() {
   }
 
   function resetTemplateText() {
-    if (!template) return
-
     setTemplateTitle(template.title)
     setTemplateSubtitle(template.subtitle)
     setTemplateCtaText(template.ctaText)
