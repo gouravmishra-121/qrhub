@@ -1,3 +1,6 @@
+import type { Ref } from 'react'
+import QRCode from 'react-qr-code'
+
 export type TemplateDesignVariant = 'payment' | 'restaurant' | 'business'
 
 type TemplateDesignPreviewProps = {
@@ -7,6 +10,8 @@ type TemplateDesignPreviewProps = {
   subtitle: string
   ctaText: string
   footerText: string
+  qrValue?: string
+  downloadRef?: Ref<HTMLDivElement>
 }
 
 const qrBlocks = [
@@ -104,6 +109,18 @@ function FakeQR() {
   )
 }
 
+function TemplateQR({ value }: { value?: string }) {
+  if (!value) {
+    return <FakeQR />
+  }
+
+  return (
+    <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-xl bg-white p-3 shadow-sm">
+      <QRCode value={value} size={112} bgColor="#ffffff" fgColor="#000000" level="M" />
+    </div>
+  )
+}
+
 export function TemplateDesignPreview({
   variant,
   label,
@@ -111,12 +128,14 @@ export function TemplateDesignPreview({
   subtitle,
   ctaText,
   footerText,
+  qrValue,
+  downloadRef,
 }: TemplateDesignPreviewProps) {
   const styles = variantStyles[variant]
 
   return (
     <div className="rounded-3xl border bg-background p-4 shadow-sm">
-      <div className={`overflow-hidden rounded-2xl border p-5 ${styles.frame}`}>
+      <div ref={downloadRef} className={`overflow-hidden rounded-2xl border p-5 ${styles.frame}`}>
         <div className={`relative rounded-2xl p-5 text-center shadow-sm ${styles.card}`}>
           <div className={`absolute right-0 top-0 h-16 w-16 rounded-bl-full ${styles.corner}`} />
 
@@ -131,7 +150,7 @@ export function TemplateDesignPreview({
           <p className="mt-2 text-sm text-muted-foreground">{subtitle}</p>
 
           <div className="my-6">
-            <FakeQR />
+            <TemplateQR value={qrValue} />
           </div>
 
           <div className={`rounded-xl px-4 py-3 text-sm font-semibold ${styles.cta}`}>
@@ -146,7 +165,9 @@ export function TemplateDesignPreview({
         <p className="text-sm font-medium">Print-ready style preview</p>
 
         <p className="mt-1 text-sm text-muted-foreground">
-          A sample visual layout for future branded QR templates.
+          {qrValue
+            ? 'This preview is connected with your generated QR value.'
+            : 'A sample visual layout for future branded QR templates.'}
         </p>
       </div>
     </div>

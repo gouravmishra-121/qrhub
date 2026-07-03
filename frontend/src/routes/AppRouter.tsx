@@ -13,6 +13,7 @@ import SMSQR from '@/pages/generators/SMSQR'
 import MapsQR from '@/pages/generators/MapsQR'
 import TextQR from '@/pages/generators/TextQR'
 import TemplatesPage from '@/pages/TemplatesPage'
+import TemplateBuilderPage from '@/pages/TemplateBuilderPage'
 
 function AppRouter() {
   return (
@@ -43,6 +44,8 @@ function AppRouter() {
         <Route path="/text" element={<TextQR />} />
 
         <Route path="/templates" element={<TemplatesPage />} />
+
+        <Route path="/templates/:templateId" element={<TemplateBuilderPage />} />
       </Routes>
     </BrowserRouter>
   )

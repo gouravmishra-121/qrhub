@@ -33,15 +33,23 @@ export default function TemplatesPage() {
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {templateDesignPreviews.map((template) => (
-            <TemplateDesignPreview
-              key={template.title}
-              variant={template.variant}
-              label={template.label}
-              title={template.title}
-              subtitle={template.subtitle}
-              ctaText={template.ctaText}
-              footerText={template.footerText}
-            />
+            <div key={template.id}>
+              <TemplateDesignPreview
+                variant={template.variant}
+                label={template.label}
+                title={template.title}
+                subtitle={template.subtitle}
+                ctaText={template.ctaText}
+                footerText={template.footerText}
+              />
+
+              <Link
+                to={`/templates/${template.id}`}
+                className="mt-4 inline-flex w-full justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+              >
+                Use this template →
+              </Link>
+            </div>
           ))}
         </div>
       </section>

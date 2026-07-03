@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 
 import {
   DEFAULT_BACKGROUND_COLOR,
@@ -10,6 +10,7 @@ import {
   QRPreview,
   type QRSize,
 } from '@/components/qr'
+import { TemplateFlowBanner } from '@/components/templates/TemplateFlowBanner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
@@ -29,6 +30,9 @@ function createSafeFileName(value: string) {
 }
 
 export default function WebsiteQR() {
+  const [searchParams] = useSearchParams()
+  const templateId = searchParams.get('template')
+
   const [url, setUrl] = useState('')
   const [qrSize, setQrSize] = useState<QRSize>(DEFAULT_QR_SIZE)
   const [foregroundColor, setForegroundColor] = useState(DEFAULT_FOREGROUND_COLOR)
@@ -66,17 +70,31 @@ export default function WebsiteQR() {
     setBackgroundColor(DEFAULT_BACKGROUND_COLOR)
   }
 
+  function clearUrl() {
+    setUrl('')
+  }
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
-      <Link
-        to="/qr-types"
-        className="mb-8 inline-block text-sm text-muted-foreground hover:text-foreground"
-      >
-        ← Back to QR Types
-      </Link>
+      <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <Link
+          to="/qr-types"
+          className="inline-block text-sm text-muted-foreground hover:text-foreground"
+        >
+          ← Back to QR Types
+        </Link>
+
+        {templateId ? (
+          <Link
+            to={`/templates/${templateId}`}
+            className="inline-block text-sm text-muted-foreground hover:text-foreground"
+          >
+            ← Back to selected template
+          </Link>
+        ) : null}
+      </div>
 
       <div className="grid gap-8 lg:grid-cols-[1.2fr_420px] lg:gap-16">
-        {/* LEFT */}
         <section>
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
@@ -90,7 +108,14 @@ export default function WebsiteQR() {
           </div>
 
           <div className="mt-10 space-y-6">
-            <div className="rounded-2xl border bg-background p-5 sm:p-6 shadow-sm">
+            <TemplateFlowBanner
+              templateId={templateId}
+              qrType="website"
+              qrValue={cleanUrl}
+              isValid={isValidUrl}
+            />
+
+            <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
               <div>
                 <h2 className="text-lg font-semibold">Enter Website URL</h2>
 
@@ -124,11 +149,11 @@ export default function WebsiteQR() {
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-xs text-muted-foreground">Example: https://google.com</p>
 
-                  {url && (
-                    <Button variant="ghost" size="sm" onClick={() => setUrl('')}>
+                  {url ? (
+                    <Button variant="ghost" size="sm" onClick={clearUrl}>
                       Clear URL
                     </Button>
-                  )}
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -147,7 +172,6 @@ export default function WebsiteQR() {
           </div>
         </section>
 
-        {/* RIGHT */}
         <section className="lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-8">
             <QRPreview
