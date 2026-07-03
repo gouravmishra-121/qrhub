@@ -72,6 +72,18 @@ export const pageMetaByPath: Record<string, PageMeta> = {
     description:
       'Create a free maps QR code for locations, addresses, coordinates or Google Maps links.',
   },
+  '/privacy': {
+    title: 'Privacy Policy — QRHub',
+    description: 'Learn how QRHub handles privacy for browser-based QR code generation.',
+  },
+  '/terms': {
+    title: 'Terms of Service — QRHub',
+    description: 'Read the basic terms for using QRHub free QR code generators and templates.',
+  },
+  '/contact': {
+    title: 'Contact — QRHub',
+    description: 'Contact QRHub for feedback, QR type suggestions, template ideas, and support.',
+  },
 }
 
 export function getPageMeta(pathname: string): PageMeta {

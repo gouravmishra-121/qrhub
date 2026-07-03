@@ -1,5 +1,4 @@
 import { FAQ } from '@/components/landing/FAQ'
-import { Footer } from '@/components/landing/Footer'
 import { Hero } from '@/components/landing/Hero'
 import { HowItWorks } from '@/components/landing/HowItWorks'
 import { Categories } from '@/components/landing/Categories'
@@ -15,7 +14,6 @@ export default function HomePage() {
       <WhyQRHub />
       <HowItWorks />
       <FAQ />
-      <Footer />
     </>
   )
 }

@@ -10,21 +10,25 @@ const qrTypes = [
   { label: 'WhatsApp QR', href: '/whatsapp' },
   { label: 'Email QR', href: '/email' },
   { label: 'vCard QR', href: '/vcard' },
+  { label: 'Phone QR', href: '/phone' },
+  { label: 'SMS QR', href: '/sms' },
+  { label: 'Text QR', href: '/text' },
+  { label: 'Maps QR', href: '/maps' },
 ]
 
 const resources = [
   { label: 'All QR Types', href: '/qr-types' },
   { label: 'Templates', href: '/templates' },
-  { label: 'FAQ', href: '/#faq' },
-  { label: 'How It Works', href: '/#how-it-works' },
-  { label: 'Home', href: '/' },
+  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Terms of Service', href: '/terms' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export function Footer() {
   return (
     <Section className="border-t py-12">
       <Container>
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <h3 className="text-2xl font-bold">QRHub</h3>
 
@@ -37,7 +41,7 @@ export function Footer() {
           <div>
             <h4 className="font-semibold">QR Types</h4>
 
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-1">
               {qrTypes.map((item) => (
                 <li key={item.href}>
                   <Link to={item.href} className="text-sm text-muted-foreground hover:text-primary">

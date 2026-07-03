@@ -16,6 +16,9 @@ import TextQR from '@/pages/generators/TextQR'
 import TemplatesPage from '@/pages/TemplatesPage'
 import TemplateBuilderPage from '@/pages/TemplateBuilderPage'
 import NotFoundPage from '@/pages/NotFoundPage'
+import ContactPage from '@/pages/ContactPage'
+import PrivacyPage from '@/pages/PrivacyPage'
+import TermsPage from '@/pages/TermsPage'
 export function AppRouter() {
   return (
     <BrowserRouter>
@@ -48,6 +51,12 @@ export function AppRouter() {
           <Route path="/templates" element={<TemplatesPage />} />
 
           <Route path="/templates/:templateId" element={<TemplateBuilderPage />} />
+
+          <Route path="/contact" element={<ContactPage />} />
+
+          <Route path="/privacy" element={<PrivacyPage />} />
+
+          <Route path="/terms" element={<TermsPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Route>

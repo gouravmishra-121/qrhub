@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 
+import { Footer } from '@/components/landing/Footer'
 import { Navbar } from '@/components/layout/Navbar'
 import { getPageMeta } from '@/lib/pageMeta'
-
+import { ScrollToTop } from '@/components/layout/ScrollToTop'
 export function AppLayout() {
   const location = useLocation()
 
@@ -26,9 +27,13 @@ export function AppLayout() {
 
   return (
     <>
+      <ScrollToTop />
+
       <Navbar />
 
       <Outlet />
+
+      <Footer />
     </>
   )
 }
