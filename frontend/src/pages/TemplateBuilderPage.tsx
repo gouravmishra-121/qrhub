@@ -79,6 +79,8 @@ export default function TemplateBuilderPage() {
   }
 
   function resetTemplateText() {
+    if (!template) return
+
     setTemplateTitle(template.title)
     setTemplateSubtitle(template.subtitle)
     setTemplateCtaText(template.ctaText)

@@ -1,66 +1,32 @@
 import { Link } from 'react-router-dom'
-import { Menu } from 'lucide-react'
+import { QrCode } from 'lucide-react'
 
-import { Container } from './Container'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
-const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'QR Types', href: '/qr-types' },
-  { label: 'Templates', href: '/templates' },
-  { label: 'About', href: '/about' },
-]
+import { DesktopNav } from './DesktopNav'
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
-      <Container>
-        <nav className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="text-xl font-bold tracking-tight">
-            QRHub
-          </Link>
+    <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link
+          to="/"
+          className="flex items-center gap-2 font-bold tracking-tight text-foreground"
+          aria-label="Go to QRHub homepage"
+        >
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+            <QrCode className="h-5 w-5" />
+          </span>
 
-          {/* Desktop Nav */}
-          <div className="hidden items-center gap-8 md:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-              >
-                {item.label}
-              </Link>
-            ))}
+          <span className="text-xl">QRHub</span>
+        </Link>
 
-            <Button size="sm">Generate QR</Button>
-          </div>
+        <DesktopNav />
 
-          {/* Mobile Nav */}
-          <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </SheetTrigger>
-
-              <SheetContent side="right" className="w-72">
-                <div className="mt-8 flex flex-col gap-6">
-                  {navItems.map((item) => (
-                    <Link key={item.href} to={item.href} className="text-lg font-medium">
-                      {item.label}
-                    </Link>
-                  ))}
-
-                  <Button className="mt-6 w-full">Generate QR</Button>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </nav>
-      </Container>
+        <Link to="/qr-types" className="hidden sm:inline-flex">
+          <Button size="sm">Create QR</Button>
+        </Link>
+      </div>
     </header>
   )
 }

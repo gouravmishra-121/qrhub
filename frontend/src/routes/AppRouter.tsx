@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import HomePage from '@/pages/HomePage'
+import { AppLayout } from '@/components/layout/AppLayout'
 import QRTypesPage from '@/pages/generators/QRTypesPage'
 import WebsiteQR from '@/pages/generators/WebsiteQR'
 import UPIQR from '@/pages/generators/UPIQR'
@@ -15,39 +16,41 @@ import TextQR from '@/pages/generators/TextQR'
 import TemplatesPage from '@/pages/TemplatesPage'
 import TemplateBuilderPage from '@/pages/TemplateBuilderPage'
 import NotFoundPage from '@/pages/NotFoundPage'
-function AppRouter() {
+export function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<HomePage />} />
 
-        <Route path="/qr-types" element={<QRTypesPage />} />
+          <Route path="/qr-types" element={<QRTypesPage />} />
 
-        <Route path="/website" element={<WebsiteQR />} />
+          <Route path="/website" element={<WebsiteQR />} />
 
-        <Route path="/upi" element={<UPIQR />} />
+          <Route path="/upi" element={<UPIQR />} />
 
-        <Route path="/wifi" element={<WiFiQR />} />
+          <Route path="/wifi" element={<WiFiQR />} />
 
-        <Route path="/email" element={<EmailQR />} />
+          <Route path="/email" element={<EmailQR />} />
 
-        <Route path="/whatsapp" element={<WhatsAppQR />} />
+          <Route path="/whatsapp" element={<WhatsAppQR />} />
 
-        <Route path="/vcard" element={<VCardQR />} />
+          <Route path="/vcard" element={<VCardQR />} />
 
-        <Route path="/phone" element={<PhoneQR />} />
+          <Route path="/phone" element={<PhoneQR />} />
 
-        <Route path="/sms" element={<SMSQR />} />
+          <Route path="/sms" element={<SMSQR />} />
 
-        <Route path="/maps" element={<MapsQR />} />
+          <Route path="/maps" element={<MapsQR />} />
 
-        <Route path="/text" element={<TextQR />} />
+          <Route path="/text" element={<TextQR />} />
 
-        <Route path="/templates" element={<TemplatesPage />} />
+          <Route path="/templates" element={<TemplatesPage />} />
 
-        <Route path="/templates/:templateId" element={<TemplateBuilderPage />} />
+          <Route path="/templates/:templateId" element={<TemplateBuilderPage />} />
 
-        <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
