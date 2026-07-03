@@ -14,7 +14,7 @@ import MapsQR from '@/pages/generators/MapsQR'
 import TextQR from '@/pages/generators/TextQR'
 import TemplatesPage from '@/pages/TemplatesPage'
 import TemplateBuilderPage from '@/pages/TemplateBuilderPage'
-
+import NotFoundPage from '@/pages/NotFoundPage'
 function AppRouter() {
   return (
     <BrowserRouter>
@@ -46,6 +46,8 @@ function AppRouter() {
         <Route path="/templates" element={<TemplatesPage />} />
 
         <Route path="/templates/:templateId" element={<TemplateBuilderPage />} />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   )

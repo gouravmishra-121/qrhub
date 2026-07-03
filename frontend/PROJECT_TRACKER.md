@@ -353,12 +353,51 @@ Decision:
 
 ## Sprint 11 — Template Builder MVP
 
-Status: Next
+Status: Complete
+
+Completed:
+
+- Task 11.1 — Created visual template preview component
+- Task 11.2 — Added visual previews to Templates page
+- Task 11.3 — Made template previews data-driven
+- Task 11.4 — Added selectable template builder route
+- Task 11.5 — Connected template flow with UPI QR generator
+- Task 11.6 — Connected Website QR flow for Restaurant and Business templates
+- Task 11.7 — Added template PNG download
+- Task 11.8 — Added free and premium export states
+- Task 11.9 — Added editable template text
+- Task 11.10 — Fixed homepage clarity
+
+Final outcome:
+
+- Users can select a template.
+- Users can create a base QR from the selected template flow.
+- UPI, Restaurant, and Business templates can connect QR data.
+- Connected QR appears inside the template preview.
+- Users can customize template text.
+- Users can download a free PNG with QRHub watermark.
+- Premium export is visible as a future monetization path.
+- Homepage no longer shows blank QR preview.
+- Homepage Templates tab now shows usable templates as Available.
+
+Decision:
+
+- Basic QR generation remains free.
+- Templates are the future monetization layer.
+- No backend, database, login, or payment is needed for current MVP.
+- Payment should be considered only after template interest is validated.
+
+---
+
+## Sprint 12 — MVP Quality, Navigation, and SEO Foundation
+
+Status: Started
 
 Planned:
 
-- Create basic template preview component
-- Add simple template layouts
-- Allow user to choose a template style
-- Connect templates to generated QR pages later
-- Keep download/export simple for MVP
+- Add 404 Not Found page
+- Add page title and description basics
+- Improve generator pages as standalone SEO landing pages
+- Add privacy-first trust messaging
+- Add simple legal placeholder pages later
+- Improve mobile and navigation QA
