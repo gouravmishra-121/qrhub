@@ -12,6 +12,7 @@ type TemplateDesignPreviewProps = {
   footerText: string
   qrValue?: string
   downloadRef?: Ref<HTMLDivElement>
+  showWatermark?: boolean
 }
 
 const qrBlocks = [
@@ -103,7 +104,10 @@ function FakeQR() {
   return (
     <div className="mx-auto grid h-36 w-36 grid-cols-7 gap-1 rounded-xl bg-white p-3 shadow-sm">
       {qrBlocks.map((isDark, index) => (
-        <div key={index} className={isDark ? 'rounded-sm bg-black' : 'rounded-sm bg-white'} />
+        <div
+          key={index}
+          className={isDark ? 'rounded-sm bg-black' : 'rounded-sm bg-white'}
+        />
       ))}
     </div>
   )
@@ -116,7 +120,13 @@ function TemplateQR({ value }: { value?: string }) {
 
   return (
     <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-xl bg-white p-3 shadow-sm">
-      <QRCode value={value} size={112} bgColor="#ffffff" fgColor="#000000" level="M" />
+      <QRCode
+        value={value}
+        size={112}
+        bgColor="#ffffff"
+        fgColor="#000000"
+        level="M"
+      />
     </div>
   )
 }
@@ -130,14 +140,22 @@ export function TemplateDesignPreview({
   footerText,
   qrValue,
   downloadRef,
+  showWatermark = false,
 }: TemplateDesignPreviewProps) {
   const styles = variantStyles[variant]
 
   return (
     <div className="rounded-3xl border bg-background p-4 shadow-sm">
-      <div ref={downloadRef} className={`overflow-hidden rounded-2xl border p-5 ${styles.frame}`}>
-        <div className={`relative rounded-2xl p-5 text-center shadow-sm ${styles.card}`}>
-          <div className={`absolute right-0 top-0 h-16 w-16 rounded-bl-full ${styles.corner}`} />
+      <div
+        ref={downloadRef}
+        className={`overflow-hidden rounded-2xl border p-5 ${styles.frame}`}
+      >
+        <div
+          className={`relative rounded-2xl p-5 text-center shadow-sm ${styles.card}`}
+        >
+          <div
+            className={`absolute right-0 top-0 h-16 w-16 rounded-bl-full ${styles.corner}`}
+          />
 
           <span
             className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${styles.badge}`}
@@ -153,11 +171,19 @@ export function TemplateDesignPreview({
             <TemplateQR value={qrValue} />
           </div>
 
-          <div className={`rounded-xl px-4 py-3 text-sm font-semibold ${styles.cta}`}>
+          <div
+            className={`rounded-xl px-4 py-3 text-sm font-semibold ${styles.cta}`}
+          >
             {ctaText}
           </div>
 
           <p className="mt-4 text-xs text-muted-foreground">{footerText}</p>
+
+          {showWatermark ? (
+            <div className="mt-5 border-t pt-3 text-center text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+              Made with QRHub
+            </div>
+          ) : null}
         </div>
       </div>
 

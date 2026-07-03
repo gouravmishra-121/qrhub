@@ -22,9 +22,13 @@ export default function TemplateBuilderPage() {
   if (!template) {
     return (
       <main className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-        <p className="text-sm font-medium text-muted-foreground">Template not found</p>
+        <p className="text-sm font-medium text-muted-foreground">
+          Template not found
+        </p>
 
-        <h1 className="mt-2 text-4xl font-bold tracking-tight">This template does not exist</h1>
+        <h1 className="mt-2 text-4xl font-bold tracking-tight">
+          This template does not exist
+        </h1>
 
         <p className="mt-4 text-muted-foreground">
           Please go back to the template gallery and choose another template.
@@ -40,7 +44,7 @@ export default function TemplateBuilderPage() {
     )
   }
 
-  const templateFileName = `${template.id}-qr-template.png`
+  const templateFileName = `${template.id}-qrhub-free-template.png`
 
   async function downloadTemplatePng() {
     if (!templateDownloadRef.current || !hasConnectedQr) return
@@ -66,111 +70,162 @@ export default function TemplateBuilderPage() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-sm font-medium text-muted-foreground">Template Builder</p>
+        <p className="text-sm font-medium text-muted-foreground">
+          Template Builder
+        </p>
 
-        <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">{template.title}</h1>
+        <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
+          {template.title}
+        </h1>
 
         <p className="mt-4 text-muted-foreground">
-          Choose or replace the base QR for this template. Once connected, the real QR appears
-          inside the template preview.
+          Connect a base QR, preview it inside the selected template, and
+          download a branded QR layout.
         </p>
       </div>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_380px]">
-        <section className="rounded-2xl border bg-background p-6 shadow-sm">
-          <h2 className="text-xl font-semibold">Template setup</h2>
+        <section className="space-y-6">
+          <div className="rounded-2xl border bg-background p-6 shadow-sm">
+            <h2 className="text-xl font-semibold">Template setup</h2>
 
-          <p className="mt-2 text-sm text-muted-foreground">
-            First connect the QR data, then download the full branded template design as PNG.
-          </p>
-
-          <div
-            className={
-              hasConnectedQr
-                ? 'mt-6 rounded-2xl border border-primary/30 bg-primary/5 p-5'
-                : 'mt-6 rounded-2xl border bg-muted/40 p-5'
-            }
-          >
-            <p className="text-sm font-medium">
-              {hasConnectedQr ? 'QR connected' : 'No QR connected yet'}
+            <p className="mt-2 text-sm text-muted-foreground">
+              First connect the QR data, then choose a free or premium export
+              option.
             </p>
 
-            <div className="mt-4 grid gap-3 text-sm">
-              <div className="flex justify-between gap-4">
-                <span className="text-muted-foreground">Template</span>
-                <span className="font-medium">{template.label}</span>
+            <div
+              className={
+                hasConnectedQr
+                  ? 'mt-6 rounded-2xl border border-primary/30 bg-primary/5 p-5'
+                  : 'mt-6 rounded-2xl border bg-muted/40 p-5'
+              }
+            >
+              <p className="text-sm font-medium">
+                {hasConnectedQr ? 'QR connected' : 'No QR connected yet'}
+              </p>
+
+              <div className="mt-4 grid gap-3 text-sm">
+                <div className="flex justify-between gap-4">
+                  <span className="text-muted-foreground">Template</span>
+                  <span className="font-medium">{template.label}</span>
+                </div>
+
+                <div className="flex justify-between gap-4">
+                  <span className="text-muted-foreground">QR type</span>
+                  <span className="font-medium">
+                    {qrType ? qrType.toUpperCase() : 'Not selected'}
+                  </span>
+                </div>
+
+                <div className="flex justify-between gap-4">
+                  <span className="text-muted-foreground">Status</span>
+                  <span className="font-medium">
+                    {hasConnectedQr ? 'Ready to download' : 'Pending'}
+                  </span>
+                </div>
               </div>
 
-              <div className="flex justify-between gap-4">
-                <span className="text-muted-foreground">QR type</span>
-                <span className="font-medium">
-                  {qrType ? qrType.toUpperCase() : 'Not selected'}
-                </span>
+              {hasConnectedQr ? (
+                <p className="mt-4 break-all rounded-xl bg-background p-3 text-xs text-muted-foreground">
+                  {qrValue}
+                </p>
+              ) : null}
+            </div>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                to={createTemplateGeneratorPath(template.baseQrPath, template.id)}
+                className="inline-flex justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+              >
+                {hasConnectedQr ? 'Replace base QR' : 'Create base QR first'}
+              </Link>
+
+              <Link
+                to="/templates"
+                className="inline-flex justify-center rounded-full border px-5 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+              >
+                Choose another template
+              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border bg-background p-6 shadow-sm">
+            <h2 className="text-xl font-semibold">Export options</h2>
+
+            <p className="mt-2 text-sm text-muted-foreground">
+              Free export is available now. Premium export options are planned
+              for monetization.
+            </p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border bg-muted/30 p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-semibold">Free PNG</h3>
+
+                  <span className="rounded-full bg-background px-3 py-1 text-xs font-medium text-muted-foreground">
+                    Available
+                  </span>
+                </div>
+
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Download a branded PNG template with a small QRHub watermark.
+                </p>
+
+                <button
+                  type="button"
+                  disabled={!hasConnectedQr || isDownloading}
+                  onClick={downloadTemplatePng}
+                  className={
+                    hasConnectedQr
+                      ? 'mt-5 inline-flex w-full justify-center rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background transition hover:opacity-90'
+                      : 'mt-5 inline-flex w-full cursor-not-allowed justify-center rounded-full bg-muted px-5 py-2 text-sm font-medium text-muted-foreground'
+                  }
+                >
+                  {isDownloading ? 'Preparing PNG...' : 'Download free PNG'}
+                </button>
               </div>
 
-              <div className="flex justify-between gap-4">
-                <span className="text-muted-foreground">Status</span>
-                <span className="font-medium">
-                  {hasConnectedQr ? 'Ready to download' : 'Pending'}
-                </span>
+              <div className="rounded-2xl border border-dashed bg-background p-5 opacity-80">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-semibold">Premium Export</h3>
+
+                  <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+                    Coming soon
+                  </span>
+                </div>
+
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Future paid export: HD PNG, print-ready PDF, no watermark,
+                  logo placement, and premium designs.
+                </p>
+
+                <button
+                  type="button"
+                  disabled
+                  className="mt-5 inline-flex w-full cursor-not-allowed justify-center rounded-full bg-muted px-5 py-2 text-sm font-medium text-muted-foreground"
+                >
+                  Unlock premium export
+                </button>
               </div>
             </div>
 
-            {hasConnectedQr ? (
-              <p className="mt-4 break-all rounded-xl bg-background p-3 text-xs text-muted-foreground">
-                {qrValue}
+            {!hasConnectedQr ? (
+              <p className="mt-4 text-sm text-muted-foreground">
+                Create and connect a base QR first to enable free export.
               </p>
             ) : null}
           </div>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Link
-              to={createTemplateGeneratorPath(template.baseQrPath, template.id)}
-              className="inline-flex justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
-            >
-              {hasConnectedQr ? 'Replace base QR' : 'Create base QR first'}
-            </Link>
+          <div className="rounded-2xl border bg-muted/30 p-5">
+            <p className="text-sm font-medium">Monetization direction</p>
 
-            <button
-              type="button"
-              disabled={!hasConnectedQr || isDownloading}
-              onClick={downloadTemplatePng}
-              className={
-                hasConnectedQr
-                  ? 'inline-flex justify-center rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background transition hover:opacity-90'
-                  : 'inline-flex cursor-not-allowed justify-center rounded-full bg-muted px-5 py-2 text-sm font-medium text-muted-foreground'
-              }
-            >
-              {isDownloading ? 'Preparing PNG...' : 'Download template PNG'}
-            </button>
-
-            <Link
-              to="/templates"
-              className="inline-flex justify-center rounded-full border px-5 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
-            >
-              Choose another template
-            </Link>
+            <p className="mt-2 text-sm text-muted-foreground">
+              QR generation remains free for traffic. Template exports create
+              the monetization layer through premium layouts, HD downloads and
+              watermark-free files.
+            </p>
           </div>
-
-          {hasConnectedQr ? (
-            <div className="mt-6 rounded-2xl border bg-muted/30 p-5">
-              <p className="text-sm font-medium">Free template download</p>
-
-              <p className="mt-2 text-sm text-muted-foreground">
-                This PNG download is the first free template export. Later, we can add premium HD
-                export, PDF print layout, logo placement and watermark-free downloads.
-              </p>
-            </div>
-          ) : (
-            <div className="mt-6 rounded-2xl border bg-muted/30 p-5">
-              <p className="text-sm font-medium">Download locked</p>
-
-              <p className="mt-2 text-sm text-muted-foreground">
-                Create and connect a base QR first. After that, the template PNG download will be
-                enabled.
-              </p>
-            </div>
-          )}
         </section>
 
         <aside className="lg:sticky lg:top-24 lg:self-start">
@@ -183,6 +238,7 @@ export default function TemplateBuilderPage() {
             footerText={template.footerText}
             qrValue={qrValue ?? undefined}
             downloadRef={templateDownloadRef}
+            showWatermark={Boolean(qrValue)}
           />
         </aside>
       </div>
