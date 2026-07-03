@@ -391,13 +391,58 @@ Decision:
 
 ## Sprint 12 — MVP Quality, Navigation, and SEO Foundation
 
-Status: Started
+Status: Complete
+
+Completed:
+
+- Task 12.1 — Added 404 Not Found page
+- Task 12.2 — Added global site navigation through AppLayout
+- Task 12.3 — Added route-based page titles and meta descriptions
+- Task 12.4 — Added global footer on every page
+- Task 12.5 — Added Privacy, Terms, and Contact pages
+- Task 12.6 — Improved footer internal QR links
+- Task 12.7 — Added ScrollToTop on route change
+- Task 12.8 — Added SEO content component for generator pages
+- Task 12.9 — Added SEO content for UPI and WhatsApp pages
+- Task 12.10 — Added SEO content for Website and WiFi pages
+- Task 12.11 — Added SEO content for Email and vCard pages
+- Task 12.12 — Added SEO content for Phone and SMS pages
+- Task 12.13 — Added SEO content for Text and Maps pages
+- Task 12.14 — Added QRHub favicon
+- Task 12.15 — Added robots.txt
+- Task 12.16 — Added MVP QA checklist
+
+Final outcome:
+
+- Navbar appears globally across all routes.
+- Footer appears globally across all routes.
+- Direct SEO landing pages now show QRHub branding.
+- All QR generator pages have SEO/use-case/FAQ sections.
+- Page titles and meta descriptions are route-aware.
+- Privacy, Terms, Contact, and 404 pages exist.
+- Favicon and robots.txt are added.
+- MVP QA checklist exists for manual validation.
+
+Decision:
+
+- QRHub remains frontend-only for current MVP.
+- No backend, database, login, or payment is needed yet.
+- Basic QR generation remains free.
+- Templates remain the future monetization layer.
+- SEO pages are important because users may land directly on generator pages.
+
+---
+
+## Sprint 13 — Final MVP QA and Launch Preparation
+
+Status: Next
 
 Planned:
 
-- Add 404 Not Found page
-- Add page title and description basics
-- Improve generator pages as standalone SEO landing pages
-- Add privacy-first trust messaging
-- Add simple legal placeholder pages later
-- Improve mobile and navigation QA
+- Run full MVP QA checklist
+- Fix any broken route, layout, or download issue
+- Review mobile responsiveness
+- Review template flow end-to-end
+- Prepare deployment checklist
+- Decide hosting option
+- Prepare production domain/sitemap later
