@@ -1,4 +1,7 @@
+export type TemplateDesignVariant = 'payment' | 'restaurant' | 'business'
+
 type TemplateDesignPreviewProps = {
+  variant: TemplateDesignVariant
   label: string
   title: string
   subtitle: string
@@ -58,6 +61,39 @@ const qrBlocks = [
   true,
 ]
 
+const variantStyles: Record<
+  TemplateDesignVariant,
+  {
+    frame: string
+    card: string
+    badge: string
+    cta: string
+    corner: string
+  }
+> = {
+  payment: {
+    frame: 'bg-emerald-50',
+    card: 'bg-white',
+    badge: 'bg-emerald-600 text-white',
+    cta: 'bg-emerald-700 text-white',
+    corner: 'bg-emerald-500',
+  },
+  restaurant: {
+    frame: 'bg-orange-50',
+    card: 'bg-white',
+    badge: 'bg-orange-600 text-white',
+    cta: 'bg-orange-700 text-white',
+    corner: 'bg-orange-500',
+  },
+  business: {
+    frame: 'bg-slate-100',
+    card: 'bg-white',
+    badge: 'bg-slate-900 text-white',
+    cta: 'bg-slate-950 text-white',
+    corner: 'bg-slate-700',
+  },
+}
+
 function FakeQR() {
   return (
     <div className="mx-auto grid h-36 w-36 grid-cols-7 gap-1 rounded-xl bg-white p-3 shadow-sm">
@@ -69,17 +105,24 @@ function FakeQR() {
 }
 
 export function TemplateDesignPreview({
+  variant,
   label,
   title,
   subtitle,
   ctaText,
   footerText,
 }: TemplateDesignPreviewProps) {
+  const styles = variantStyles[variant]
+
   return (
     <div className="rounded-3xl border bg-background p-4 shadow-sm">
-      <div className="overflow-hidden rounded-2xl border bg-muted/50 p-5">
-        <div className="rounded-2xl bg-background p-5 text-center shadow-sm">
-          <span className="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+      <div className={`overflow-hidden rounded-2xl border p-5 ${styles.frame}`}>
+        <div className={`relative rounded-2xl p-5 text-center shadow-sm ${styles.card}`}>
+          <div className={`absolute right-0 top-0 h-16 w-16 rounded-bl-full ${styles.corner}`} />
+
+          <span
+            className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${styles.badge}`}
+          >
             {label}
           </span>
 
@@ -91,7 +134,7 @@ export function TemplateDesignPreview({
             <FakeQR />
           </div>
 
-          <div className="rounded-xl bg-foreground px-4 py-3 text-sm font-semibold text-background">
+          <div className={`rounded-xl px-4 py-3 text-sm font-semibold ${styles.cta}`}>
             {ctaText}
           </div>
 

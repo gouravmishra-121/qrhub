@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import { TemplateDesignPreview } from '@/components/templates/TemplateDesignPreview'
 import { templateGroups } from '@/data/templateGroups'
-
+import { templateDesignPreviews } from '@/data/templateDesignPreviews'
 export default function TemplatesPage() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16">
@@ -32,29 +32,17 @@ export default function TemplatesPage() {
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
-          <TemplateDesignPreview
-            label="UPI Payment"
-            title="Scan & Pay"
-            subtitle="Fast UPI payment accepted here"
-            ctaText="Pay with UPI"
-            footerText="For shops, stalls and small businesses"
-          />
-
-          <TemplateDesignPreview
-            label="Restaurant"
-            title="View Our Menu"
-            subtitle="Scan to open our digital menu"
-            ctaText="Open Menu"
-            footerText="For cafes, restaurants and food counters"
-          />
-
-          <TemplateDesignPreview
-            label="Business"
-            title="Connect With Us"
-            subtitle="Scan to visit our website"
-            ctaText="Visit Website"
-            footerText="For stores, offices and service providers"
-          />
+          {templateDesignPreviews.map((template) => (
+            <TemplateDesignPreview
+              key={template.title}
+              variant={template.variant}
+              label={template.label}
+              title={template.title}
+              subtitle={template.subtitle}
+              ctaText={template.ctaText}
+              footerText={template.footerText}
+            />
+          ))}
         </div>
       </section>
 
