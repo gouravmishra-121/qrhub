@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+
+import { TemplateDesignPreview } from '@/components/templates/TemplateDesignPreview'
 import { templateGroups } from '@/data/templateGroups'
 
 export default function TemplatesPage() {
@@ -16,6 +18,45 @@ export default function TemplatesPage() {
           print-ready QR designs for payments, menus, contact cards, WiFi access and more.
         </p>
       </div>
+
+      <section className="mt-12">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-medium text-muted-foreground">Visual Template Previews</p>
+
+          <h2 className="mt-2 text-3xl font-bold tracking-tight">See how QR templates can look</h2>
+
+          <p className="mt-3 text-sm text-muted-foreground">
+            These are sample printable layouts. Later, users will be able to select a template,
+            connect it with a real QR code, and download it.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <TemplateDesignPreview
+            label="UPI Payment"
+            title="Scan & Pay"
+            subtitle="Fast UPI payment accepted here"
+            ctaText="Pay with UPI"
+            footerText="For shops, stalls and small businesses"
+          />
+
+          <TemplateDesignPreview
+            label="Restaurant"
+            title="View Our Menu"
+            subtitle="Scan to open our digital menu"
+            ctaText="Open Menu"
+            footerText="For cafes, restaurants and food counters"
+          />
+
+          <TemplateDesignPreview
+            label="Business"
+            title="Connect With Us"
+            subtitle="Scan to visit our website"
+            ctaText="Visit Website"
+            footerText="For stores, offices and service providers"
+          />
+        </div>
+      </section>
 
       <div className="mt-14 rounded-2xl border bg-muted/40 p-5 text-center sm:p-6">
         <p className="font-medium">Templates are coming soon</p>
