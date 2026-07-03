@@ -12,7 +12,8 @@ import {
 } from '@/components/qr'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-
+import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
+import { generatorSeoContent } from '@/data/generatorSeoContent'
 type WiFiSecurity = 'WPA' | 'WEP' | 'nopass'
 
 function escapeWiFiValue(value: string) {
@@ -276,6 +277,7 @@ export default function WiFiQR() {
           </div>
         </section>
       </div>
+      <GeneratorSeoContent {...generatorSeoContent.wifi} />
     </main>
   )
 }

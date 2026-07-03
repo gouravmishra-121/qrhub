@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-
+import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
+import { generatorSeoContent } from '@/data/generatorSeoContent'
 import {
   DEFAULT_BACKGROUND_COLOR,
   DEFAULT_FOREGROUND_COLOR,
@@ -193,6 +194,7 @@ export default function WebsiteQR() {
           </div>
         </section>
       </div>
+      <GeneratorSeoContent {...generatorSeoContent.website} />
     </main>
   )
 }
