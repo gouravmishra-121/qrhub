@@ -2,17 +2,17 @@ export const generatorSeoContent = {
   upi: {
     title: 'Free UPI QR Code Generator',
     description:
-      'Create a UPI payment QR code for Indian payment apps. Add your UPI ID, payee name, optional amount and note, then download the QR as PNG or SVG.',
+      'Create a UPI payment QR code online for shops, stalls, freelancers, small businesses, and payment counters. Enter your UPI ID, preview the QR code instantly, and download it as PNG or SVG without signing up.',
     useCases: [
       'Accept payments at shops, stalls and small businesses.',
       'Create a payment QR for freelancers and service providers.',
-      'Print a UPI QR code for counters, invoices or packaging.',
+      'Print a UPI QR code for shop counters, stalls, invoices, delivery payments, packaging, events, or small business payment boards.',
       'Generate a QR with optional fixed amount and payment note.',
     ],
     faqs: [
       {
-        question: 'Is this UPI QR code free?',
-        answer: 'Yes. You can create and download a basic UPI QR code for free without signup.',
+        question: 'Is this UPI QR code generator free?',
+        answer: 'Yes. You can create and download a UPI QR code for free without signing up.',
       },
       {
         question: 'Can I add a fixed amount?',
@@ -23,6 +23,11 @@ export const generatorSeoContent = {
         question: 'Should I test the QR before printing?',
         answer:
           'Yes. Always scan and test your UPI QR code with a payment app before printing or sharing it publicly.',
+      },
+      {
+        question: 'Does QRPrintly store my UPI ID?',
+        answer:
+          'No. Your UPI QR code is generated in your browser. QRPrintly does not store your UPI ID or payment details.',
       },
     ],
     relatedLinks: [

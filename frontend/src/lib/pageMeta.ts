@@ -31,9 +31,9 @@ export const pageMetaByPath: Record<string, PageMeta> = {
       'Create a free QR code for any website URL. Enter a valid URL and download your QR code as PNG or SVG.',
   },
   '/upi': {
-    title: 'UPI QR Code Generator — QRPrintly',
+    title: 'Free UPI QR Code Generator | QRPrintly',
     description:
-      'Create a free UPI payment QR code for Indian payment apps with payee name, amount and note.',
+      'Create a free UPI QR code online for shops, stalls, freelancers and small businesses. No signup required. Download your UPI QR code as PNG or SVG.',
   },
   '/wifi': {
     title: 'WiFi QR Code Generator — QRPrintly',

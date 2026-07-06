@@ -150,11 +150,14 @@ export default function UPIQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">UPI QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Free UPI QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Create a UPI payment QR code for Indian payment apps. Add your UPI ID, payee name,
-              optional amount, and download it as PNG or SVG.
+              Create a UPI payment QR code online for shops, stalls, freelancers, small businesses,
+              and payment counters. Enter your UPI ID, preview the QR code instantly, and download
+              it as PNG or SVG without signing up.
             </p>
           </div>
 
@@ -171,7 +174,8 @@ export default function UPIQR() {
                 <h2 className="text-lg font-semibold">Enter UPI Details</h2>
 
                 <p className="mt-1 text-sm text-muted-foreground">
-                  UPI ID and payee name are required. Amount and note are optional.
+                  Enter your UPI ID and payee name to create a payment QR code. Amount and note are
+                  optional.
                 </p>
               </div>
 
@@ -277,7 +281,7 @@ export default function UPIQR() {
               onBackgroundChange={setBackgroundColor}
               onReset={resetCustomization}
               tipTitle="Payment tip"
-              tipDescription="Test your QR once using a UPI app before printing or sharing it publicly."
+              tipDescription="Always test your UPI QR code once using a payment app before printing it for your shop, stall, invoice, or payment counter."
             />
           </div>
         </section>
