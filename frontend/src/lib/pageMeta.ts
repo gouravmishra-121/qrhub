@@ -41,9 +41,9 @@ export const pageMetaByPath: Record<string, PageMeta> = {
       'Create a free WiFi QR code so people can connect to your network without typing the password.',
   },
   '/whatsapp': {
-    title: 'WhatsApp QR Code Generator — QRPrintly',
+    title: 'WhatsApp QR Code Generator | QRPrintly',
     description:
-      'Create a free WhatsApp QR code that opens a chat with your phone number and optional message.',
+      'Create a free WhatsApp QR code for direct chats. Add your WhatsApp number, optional message, and download the QR code as PNG or SVG. No signup required.',
   },
   '/email': {
     title: 'Email QR Code Generator — QRPrintly',

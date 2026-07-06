@@ -96,11 +96,14 @@ export default function WhatsAppQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">WhatsApp QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              WhatsApp QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Create a WhatsApp QR code that opens a chat with your number. Add an optional
-              pre-filled message for customers or visitors.
+              Create a WhatsApp QR code that opens a chat directly when scanned. Add your WhatsApp
+              number, include an optional pre-filled message, preview the QR code, and download it
+              as PNG or SVG without signing up.
             </p>
           </div>
 
@@ -110,7 +113,8 @@ export default function WhatsAppQR() {
                 <h2 className="text-lg font-semibold">Enter WhatsApp Details</h2>
 
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Enter your WhatsApp number with country code. Message is optional.
+                  Enter your WhatsApp number with country code. You can also add an optional message
+                  that opens automatically when someone scans the QR code.
                 </p>
               </div>
 

@@ -37,9 +37,9 @@ export const generatorSeoContent = {
     ],
   },
   whatsapp: {
-    title: 'Free WhatsApp QR Code Generator',
+    title: 'WhatsApp QR Code Generator',
     description:
-      'Create a WhatsApp QR code that opens a chat with your phone number and optional prefilled message. Useful for shops, support, sales and personal contact sharing.',
+      'Create a WhatsApp QR code that opens a chat directly when scanned. Add your WhatsApp number, include an optional message, and download the QR code as PNG or SVG without signing up.',
     useCases: [
       'Let customers start a WhatsApp chat with one scan.',
       'Create sales, support or inquiry QR codes.',
@@ -48,17 +48,32 @@ export const generatorSeoContent = {
     ],
     faqs: [
       {
-        question: 'Does WhatsApp QR open a chat directly?',
-        answer: 'Yes. The QR code opens a WhatsApp chat link for the phone number you enter.',
+        question: 'Is this WhatsApp QR code generator free?',
+        answer: 'Yes. You can create and download a WhatsApp QR code for free without signing up.',
       },
       {
-        question: 'Can I add a default message?',
-        answer: 'Yes. You can add an optional message that appears prefilled when the chat opens.',
-      },
-      {
-        question: 'Do users need WhatsApp installed?',
+        question: 'Do I need to add country code?',
         answer:
-          'For the best experience, users should have WhatsApp installed or use WhatsApp Web on desktop.',
+          'Yes. Enter your WhatsApp number with country code so the QR code works correctly for users in different locations.',
+      },
+      {
+        question: 'Can I add a pre-filled WhatsApp message?',
+        answer:
+          'Yes. You can add an optional message that opens automatically when someone scans the QR code.',
+      },
+      {
+        question: 'Can I use this WhatsApp QR code for my business?',
+        answer:
+          'Yes. You can use it for customer inquiries, support, bookings, orders, business cards, posters, packaging, and social media.',
+      },
+      {
+        question: 'Does QRPrintly store my WhatsApp number?',
+        answer:
+          'No. Your WhatsApp QR code is generated in your browser. QRPrintly does not store your phone number or message.',
+      },
+      {
+        question: 'Can I download the WhatsApp QR code?',
+        answer: 'Yes. You can download the QR code as PNG or SVG.',
       },
     ],
     relatedLinks: [
