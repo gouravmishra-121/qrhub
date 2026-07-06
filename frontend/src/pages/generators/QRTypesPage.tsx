@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 const popularQrTypes = [
   {
     title: 'Website QR',
-    description: 'Generate QR codes for website URLs.',
+    description:
+      'Turn any website, landing page, menu, portfolio, form, or product link into a scannable QR code.',
     href: '/website',
     icon: '🌐',
   },
@@ -177,12 +178,13 @@ export default function QRTypesPage() {
         <p className="text-sm font-medium text-muted-foreground">QR Types</p>
 
         <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-          Choose what you want to create
+          Choose the Right QR Code Generator
         </h1>
 
         <p className="mt-4 text-muted-foreground">
-          Create QR codes for websites, payments, WiFi, WhatsApp, email, contacts, maps, plain text,
-          and more.
+          Explore free QR code generators for UPI payments, WhatsApp chats, WiFi access, websites,
+          vCards, email, SMS, phone calls, maps, and plain text. Choose a QR type, enter your
+          details, preview instantly, and download as PNG or SVG.
         </p>
       </div>
 

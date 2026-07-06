@@ -14,8 +14,9 @@ export default function TemplatesPage() {
         </h1>
 
         <p className="mt-4 text-muted-foreground">
-          Basic QR generation will stay free. Templates will help businesses create branded,
-          print-ready QR designs for payments, menus, contact cards, WiFi access and more.
+          Choose a ready-to-use QR template for payments, menus, WiFi access, business cards,
+          websites, customer chats, and shop counters. Create your QR code, connect it to a
+          template, customize the text, and download a clean PNG design.
         </p>
       </div>
 

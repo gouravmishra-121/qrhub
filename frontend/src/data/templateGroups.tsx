@@ -5,7 +5,7 @@ export const templateGroups = [
     icon: <BadgeIndianRupee className="h-7 w-7" />,
     title: 'UPI Payment Templates',
     description:
-      'Print-ready payment QR layouts for shops, stalls, freelancers and small businesses.',
+      'Printable payment QR layouts for shops, stalls, freelancers, counters, invoices, and small business payment boards.',
     examples: ['Shop counter QR', 'Payment standee', 'Small business payment card'],
     primaryAction: '/upi',
   },
