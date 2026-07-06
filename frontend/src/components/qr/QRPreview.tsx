@@ -1,5 +1,7 @@
-import { forwardRef } from 'react'
+import { forwardRef, useEffect, useRef } from 'react'
 import QRCode from 'react-qr-code'
+
+import { trackQrGenerateFromCurrentPath } from '@/lib/analytics'
 
 type QRPreviewProps = {
   value: string
@@ -21,6 +23,17 @@ export const QRPreview = forwardRef<HTMLDivElement, QRPreviewProps>(function QRP
   },
   ref
 ) {
+  const hasTrackedGenerate = useRef(false)
+
+  useEffect(() => {
+    if (!isValid || !value.trim() || hasTrackedGenerate.current) {
+      return
+    }
+
+    trackQrGenerateFromCurrentPath()
+    hasTrackedGenerate.current = true
+  }, [isValid, value])
+
   return (
     <>
       <h2 className="mb-6 text-center text-lg font-semibold sm:mb-8 sm:text-xl">Live Preview</h2>

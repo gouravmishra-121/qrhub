@@ -1,6 +1,7 @@
 import type { RefObject } from 'react'
 
 import { Button } from '@/components/ui/button'
+import { trackQrDownloadFromCurrentPath } from '@/lib/analytics'
 
 type QRDownloadProps = {
   isValid: boolean
@@ -55,6 +56,11 @@ export function QRDownload({
 
     if (!svgString) return
 
+    trackQrDownloadFromCurrentPath({
+      format: 'svg',
+      size: downloadSize,
+    })
+
     const blob = new Blob([svgString], {
       type: 'image/svg+xml;charset=utf-8',
     })
@@ -95,6 +101,11 @@ export function QRDownload({
         URL.revokeObjectURL(svgUrl)
 
         if (!blob) return
+
+        trackQrDownloadFromCurrentPath({
+          format: 'png',
+          size: downloadSize,
+        })
 
         downloadBlob(blob, `${fileName}-${downloadSize}px.png`)
       }, 'image/png')

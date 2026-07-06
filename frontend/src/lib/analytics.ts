@@ -114,6 +114,59 @@ export function trackPremiumExportClick(templateId: string) {
   })
 }
 
+export function getQRTypeFromCurrentPath(): QRAnalyticsType | null {
+  const path = window.location.pathname.replace('/', '')
+
+  const validTypes: QRAnalyticsType[] = [
+    'website',
+    'upi',
+    'wifi',
+    'whatsapp',
+    'email',
+    'vcard',
+    'phone',
+    'sms',
+    'text',
+    'maps',
+  ]
+
+  if (validTypes.includes(path as QRAnalyticsType)) {
+    return path as QRAnalyticsType
+  }
+
+  return null
+}
+
+export function trackQrGenerateFromCurrentPath() {
+  const qrType = getQRTypeFromCurrentPath()
+
+  if (!qrType) {
+    return
+  }
+
+  trackQrGenerate(qrType)
+}
+
+export function trackQrDownloadFromCurrentPath({
+  format,
+  size,
+}: {
+  format: QRDownloadFormat
+  size: number
+}) {
+  const qrType = getQRTypeFromCurrentPath()
+
+  if (!qrType) {
+    return
+  }
+
+  trackQrDownload({
+    qrType,
+    format,
+    size,
+  })
+}
+
 function trackEvent(eventName: string, params?: Record<string, string | number>) {
   if (!GA_MEASUREMENT_ID || !window.gtag) {
     return
