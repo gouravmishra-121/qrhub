@@ -6,6 +6,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { getPageMeta } from '@/lib/pageMeta'
 import { ScrollToTop } from '@/components/layout/ScrollToTop'
 import { PageViewTracker } from '@/components/analytics/PageViewTracker'
+import { updateCanonicalUrl } from '@/lib/seo'
 export function AppLayout() {
   const location = useLocation()
 
@@ -13,6 +14,7 @@ export function AppLayout() {
     const meta = getPageMeta(location.pathname)
 
     document.title = meta.title
+    updateCanonicalUrl(location.pathname)
 
     const descriptionTag = document.querySelector('meta[name="description"]')
 
