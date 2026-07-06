@@ -282,7 +282,7 @@ export default function VCardQR() {
 
                     <Input
                       value={company}
-                      placeholder="QRHub"
+                      placeholder="QRPrintly"
                       onChange={(event) => setCompany(event.target.value)}
                     />
                   </div>

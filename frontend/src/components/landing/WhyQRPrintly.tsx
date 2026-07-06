@@ -38,12 +38,12 @@ const benefits = [
   },
 ]
 
-export function WhyQRHub() {
+export function WhyQRPrintly() {
   return (
-    <Section id="why-qrhub">
+    <Section id="why-qrprintly">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight">Why Choose QRHub?</h2>
+          <h2 className="text-4xl font-bold tracking-tight">Why Choose QRPrintly?</h2>
 
           <p className="mt-4 text-lg text-muted-foreground">
             Built for speed, privacy and simplicity—everything you need to create professional QR

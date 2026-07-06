@@ -163,7 +163,7 @@ export function TemplateDesignPreview({
 
           {showWatermark ? (
             <div className="mt-5 border-t pt-3 text-center text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
-              Made with QRHub
+              Made with QRPrintly
             </div>
           ) : null}
         </div>

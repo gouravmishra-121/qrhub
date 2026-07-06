@@ -7,14 +7,14 @@ import { Section } from '@/components/layout/Section'
 import { PreviewCard } from './PreviewCard'
 
 export function LivePreview() {
-  const [url, setUrl] = useState('https://qrhub.in')
-  const [preview, setPreview] = useState('https://qrhub.in')
+  const [url, setUrl] = useState('https://qrprintly.in')
+  const [preview, setPreview] = useState('https://qrprintly.in')
 
   return (
     <Section id="live-preview">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight">Try QRHub Instantly</h2>
+          <h2 className="text-4xl font-bold tracking-tight">Try QRPrintly Instantly</h2>
 
           <p className="mt-4 text-lg text-muted-foreground">
             Experience QR generation before exploring all features.

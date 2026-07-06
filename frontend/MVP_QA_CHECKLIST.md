@@ -1,9 +1,9 @@
-# QRHub MVP QA Checklist
+# QRPrintly MVP QA Checklist
 
 ## Global Layout
 
 - [ ] Navbar is visible on every page
-- [ ] QRHub logo links to homepage
+- [ ] QRPrintly logo links to homepage
 - [ ] Create QR button links to /qr-types
 - [ ] Footer is visible only once on every page
 - [ ] Footer QR links open correct generator pages

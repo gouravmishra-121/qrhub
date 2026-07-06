@@ -1,4 +1,4 @@
-# QRHub Project Tracker
+# QRPrintly Project Tracker
 
 ## Sprint 0 — Project Planning
 
@@ -375,7 +375,7 @@ Final outcome:
 - UPI, Restaurant, and Business templates can connect QR data.
 - Connected QR appears inside the template preview.
 - Users can customize template text.
-- Users can download a free PNG with QRHub watermark.
+- Users can download a free PNG with QRPrintly watermark.
 - Premium export is visible as a future monetization path.
 - Homepage no longer shows blank QR preview.
 - Homepage Templates tab now shows usable templates as Available.
@@ -408,7 +408,7 @@ Completed:
 - Task 12.11 — Added SEO content for Email and vCard pages
 - Task 12.12 — Added SEO content for Phone and SMS pages
 - Task 12.13 — Added SEO content for Text and Maps pages
-- Task 12.14 — Added QRHub favicon
+- Task 12.14 — Added QRPrintly favicon
 - Task 12.15 — Added robots.txt
 - Task 12.16 — Added MVP QA checklist
 
@@ -416,7 +416,7 @@ Final outcome:
 
 - Navbar appears globally across all routes.
 - Footer appears globally across all routes.
-- Direct SEO landing pages now show QRHub branding.
+- Direct SEO landing pages now show QRPrintly branding.
 - All QR generator pages have SEO/use-case/FAQ sections.
 - Page titles and meta descriptions are route-aware.
 - Privacy, Terms, Contact, and 404 pages exist.
@@ -425,7 +425,7 @@ Final outcome:
 
 Decision:
 
-- QRHub remains frontend-only for current MVP.
+- QRPrintly remains frontend-only for current MVP.
 - No backend, database, login, or payment is needed yet.
 - Basic QR generation remains free.
 - Templates remain the future monetization layer.

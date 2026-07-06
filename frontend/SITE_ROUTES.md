@@ -1,4 +1,4 @@
-# QRHub Site Routes
+# QRPrintly Site Routes
 
 ## Core Pages
 

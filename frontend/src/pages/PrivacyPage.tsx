@@ -7,7 +7,7 @@ export default function PrivacyPage() {
 
       <div className="mt-8 space-y-6 text-muted-foreground">
         <p>
-          QRHub is designed to create QR codes directly in your browser. For the current MVP, QR
+          QRPrintly is designed to create QR codes directly in your browser. For the current MVP, QR
           data is not stored on our servers.
         </p>
 
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold text-foreground">Future updates</h2>
 
           <p className="mt-2">
-            If QRHub adds accounts, payments, analytics, or premium features in the future, this
+            If QRPrintly adds accounts, payments, analytics, or premium features in the future, this
             policy should be updated before launch.
           </p>
         </section>

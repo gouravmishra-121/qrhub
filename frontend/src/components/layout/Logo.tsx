@@ -8,7 +8,7 @@ export function Logo() {
       </div>
 
       <div>
-        <p className="text-lg font-bold">QRHub</p>
+        <p className="text-lg font-bold">QRPrintly</p>
 
         <p className="text-xs text-muted-foreground">Free QR Generator</p>
       </div>

@@ -76,7 +76,7 @@ export const generatorSeoContent = {
       {
         question: 'Can I create a QR code for any website?',
         answer:
-          'Yes. Enter a full website URL starting with http:// or https:// and QRHub will generate a QR code for it.',
+          'Yes. Enter a full website URL starting with http:// or https:// and QRPrintly will generate a QR code for it.',
       },
       {
         question: 'Why do I need to enter https://?',

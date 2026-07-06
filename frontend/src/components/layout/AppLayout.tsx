@@ -5,6 +5,7 @@ import { Footer } from '@/components/landing/Footer'
 import { Navbar } from '@/components/layout/Navbar'
 import { getPageMeta } from '@/lib/pageMeta'
 import { ScrollToTop } from '@/components/layout/ScrollToTop'
+import { PageViewTracker } from '@/components/analytics/PageViewTracker'
 export function AppLayout() {
   const location = useLocation()
 
@@ -28,6 +29,8 @@ export function AppLayout() {
   return (
     <>
       <ScrollToTop />
+
+      <PageViewTracker />
 
       <Navbar />
 

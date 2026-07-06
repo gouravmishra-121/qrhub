@@ -103,7 +103,7 @@ export default function TemplatesPage() {
       <div className="mt-14 rounded-2xl border bg-background p-6 shadow-sm">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-xl font-semibold">Why templates matter for QRHub</h2>
+            <h2 className="text-xl font-semibold">Why templates matter for QRPrintly</h2>
 
             <p className="mt-2 text-sm text-muted-foreground">
               Free QR tools bring traffic. Templates become the future monetization layer through

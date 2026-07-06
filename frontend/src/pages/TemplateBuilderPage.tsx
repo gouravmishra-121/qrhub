@@ -67,7 +67,7 @@ function TemplateBuilderContent({
   const [templateFooterText, setTemplateFooterText] = useState(template.footerText)
 
   const hasConnectedQr = Boolean(qrType && qrValue)
-  const templateFileName = `${template.id}-qrhub-free-template.png`
+  const templateFileName = `${template.id}-qrprintly-free-template.png`
 
   async function downloadTemplatePng() {
     if (!templateDownloadRef.current || !hasConnectedQr) return
@@ -263,7 +263,7 @@ function TemplateBuilderContent({
                 </div>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Download a branded PNG template with a small QRHub watermark.
+                  Download a branded PNG template with a small QRPrintly watermark.
                 </p>
 
                 <button

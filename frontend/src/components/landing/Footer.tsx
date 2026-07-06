@@ -30,7 +30,7 @@ export function Footer() {
       <Container>
         <div className="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <h3 className="text-2xl font-bold">QRHub</h3>
+            <h3 className="text-2xl font-bold">QRPrintly</h3>
 
             <p className="mt-4 text-sm text-muted-foreground">
               Create beautiful QR codes for websites, WiFi, UPI, WhatsApp, business cards and more —
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t pt-6 text-center text-sm text-muted-foreground">
-          © 2026 QRHub. Made with ❤️ in India.
+          © 2026 QRPrintly. Made with ❤️ in India.
         </div>
       </Container>
     </Section>

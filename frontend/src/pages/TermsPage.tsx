@@ -7,15 +7,15 @@ export default function TermsPage() {
 
       <div className="mt-8 space-y-6 text-muted-foreground">
         <p>
-          QRHub provides free QR generation tools for personal, business, and general use. This page
-          is a basic MVP placeholder and should be reviewed before production launch.
+          QRPrintly provides free QR generation tools for personal, business, and general use. This
+          page is a basic MVP placeholder and should be reviewed before production launch.
         </p>
 
         <section>
           <h2 className="text-xl font-semibold text-foreground">Use responsibly</h2>
 
           <p className="mt-2">
-            Do not use QRHub to create QR codes for scams, phishing, harmful content, misleading
+            Do not use QRPrintly to create QR codes for scams, phishing, harmful content, misleading
             links, or illegal activity.
           </p>
         </section>
@@ -24,7 +24,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-foreground">No guarantee</h2>
 
           <p className="mt-2">
-            QRHub aims to generate reliable QR codes, but users should test QR codes before
+            QRPrintly aims to generate reliable QR codes, but users should test QR codes before
             printing, publishing, or using them in business material.
           </p>
         </section>

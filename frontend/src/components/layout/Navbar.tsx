@@ -12,13 +12,13 @@ export function Navbar() {
         <Link
           to="/"
           className="flex items-center gap-2 font-bold tracking-tight text-foreground"
-          aria-label="Go to QRHub homepage"
+          aria-label="Go to QRPrintly homepage"
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
             <QrCode className="h-5 w-5" />
           </span>
 
-          <span className="text-xl">QRHub</span>
+          <span className="text-xl">QRPrintly</span>
         </Link>
 
         <DesktopNav />

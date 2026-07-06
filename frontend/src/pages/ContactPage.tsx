@@ -5,7 +5,7 @@ export default function ContactPage() {
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
       <p className="text-sm font-medium text-muted-foreground">Contact</p>
 
-      <h1 className="mt-2 text-4xl font-bold tracking-tight">Contact QRHub</h1>
+      <h1 className="mt-2 text-4xl font-bold tracking-tight">Contact QRPrintly</h1>
 
       <p className="mt-4 text-muted-foreground">
         Have feedback, a template idea, or a QR type request? This page is a simple MVP contact
