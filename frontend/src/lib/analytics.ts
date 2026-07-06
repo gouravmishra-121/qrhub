@@ -36,8 +36,10 @@ export function loadAnalytics() {
 
   window.dataLayer = window.dataLayer ?? []
 
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer?.push(args)
+  window.gtag = function gtag() {
+    // Google gtag's official snippet pushes the function arguments object.
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer?.push(arguments)
   }
 
   window.gtag('js', new Date())
@@ -73,24 +75,11 @@ export function loadAnalytics() {
 }
 
 export function trackPageView(path: string) {
-  if (!GA_MEASUREMENT_ID || !window.gtag) {
-    debugAnalytics('page_view_skipped', {
-      reason: 'analytics_not_ready',
-      path,
-    })
-    return
-  }
-
-  const pageViewParams = {
+  trackEvent('page_view', {
     page_path: path,
     page_location: `${window.location.origin}${path}`,
     page_title: document.title,
-    debug_mode: isDev,
-  }
-
-  debugAnalytics('page_view', pageViewParams)
-
-  window.gtag('config', GA_MEASUREMENT_ID, pageViewParams)
+  })
 }
 
 export function trackQrGenerate(qrType: QRAnalyticsType) {
