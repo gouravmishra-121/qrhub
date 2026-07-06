@@ -171,18 +171,22 @@ export const generatorSeoContent = {
     ],
     faqs: [
       {
-        question: 'What does an email QR code do?',
-        answer:
-          'An email QR code opens the email app with recipient, subject and message fields filled based on what you enter.',
+        question: 'Is this email QR code generator free?',
+        answer: 'Yes. You can create and download an email QR code for free without signing up.',
       },
       {
-        question: 'Can I create an email QR without a message?',
-        answer: 'Yes. You can use only the recipient email, or add subject and message if needed.',
+        question: 'What happens when someone scans an email QR code?',
+        answer:
+          'The scanner opens an email draft with the recipient, subject, and message you entered.',
       },
       {
-        question: 'Will it work on every phone?',
+        question: 'Can I download the email QR code?',
+        answer: 'Yes. You can download the QR code as PNG or SVG.',
+      },
+      {
+        question: 'Does QRPrintly store my email content?',
         answer:
-          'Most phones and QR scanners support email QR links, but the exact behavior depends on the user’s email app.',
+          'No. Your email QR code is generated in your browser. QRPrintly does not store the email address, subject, or message you enter.',
       },
     ],
     relatedLinks: [
@@ -245,18 +249,22 @@ export const generatorSeoContent = {
     ],
     faqs: [
       {
-        question: 'What does a phone QR code do?',
-        answer:
-          'A phone QR code opens the phone dialer with the number you enter, so the user can call quickly.',
+        question: 'Is this phone QR code generator free?',
+        answer: 'Yes. You can create and download a phone QR code for free without signing up.',
       },
       {
-        question: 'Does it call automatically?',
-        answer: 'No. Most phones open the dialer first. The user still needs to confirm the call.',
+        question: 'What happens when someone scans a phone QR code?',
+        answer: 'The phone dialer opens with the number you entered, so the user can call easily.',
       },
       {
-        question: 'Can I use this on printed material?',
+        question: 'Can I use a phone QR code for business?',
         answer:
-          'Yes. Phone QR codes are useful on business cards, posters, packaging and support material.',
+          'Yes. Phone QR codes are useful on business cards, posters, packaging, service counters, and support material.',
+      },
+      {
+        question: 'Does QRPrintly store my phone number?',
+        answer:
+          'No. Your phone QR code is generated in your browser. QRPrintly does not store the phone number you enter.',
       },
     ],
     relatedLinks: [
@@ -277,17 +285,21 @@ export const generatorSeoContent = {
     ],
     faqs: [
       {
-        question: 'What does an SMS QR code do?',
+        question: 'Is this SMS QR code generator free?',
+        answer: 'Yes. You can create and download an SMS QR code for free without signing up.',
+      },
+      {
+        question: 'What happens when someone scans an SMS QR code?',
+        answer: 'The phone opens a text message draft with the number and message you entered.',
+      },
+      {
+        question: 'Can I add a pre-filled message?',
+        answer: 'Yes. You can add an optional message that appears in the SMS draft.',
+      },
+      {
+        question: 'Does QRPrintly store my phone number or message?',
         answer:
-          'An SMS QR code opens the messaging app with the phone number and optional message filled in.',
-      },
-      {
-        question: 'Can I add a default message?',
-        answer: 'Yes. You can add an optional message that appears inside the SMS draft.',
-      },
-      {
-        question: 'Will the SMS send automatically?',
-        answer: 'No. The user must review and send the SMS manually from their messaging app.',
+          'No. Your SMS QR code is generated in your browser. QRPrintly does not store the phone number or message you enter.',
       },
     ],
     relatedLinks: [
@@ -308,19 +320,23 @@ export const generatorSeoContent = {
     ],
     faqs: [
       {
-        question: 'What does a text QR code do?',
-        answer:
-          'A text QR code stores plain text directly inside the QR code. When scanned, the scanner shows the text.',
+        question: 'Is this text QR code generator free?',
+        answer: 'Yes. You can create and download a text QR code for free without signing up.',
       },
       {
-        question: 'Do I need a website for a text QR code?',
+        question: 'What can I put in a text QR code?',
         answer:
-          'No. Text QR codes do not need a website because the text is stored inside the QR code itself.',
+          'You can add short notes, instructions, labels, IDs, event details, or other plain text.',
       },
       {
-        question: 'Can I add long text?',
+        question: 'Can I use a text QR code offline?',
         answer:
-          'You can add text, but very long text makes the QR code more complex. Short and clear text scans better.',
+          'Yes. The text is stored inside the QR code, so it can be scanned without opening a website.',
+      },
+      {
+        question: 'Does QRPrintly store my text?',
+        answer:
+          'No. Your text QR code is generated in your browser. QRPrintly does not store the text you enter.',
       },
     ],
     relatedLinks: [
@@ -341,19 +357,22 @@ export const generatorSeoContent = {
     ],
     faqs: [
       {
-        question: 'What can I add to a maps QR code?',
-        answer:
-          'You can add an address, place name, coordinates or a Google Maps link depending on what you want people to open.',
+        question: 'Is this Google Maps QR code generator free?',
+        answer: 'Yes. You can create and download a maps QR code for free without signing up.',
       },
       {
-        question: 'Will it open Google Maps?',
-        answer:
-          'The QR code opens a maps search or maps link. On most phones, it can open in Google Maps or the default maps app.',
+        question: 'What type of map link can I use?',
+        answer: 'You can use a Google Maps link or any valid public location URL.',
       },
       {
-        question: 'Should I test the location before sharing?',
+        question: 'Can I use this QR code for my shop or event?',
         answer:
-          'Yes. Always scan and test the maps QR code to make sure it opens the correct location.',
+          'Yes. You can use it for shops, offices, restaurants, hotels, event venues, invitations, and posters.',
+      },
+      {
+        question: 'Does QRPrintly store my location link?',
+        answer:
+          'No. Your maps QR code is generated in your browser. QRPrintly does not store the location link you enter.',
       },
     ],
     relatedLinks: [

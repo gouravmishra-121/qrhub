@@ -67,11 +67,14 @@ export default function TextQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Text QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Free Text QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Create a QR code for plain text, notes, instructions, IDs, coupon codes, or any
-              message you want to share offline.
+              Create a plain text QR code for short notes, instructions, labels, IDs, event details,
+              or offline information. Enter your text, preview the QR code, and download it as PNG
+              or SVG.
             </p>
           </div>
 

@@ -87,10 +87,13 @@ export default function PhoneQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Phone QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Free Phone QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Create a phone QR code that opens the dialer with your phone number ready to call.
+              Create a phone QR code that opens the dialer with your number when scanned. Useful for
+              business cards, service counters, posters, packaging, and customer support material.
             </p>
           </div>
 

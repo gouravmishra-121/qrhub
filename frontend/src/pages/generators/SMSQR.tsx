@@ -97,11 +97,13 @@ export default function SMSQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">SMS QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Free SMS QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Create an SMS QR code that opens the messaging app with a phone number and optional
-              pre-filled message.
+              Create an SMS QR code that opens a text message draft when scanned. Add the phone
+              number and optional message, then preview and download the QR code as PNG or SVG..
             </p>
           </div>
 

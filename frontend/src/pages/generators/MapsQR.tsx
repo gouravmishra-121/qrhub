@@ -98,11 +98,14 @@ export default function MapsQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Maps QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Free Google Maps QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Create a QR code that opens a location in Google Maps. Use an address, place name,
-              coordinates, or a full maps link.
+              Create a Google Maps QR code for a location, shop, office, event venue, hotel,
+              restaurant, or meeting point. Add your map link, preview the QR code, and download it
+              as PNG or SVG.
             </p>
           </div>
 

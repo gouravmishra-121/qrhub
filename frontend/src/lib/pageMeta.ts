@@ -46,9 +46,9 @@ export const pageMetaByPath: Record<string, PageMeta> = {
       'Create a free WhatsApp QR code for direct chats. Add your WhatsApp number, optional message, and download the QR code as PNG or SVG. No signup required.',
   },
   '/email': {
-    title: 'Email QR Code Generator — QRPrintly',
+    title: 'Free Email QR Code Generator | QRPrintly',
     description:
-      'Create a free email QR code that opens a prefilled email draft with recipient, subject and message.',
+      'Create a free email QR code that opens a ready-to-send email draft. Add recipient, subject and message. Download PNG or SVG. No signup required.',
   },
   '/vcard': {
     title: 'Free vCard QR Code Generator | QRPrintly',
@@ -56,21 +56,24 @@ export const pageMetaByPath: Record<string, PageMeta> = {
       'Create a free vCard QR code to share contact details. Useful for business cards, freelancers, sales teams, events and networking.',
   },
   '/phone': {
-    title: 'Phone QR Code Generator — QRPrintly',
-    description: 'Create a free phone QR code that opens the dialer with your phone number.',
+    title: 'Free Phone QR Code Generator | QRPrintly',
+    description:
+      'Create a free phone QR code that opens the dialer with your number. Useful for business cards, posters and customer support.',
   },
   '/sms': {
-    title: 'SMS QR Code Generator — QRPrintly',
-    description: 'Create a free SMS QR code that opens a prefilled text message.',
+    title: 'Free SMS QR Code Generator | QRPrintly',
+    description:
+      'Create a free SMS QR code that opens a text message draft. Add phone number and message. Download PNG or SVG. No signup required.',
   },
   '/text': {
-    title: 'Text QR Code Generator — QRPrintly',
-    description: 'Create a free text QR code for notes, instructions, codes or plain text.',
+    title: 'Free Text QR Code Generator | QRPrintly',
+    description:
+      'Create a free plain text QR code for notes, labels, instructions, IDs and offline information. Download PNG or SVG instantly.',
   },
   '/maps': {
-    title: 'Maps QR Code Generator — QRPrintly',
+    title: 'Free Google Maps QR Code Generator | QRPrintly',
     description:
-      'Create a free maps QR code for locations, addresses, coordinates or Google Maps links.',
+      'Create a free Google Maps QR code for shops, offices, restaurants, events and venues. Add a map link and download PNG or SVG.',
   },
   '/privacy': {
     title: 'Privacy Policy — QRPrintly',

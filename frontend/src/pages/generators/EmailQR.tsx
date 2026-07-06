@@ -114,11 +114,14 @@ export default function EmailQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Email QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Free Email QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Create an email QR code that opens the user’s mail app with a recipient, optional
-              subject, and optional message body.
+              Create an email QR code that opens a ready-to-send email draft when scanned. Add the
+              recipient email address, subject, and message, then preview and download the QR code
+              as PNG or SVG.
             </p>
           </div>
 
