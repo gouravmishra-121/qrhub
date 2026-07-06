@@ -196,11 +196,14 @@ export default function VCardQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">vCard QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Free vCard QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Create a contact QR code that lets people save your name, phone, email, company,
-              website, and address directly to their contacts.
+              Create a vCard QR code that lets people scan and save your contact details. Useful for
+              business cards, freelancers, sales teams, events, networking, portfolios, and
+              professional contact sharing.
             </p>
           </div>
 
@@ -356,7 +359,7 @@ export default function VCardQR() {
               onBackgroundChange={setBackgroundColor}
               onReset={resetCustomization}
               tipTitle="vCard tip"
-              tipDescription="Test the QR on both Android and iPhone before printing it on a business card."
+              tipDescription="Test your vCard QR code on both Android and iPhone before printing it on a business card, event badge, brochure, or networking material."
             />
           </div>
         </section>

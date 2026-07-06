@@ -100,11 +100,14 @@ export default function WebsiteQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Website QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Free Website QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Create a QR code for any website URL. Enter the complete URL, customize the design,
-              and download it as PNG or SVG.
+              Turn any website link into a QR code. Create QR codes for landing pages, portfolios,
+              menus, product pages, forms, brochures, posters, and business websites. Preview
+              instantly and download as PNG or SVG.
             </p>
           </div>
 

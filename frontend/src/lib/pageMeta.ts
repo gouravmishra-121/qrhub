@@ -26,9 +26,9 @@ export const pageMetaByPath: Record<string, PageMeta> = {
       'Explore QR code templates for UPI payments, restaurants, business websites, WiFi and branded QR designs.',
   },
   '/website': {
-    title: 'Website QR Code Generator — QRPrintly',
+    title: 'Free Website QR Code Generator | QRPrintly',
     description:
-      'Create a free QR code for any website URL. Enter a valid URL and download your QR code as PNG or SVG.',
+      'Turn any website link into a QR code. Create free QR codes for landing pages, menus, portfolios, forms, products and business websites. Download PNG or SVG.',
   },
   '/upi': {
     title: 'Free UPI QR Code Generator | QRPrintly',
@@ -51,9 +51,9 @@ export const pageMetaByPath: Record<string, PageMeta> = {
       'Create a free email QR code that opens a prefilled email draft with recipient, subject and message.',
   },
   '/vcard': {
-    title: 'vCard QR Code Generator — QRPrintly',
+    title: 'Free vCard QR Code Generator | QRPrintly',
     description:
-      'Create a free vCard QR code to share contact details that can be saved directly on a phone.',
+      'Create a free vCard QR code to share contact details. Useful for business cards, freelancers, sales teams, events and networking.',
   },
   '/phone': {
     title: 'Phone QR Code Generator — QRPrintly',

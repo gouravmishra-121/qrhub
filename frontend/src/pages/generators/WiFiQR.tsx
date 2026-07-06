@@ -126,11 +126,14 @@ export default function WiFiQR() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">QR Type</p>
 
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">WiFi QR Code</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Free WiFi QR Code Generator
+            </h1>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
               Create a WiFi QR code so guests can connect to your network without typing the
-              password manually.
+              password. Useful for homes, cafes, restaurants, offices, hotels, guest rooms, and
+              reception areas.
             </p>
           </div>
 

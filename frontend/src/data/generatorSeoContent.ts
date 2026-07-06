@@ -85,27 +85,30 @@ export const generatorSeoContent = {
   website: {
     title: 'Free Website QR Code Generator',
     description:
-      'Create a website QR code for any valid URL. Add your website link, generate the QR code instantly, and download it as PNG or SVG.',
+      'Turn any website link into a QR code. Create QR codes for landing pages, portfolios, menus, product pages, forms, brochures, posters, and business websites. Download as PNG or SVG.',
     useCases: [
-      'Share business websites, landing pages and portfolios.',
-      'Add website QR codes to posters, flyers and product packaging.',
-      'Create QR codes for menus, forms, payment pages or event pages.',
-      'Help users open your website quickly without typing the URL.',
+      'Add website QR codes to posters, flyers, brochures, product packaging, menus, and business cards.',
+      'Share landing pages, portfolios, forms, event pages, and product pages through a scannable QR code.',
+      'Use website QR codes for print campaigns, offline marketing, and digital sharing.',
     ],
     faqs: [
       {
-        question: 'Can I create a QR code for any website?',
-        answer:
-          'Yes. Enter a full website URL starting with http:// or https:// and QRPrintly will generate a QR code for it.',
+        question: 'Is this website QR code generator free?',
+        answer: 'Yes. You can create and download a website QR code for free without signing up.',
       },
       {
-        question: 'Why do I need to enter https://?',
+        question: 'What type of links can I use?',
         answer:
-          'Using a complete URL avoids mistakes and makes sure the QR code opens the exact website you entered.',
+          'You can use any valid website URL, landing page, portfolio link, menu link, product page, form, or public web page.',
       },
       {
         question: 'Can I download the website QR code?',
         answer: 'Yes. You can download your website QR code as PNG or SVG after generating it.',
+      },
+      {
+        question: 'Should my link start with http or https?',
+        answer:
+          'Yes. Use a complete URL starting with http:// or https:// so the QR code opens correctly.',
       },
     ],
     relatedLinks: [
@@ -126,19 +129,28 @@ export const generatorSeoContent = {
     ],
     faqs: [
       {
-        question: 'Does a WiFi QR code share my password?',
-        answer:
-          'The QR code contains the WiFi network details needed to connect. Share it only with people you want to give access to.',
+        question: 'Is this WiFi QR code generator free?',
+        answer: 'Yes. You can create and download a WiFi QR code for free without signing up.',
       },
       {
-        question: 'Can phones connect automatically after scanning?',
+        question: 'Does a WiFi QR code include my password?',
+        answer:
+          'Yes. The QR code contains the WiFi network details needed to connect. Share it only with people you want to give network access to.',
+      },
+      {
+        question: 'Can phones scan WiFi QR codes?',
         answer:
           'Most modern phones can detect WiFi QR codes and show an option to connect to the network.',
       },
       {
         question: 'Should I print my WiFi QR code?',
         answer:
-          'Yes. You can print it for guests, cafes, hotels or offices, but test it once before sharing publicly.',
+          'Yes. You can print it for homes, cafes, restaurants, hotels, offices, guest rooms, and reception areas.',
+      },
+      {
+        question: 'Does QRPrintly store my WiFi password?',
+        answer:
+          'No. Your WiFi QR code is generated in your browser. QRPrintly does not store your network name or password.',
       },
     ],
     relatedLinks: [
@@ -191,19 +203,28 @@ export const generatorSeoContent = {
     ],
     faqs: [
       {
+        question: 'Is this vCard QR code generator free?',
+        answer: 'Yes. You can create and download a vCard QR code for free without signing up.',
+      },
+      {
         question: 'What happens when someone scans a vCard QR code?',
         answer:
           'Most phones show an option to preview and save the contact details from the vCard QR code.',
       },
       {
-        question: 'Does vCard QR open a website?',
+        question: 'Can I use a vCard QR code on a business card?',
         answer:
-          'No. A vCard QR stores contact details directly in the QR code. Some scanners may show raw vCard text if they do not support contact previews.',
+          'Yes. vCard QR codes are useful for printed business cards, event badges, networking cards, brochures, and contact-sharing material.',
       },
       {
-        question: 'Can I use vCard QR on a printed business card?',
+        question: 'Does QRPrintly store my contact details?',
         answer:
-          'Yes. vCard QR codes are useful for printed business cards, networking cards and contact-sharing material.',
+          'No. Your vCard QR code is generated in your browser. QRPrintly does not store the contact details you enter.',
+      },
+      {
+        question: 'Can I add my website to a vCard QR code?',
+        answer:
+          'Yes. You can add your website or portfolio link along with your name, phone, email, company, and role.',
       },
     ],
     relatedLinks: [
