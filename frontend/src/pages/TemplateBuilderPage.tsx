@@ -48,7 +48,7 @@ export default function TemplateBuilderPage() {
         <h1 className="mt-2 text-4xl font-bold tracking-tight">This template does not exist</h1>
 
         <p className="mt-4 text-muted-foreground">
-          Please go back to the template gallery and choose another template.
+          Choose another QR template from the template gallery.
         </p>
 
         <Link
@@ -92,7 +92,7 @@ function TemplateBuilderContent({
   const hasTrackedQrConnected = useRef(false)
 
   const hasConnectedQr = Boolean(qrType && qrValue)
-  const templateFileName = `${template.id}-qrprintly-free-template.png`
+  const templateFileName = `${template.id}-qrprintly-template.png`
 
   useEffect(() => {
     if (hasTrackedTemplateSelect.current) {
@@ -143,7 +143,7 @@ function TemplateBuilderContent({
     }
   }
 
-  function handlePremiumExportClick() {
+  function handleMoreExportOptionsClick() {
     trackPremiumExportClick(template.id)
   }
 
@@ -157,23 +157,26 @@ function TemplateBuilderContent({
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-sm font-medium text-muted-foreground">Template Builder</p>
+        <p className="text-sm font-medium text-muted-foreground">QR Template Builder</p>
 
-        <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">{template.title}</h1>
+        <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
+          Customize your {template.label} QR template
+        </h1>
 
         <p className="mt-4 text-muted-foreground">
-          Connect a base QR, customize the template text, preview the final design, and download a
-          branded QR layout.
+          Connect your QR code, edit the template text, preview the final design, and download a
+          ready-to-use PNG for sharing or printing.
         </p>
       </div>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_380px]">
         <section className="space-y-6">
           <div className="rounded-2xl border bg-background p-6 shadow-sm">
-            <h2 className="text-xl font-semibold">Template setup</h2>
+            <h2 className="text-xl font-semibold">Connect QR code</h2>
 
             <p className="mt-2 text-sm text-muted-foreground">
-              First connect the QR data, then customize the text and export the final template.
+              Start by creating the QR code for this template. Once connected, the QR will appear
+              inside your design preview.
             </p>
 
             <div
@@ -210,7 +213,7 @@ function TemplateBuilderContent({
 
               {hasConnectedQr ? (
                 <p className="mt-4 break-all rounded-xl bg-background p-3 text-xs text-muted-foreground">
-                  {qrValue}
+                  QR data connected successfully.
                 </p>
               ) : null}
             </div>
@@ -220,7 +223,7 @@ function TemplateBuilderContent({
                 to={createTemplateGeneratorPath(template.baseQrPath, template.id)}
                 className="inline-flex justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
               >
-                {hasConnectedQr ? 'Replace base QR' : 'Create base QR first'}
+                {hasConnectedQr ? 'Replace QR code' : 'Create QR code first'}
               </Link>
 
               <Link
@@ -238,7 +241,8 @@ function TemplateBuilderContent({
                 <h2 className="text-xl font-semibold">Customize text</h2>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Edit the text that appears on the template before downloading.
+                  Update the title, subtitle, button text, and footer note shown on your QR
+                  template.
                 </p>
               </div>
 
@@ -263,7 +267,7 @@ function TemplateBuilderContent({
                 />
 
                 <p className="text-xs text-muted-foreground">
-                  Keep it short for better print layout.
+                  Short titles work best for printed templates.
                 </p>
               </div>
 
@@ -303,16 +307,17 @@ function TemplateBuilderContent({
           </div>
 
           <div className="rounded-2xl border bg-background p-6 shadow-sm">
-            <h2 className="text-xl font-semibold">Export options</h2>
+            <h2 className="text-xl font-semibold">Download template</h2>
 
             <p className="mt-2 text-sm text-muted-foreground">
-              Free export is available now. Premium export options are planned for monetization.
+              Download a PNG version of your QR template. You can use it on posters, payment boards,
+              menus, cards, or digital sharing.
             </p>
 
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               <div className="rounded-2xl border bg-muted/30 p-5">
                 <div className="flex items-center justify-between gap-3">
-                  <h3 className="font-semibold">Free PNG</h3>
+                  <h3 className="font-semibold">PNG Download</h3>
 
                   <span className="rounded-full bg-background px-3 py-1 text-xs font-medium text-muted-foreground">
                     Available
@@ -320,7 +325,7 @@ function TemplateBuilderContent({
                 </div>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Download a branded PNG template with a small QRPrintly watermark.
+                  Export your completed QR template as a high-quality PNG file.
                 </p>
 
                 <button
@@ -333,13 +338,13 @@ function TemplateBuilderContent({
                       : 'mt-5 inline-flex w-full cursor-not-allowed justify-center rounded-full bg-muted px-5 py-2 text-sm font-medium text-muted-foreground'
                   }
                 >
-                  {isDownloading ? 'Preparing PNG...' : 'Download free PNG'}
+                  {isDownloading ? 'Preparing PNG...' : 'Download PNG'}
                 </button>
               </div>
 
               <div className="rounded-2xl border border-dashed bg-background p-5 opacity-90">
                 <div className="flex items-center justify-between gap-3">
-                  <h3 className="font-semibold">Premium Export</h3>
+                  <h3 className="font-semibold">More export options</h3>
 
                   <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
                     Coming soon
@@ -347,33 +352,33 @@ function TemplateBuilderContent({
                 </div>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Future paid export: HD PNG, print-ready PDF, no watermark, logo placement, and
-                  premium designs.
+                  We may add more formats like PDF, higher-resolution images, and extra template
+                  styles in future updates.
                 </p>
 
                 <button
                   type="button"
-                  onClick={handlePremiumExportClick}
+                  onClick={handleMoreExportOptionsClick}
                   className="mt-5 inline-flex w-full justify-center rounded-full border px-5 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
                 >
-                  Notify me when premium export is available
+                  I&apos;d like more export options
                 </button>
               </div>
             </div>
 
             {!hasConnectedQr ? (
               <p className="mt-4 text-sm text-muted-foreground">
-                Create and connect a base QR first to enable free export.
+                Create and connect a QR code first to enable the PNG download.
               </p>
             ) : null}
           </div>
 
           <div className="rounded-2xl border bg-muted/30 p-5">
-            <p className="text-sm font-medium">Monetization direction</p>
+            <p className="text-sm font-medium">Privacy-first QR creation</p>
 
             <p className="mt-2 text-sm text-muted-foreground">
-              QR generation remains free for traffic. Template exports create the monetization layer
-              through premium layouts, HD downloads and watermark-free files.
+              Your QR code is created in your browser. QRPrintly does not store the information you
+              enter while creating a QR code.
             </p>
           </div>
         </section>

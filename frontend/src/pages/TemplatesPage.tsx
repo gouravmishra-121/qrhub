@@ -106,8 +106,9 @@ export default function TemplatesPage() {
             <h2 className="text-xl font-semibold">Why templates matter for QRPrintly</h2>
 
             <p className="mt-2 text-sm text-muted-foreground">
-              Free QR tools bring traffic. Templates become the future monetization layer through
-              branded layouts, print-ready designs and premium visual packs.
+              Create printable QR templates for shops, restaurants, business cards, WiFi access,
+              payments, and customer communication. Choose a template, connect your QR code,
+              customize the text, and download a ready-to-use design.
             </p>
           </div>
 
