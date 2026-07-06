@@ -1,13 +1,35 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { toPng } from 'html-to-image'
 
 import { TemplateDesignPreview } from '@/components/templates/TemplateDesignPreview'
 import { Input } from '@/components/ui/input'
 import { templateDesignPreviews } from '@/data/templateDesignPreviews'
+import {
+  trackPremiumExportClick,
+  trackTemplateDownload,
+  trackTemplateQrConnected,
+  trackTemplateSelect,
+  type QRAnalyticsType,
+} from '@/lib/analytics'
 import { createTemplateGeneratorPath } from '@/lib/templateFlow'
 
 type SelectedTemplate = (typeof templateDesignPreviews)[number]
+
+function isQRAnalyticsType(value: string | null): value is QRAnalyticsType {
+  return (
+    value === 'website' ||
+    value === 'upi' ||
+    value === 'wifi' ||
+    value === 'whatsapp' ||
+    value === 'email' ||
+    value === 'vcard' ||
+    value === 'phone' ||
+    value === 'sms' ||
+    value === 'text' ||
+    value === 'maps'
+  )
+}
 
 export default function TemplateBuilderPage() {
   const { templateId } = useParams()
@@ -66,8 +88,33 @@ function TemplateBuilderContent({
   const [templateCtaText, setTemplateCtaText] = useState(template.ctaText)
   const [templateFooterText, setTemplateFooterText] = useState(template.footerText)
 
+  const hasTrackedTemplateSelect = useRef(false)
+  const hasTrackedQrConnected = useRef(false)
+
   const hasConnectedQr = Boolean(qrType && qrValue)
   const templateFileName = `${template.id}-qrprintly-free-template.png`
+
+  useEffect(() => {
+    if (hasTrackedTemplateSelect.current) {
+      return
+    }
+
+    trackTemplateSelect(template.id)
+    hasTrackedTemplateSelect.current = true
+  }, [template.id])
+
+  useEffect(() => {
+    if (!qrValue || !isQRAnalyticsType(qrType) || hasTrackedQrConnected.current) {
+      return
+    }
+
+    trackTemplateQrConnected({
+      templateId: template.id,
+      qrType,
+    })
+
+    hasTrackedQrConnected.current = true
+  }, [qrType, qrValue, template.id])
 
   async function downloadTemplatePng() {
     if (!templateDownloadRef.current || !hasConnectedQr) return
@@ -84,10 +131,20 @@ function TemplateBuilderContent({
       const link = document.createElement('a')
       link.download = templateFileName
       link.href = dataUrl
+
+      trackTemplateDownload({
+        templateId: template.id,
+        exportType: 'free_png',
+      })
+
       link.click()
     } finally {
       setIsDownloading(false)
     }
+  }
+
+  function handlePremiumExportClick() {
+    trackPremiumExportClick(template.id)
   }
 
   function resetTemplateText() {
@@ -280,7 +337,7 @@ function TemplateBuilderContent({
                 </button>
               </div>
 
-              <div className="rounded-2xl border border-dashed bg-background p-5 opacity-80">
+              <div className="rounded-2xl border border-dashed bg-background p-5 opacity-90">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="font-semibold">Premium Export</h3>
 
@@ -296,10 +353,10 @@ function TemplateBuilderContent({
 
                 <button
                   type="button"
-                  disabled
-                  className="mt-5 inline-flex w-full cursor-not-allowed justify-center rounded-full bg-muted px-5 py-2 text-sm font-medium text-muted-foreground"
+                  onClick={handlePremiumExportClick}
+                  className="mt-5 inline-flex w-full justify-center rounded-full border px-5 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
                 >
-                  Unlock premium export
+                  Notify me when premium export is available
                 </button>
               </div>
             </div>
