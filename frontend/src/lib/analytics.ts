@@ -7,6 +7,8 @@ declare global {
 
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined
 
+const isDev = import.meta.env.DEV
+
 let isAnalyticsLoaded = false
 
 export type QRAnalyticsType =
@@ -14,19 +16,23 @@ export type QRAnalyticsType =
 
 export type QRDownloadFormat = 'png' | 'svg'
 
+type AnalyticsParams = Record<string, string | number | boolean>
+
 export function isAnalyticsEnabled() {
   return Boolean(GA_MEASUREMENT_ID)
 }
 
 export function loadAnalytics() {
-  if (!GA_MEASUREMENT_ID || isAnalyticsLoaded) {
+  if (!GA_MEASUREMENT_ID) {
+    debugAnalytics('analytics_disabled', {
+      reason: 'missing VITE_GA_MEASUREMENT_ID',
+    })
     return
   }
 
-  const script = document.createElement('script')
-  script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-  document.head.appendChild(script)
+  if (isAnalyticsLoaded) {
+    return
+  }
 
   window.dataLayer = window.dataLayer ?? []
 
@@ -34,20 +40,39 @@ export function loadAnalytics() {
     window.dataLayer?.push(args)
   }
 
+  const script = document.createElement('script')
+  script.async = true
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+
+  script.onload = () => {
+    debugAnalytics('gtag_script_loaded', {
+      measurement_id: GA_MEASUREMENT_ID,
+    })
+  }
+
+  script.onerror = () => {
+    debugAnalytics('gtag_script_failed', {
+      measurement_id: GA_MEASUREMENT_ID,
+    })
+  }
+
+  document.head.appendChild(script)
+
   window.gtag('js', new Date())
   window.gtag('config', GA_MEASUREMENT_ID, {
     send_page_view: false,
+    debug_mode: isDev,
   })
 
   isAnalyticsLoaded = true
+
+  debugAnalytics('analytics_loaded', {
+    measurement_id: GA_MEASUREMENT_ID,
+  })
 }
 
 export function trackPageView(path: string) {
-  if (!GA_MEASUREMENT_ID || !window.gtag) {
-    return
-  }
-
-  window.gtag('event', 'page_view', {
+  trackEvent('page_view', {
     page_path: path,
     page_location: window.location.href,
     page_title: document.title,
@@ -141,6 +166,10 @@ export function trackQrGenerateFromCurrentPath() {
   const qrType = getQRTypeFromCurrentPath()
 
   if (!qrType) {
+    debugAnalytics('qr_generate_skipped', {
+      reason: 'unknown_qr_type_path',
+      path: window.location.pathname,
+    })
     return
   }
 
@@ -157,6 +186,10 @@ export function trackQrDownloadFromCurrentPath({
   const qrType = getQRTypeFromCurrentPath()
 
   if (!qrType) {
+    debugAnalytics('qr_download_skipped', {
+      reason: 'unknown_qr_type_path',
+      path: window.location.pathname,
+    })
     return
   }
 
@@ -167,10 +200,25 @@ export function trackQrDownloadFromCurrentPath({
   })
 }
 
-function trackEvent(eventName: string, params?: Record<string, string | number>) {
+function trackEvent(eventName: string, params: AnalyticsParams = {}) {
+  const eventParams = {
+    ...params,
+    debug_mode: isDev,
+  }
+
+  debugAnalytics(eventName, eventParams)
+
   if (!GA_MEASUREMENT_ID || !window.gtag) {
     return
   }
 
-  window.gtag('event', eventName, params)
+  window.gtag('event', eventName, eventParams)
+}
+
+function debugAnalytics(eventName: string, params?: AnalyticsParams) {
+  if (!isDev) {
+    return
+  }
+
+  console.info('[QRPrintly Analytics]', eventName, params ?? {})
 }
