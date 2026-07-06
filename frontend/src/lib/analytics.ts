@@ -40,6 +40,13 @@ export function loadAnalytics() {
     window.dataLayer?.push(args)
   }
 
+  window.gtag('js', new Date())
+
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    send_page_view: false,
+    debug_mode: isDev,
+  })
+
   const script = document.createElement('script')
   script.async = true
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
@@ -58,12 +65,6 @@ export function loadAnalytics() {
 
   document.head.appendChild(script)
 
-  window.gtag('js', new Date())
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    send_page_view: false,
-    debug_mode: isDev,
-  })
-
   isAnalyticsLoaded = true
 
   debugAnalytics('analytics_loaded', {
@@ -72,11 +73,24 @@ export function loadAnalytics() {
 }
 
 export function trackPageView(path: string) {
-  trackEvent('page_view', {
+  if (!GA_MEASUREMENT_ID || !window.gtag) {
+    debugAnalytics('page_view_skipped', {
+      reason: 'analytics_not_ready',
+      path,
+    })
+    return
+  }
+
+  const pageViewParams = {
     page_path: path,
-    page_location: window.location.href,
+    page_location: `${window.location.origin}${path}`,
     page_title: document.title,
-  })
+    debug_mode: isDev,
+  }
+
+  debugAnalytics('page_view', pageViewParams)
+
+  window.gtag('config', GA_MEASUREMENT_ID, pageViewParams)
 }
 
 export function trackQrGenerate(qrType: QRAnalyticsType) {
