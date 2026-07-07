@@ -20,6 +20,8 @@ import ContactPage from '@/pages/ContactPage'
 import PrivacyPage from '@/pages/PrivacyPage'
 import TermsPage from '@/pages/TermsPage'
 import LongTailSeoPage from '@/pages/seo/LongTailSeoPage'
+import BlogIndexPage from '@/pages/blog/BlogIndexPage'
+import BlogPostPage from '@/pages/blog/BlogPostPage'
 
 export function AppRouter() {
   return (
@@ -70,6 +72,10 @@ export function AppRouter() {
           <Route path="/templates" element={<TemplatesPage />} />
 
           <Route path="/templates/:templateId" element={<TemplateBuilderPage />} />
+
+          <Route path="/blog" element={<BlogIndexPage />} />
+
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
 
           <Route path="/contact" element={<ContactPage />} />
 

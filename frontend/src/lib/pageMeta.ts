@@ -4,6 +4,7 @@ export type PageMeta = {
 }
 
 import { longTailPagesByPath } from '@/data/longTailPages'
+import { blogPostsByPath } from '@/data/blogPosts'
 
 export const defaultPageMeta: PageMeta = {
   title: 'QRPrintly — Free QR Code Generator',
@@ -81,6 +82,11 @@ export const pageMetaByPath: Record<string, PageMeta> = {
     title: 'Privacy Policy — QRPrintly',
     description: 'Learn how QRPrintly handles privacy for browser-based QR code generation.',
   },
+  '/blog': {
+    title: 'QR Code Guides for Small Businesses | QRPrintly',
+    description:
+      'Read practical QR code guides for UPI payments, WhatsApp chats, WiFi access, menus, business cards and small business use cases.',
+  },
   '/terms': {
     title: 'Terms of Service — QRPrintly',
     description: 'Read the basic terms for using QRPrintly free QR code generators and templates.',
@@ -108,6 +114,15 @@ export function getPageMeta(pathname: string): PageMeta {
     return {
       title: longTailPage.metaTitle,
       description: longTailPage.metaDescription,
+    }
+  }
+
+  const blogPost = blogPostsByPath[normalizedPathname]
+
+  if (blogPost) {
+    return {
+      title: blogPost.metaTitle,
+      description: blogPost.metaDescription,
     }
   }
 

@@ -96,4 +96,19 @@
     <loc>https://qrprintly.com/contact</loc>
     <priority>0.4</priority>
   </url>
+    <url>
+    <loc>https://qrprintly.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qrprintly.com/blog/how-to-create-upi-qr-code-for-shop</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qrprintly.com/blog/how-to-make-whatsapp-qr-code-for-business</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

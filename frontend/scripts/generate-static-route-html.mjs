@@ -440,6 +440,79 @@ const routes = [
     ],
   },
   {
+    path: '/blog',
+    title: 'QR Code Guides for Small Businesses | QRPrintly',
+    description:
+      'Read practical QR code guides for UPI payments, WhatsApp chats, WiFi access, menus, business cards and small business use cases.',
+    h1: 'QR code guides for small businesses',
+    intro:
+      'Practical guides for creating QR codes for payments, WhatsApp chats, WiFi access, menus, business cards and more.',
+    links: [
+      {
+        label: 'How to Create a UPI QR Code for Your Shop',
+        href: '/blog/how-to-create-upi-qr-code-for-shop',
+      },
+      {
+        label: 'How to Make a WhatsApp QR Code for Business',
+        href: '/blog/how-to-make-whatsapp-qr-code-for-business',
+      },
+      { label: 'All QR Code Types', href: '/qr-types' },
+    ],
+    faqs: [],
+  },
+  {
+    path: '/blog/how-to-create-upi-qr-code-for-shop',
+    title: 'How to Create a UPI QR Code for Your Shop | QRPrintly',
+    description:
+      'Learn how to create a UPI QR code for your shop, stall, counter or small business. Generate, test, download and print your payment QR code.',
+    h1: 'How to Create a UPI QR Code for Your Shop',
+    intro:
+      'A practical guide for shop owners, stalls, freelancers and small businesses who want to create and print a UPI payment QR code.',
+    links: [
+      { label: 'Create Free UPI QR Code', href: '/upi' },
+      { label: 'UPI QR Code Generator for Shops', href: '/upi-qr-code-generator-for-shops' },
+      { label: 'UPI Payment Templates', href: '/templates/upi-payment' },
+    ],
+    faqs: [
+      {
+        question: 'Can I create a UPI QR code for my shop for free?',
+        answer:
+          'Yes. You can create and download a UPI QR code for your shop for free using QRPrintly.',
+      },
+      {
+        question: 'Does QRPrintly store my UPI ID?',
+        answer:
+          'No. QRPrintly generates the UPI QR code in your browser and does not store your UPI ID or payment details.',
+      },
+    ],
+  },
+  {
+    path: '/blog/how-to-make-whatsapp-qr-code-for-business',
+    title: 'How to Make a WhatsApp QR Code for Business | QRPrintly',
+    description:
+      'Learn how to create a WhatsApp QR code for your business, shop, customer inquiries, bookings, orders and support. Add a message and download PNG or SVG.',
+    h1: 'How to Make a WhatsApp QR Code for Business',
+    intro:
+      'A simple guide for businesses that want customers to scan a QR code and start a WhatsApp chat instantly.',
+    links: [
+      { label: 'Create WhatsApp QR Code', href: '/whatsapp' },
+      { label: 'WhatsApp QR Code for Business', href: '/whatsapp-qr-code-for-business' },
+      { label: 'WhatsApp QR Templates', href: '/templates/whatsapp' },
+    ],
+    faqs: [
+      {
+        question: 'Can I use a WhatsApp QR code for business?',
+        answer:
+          'Yes. You can use it for inquiries, bookings, support, orders, product questions and general business communication.',
+      },
+      {
+        question: 'Does QRPrintly store my WhatsApp number?',
+        answer:
+          'No. QRPrintly generates the WhatsApp QR code in your browser and does not store your phone number or message.',
+      },
+    ],
+  },
+  {
     path: '/privacy',
     title: 'Privacy Policy | QRPrintly',
     description:
