@@ -50,6 +50,13 @@ export function AppRouter() {
             element={<LongTailSeoPage pageId="whatsapp-business" />}
           />
 
+          <Route path="/wifi-qr-code-for-cafe" element={<LongTailSeoPage pageId="wifi-cafe" />} />
+
+          <Route
+            path="/restaurant-menu-qr-code-generator"
+            element={<LongTailSeoPage pageId="restaurant-menu" />}
+          />
+
           <Route path="/vcard" element={<VCardQR />} />
 
           <Route path="/phone" element={<PhoneQR />} />

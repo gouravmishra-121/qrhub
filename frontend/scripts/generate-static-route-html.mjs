@@ -167,6 +167,58 @@ const routes = [
     ],
   },
   {
+    path: '/wifi-qr-code-for-cafe',
+    title: 'WiFi QR Code for Cafe | QRPrintly',
+    description:
+      'Create a free WiFi QR code for your cafe, restaurant, hotel, office or guest network. Let guests connect without typing the password.',
+    h1: 'WiFi QR Code for Cafe',
+    intro:
+      'Create a WiFi QR code for your cafe, restaurant, hotel, office, or guest area so visitors can connect without typing the password manually.',
+    links: [
+      { label: 'Create Free WiFi QR Code', href: '/wifi' },
+      { label: 'WiFi QR Templates', href: '/templates/wifi' },
+      { label: 'Restaurant Menu QR Code Generator', href: '/restaurant-menu-qr-code-generator' },
+    ],
+    faqs: [
+      {
+        question: 'Can I create a WiFi QR code for my cafe?',
+        answer:
+          'Yes. You can create a WiFi QR code for your cafe, restaurant, hotel, office, or guest network for free.',
+      },
+      {
+        question: 'Does QRPrintly store my WiFi password?',
+        answer:
+          'No. The WiFi QR code is generated in your browser. QRPrintly does not store your network name or password.',
+      },
+    ],
+  },
+  {
+    path: '/restaurant-menu-qr-code-generator',
+    title: 'Restaurant Menu QR Code Generator | QRPrintly',
+    description:
+      'Create a free QR code for your restaurant menu, cafe menu, food stall menu or cloud kitchen menu. Download PNG or use printable QR templates.',
+    h1: 'Restaurant Menu QR Code Generator',
+    intro:
+      'Create a QR code for your restaurant menu, cafe menu, food stall menu, or cloud kitchen menu.',
+    links: [
+      { label: 'Create Menu QR Code', href: '/website' },
+      { label: 'Restaurant Menu Templates', href: '/templates/restaurant-menu' },
+      { label: 'WiFi QR Code for Cafe', href: '/wifi-qr-code-for-cafe' },
+    ],
+    faqs: [
+      {
+        question: 'Can I create a QR code for my restaurant menu?',
+        answer:
+          'Yes. You can create a QR code for any public restaurant menu link, website menu, PDF menu, or ordering page.',
+      },
+      {
+        question: 'Can I update my menu later?',
+        answer:
+          'The QR code opens the link you provide. If you use an editable website or online menu link, you can update the menu without changing the QR code.',
+      },
+    ],
+  },
+  {
     path: '/vcard',
     title: 'Free vCard QR Code Generator | QRPrintly',
     description:

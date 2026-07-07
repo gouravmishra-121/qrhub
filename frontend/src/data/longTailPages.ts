@@ -1,4 +1,4 @@
-export type LongTailPageId = 'upi-shops' | 'whatsapp-business'
+export type LongTailPageId = 'upi-shops' | 'whatsapp-business' | 'wifi-cafe' | 'restaurant-menu'
 
 export type LongTailPage = {
   id: LongTailPageId
@@ -211,6 +211,186 @@ export const longTailPages: LongTailPage[] = [
         question: 'Does QRPrintly store my WhatsApp number?',
         answer:
           'No. The WhatsApp QR code is generated in your browser. QRPrintly does not store your phone number or message.',
+      },
+    ],
+  },
+  {
+    id: 'wifi-cafe',
+    path: '/wifi-qr-code-for-cafe',
+    eyebrow: 'WiFi QR for cafes',
+    title: 'WiFi QR Code for Cafe',
+    metaTitle: 'WiFi QR Code for Cafe | QRPrintly',
+    metaDescription:
+      'Create a free WiFi QR code for your cafe, restaurant, hotel, office or guest network. Let guests connect without typing the password.',
+    intro:
+      'Create a WiFi QR code for your cafe, restaurant, hotel, office, or guest area so visitors can connect without typing the password manually. QRPrintly helps you generate a scannable WiFi QR code and download it as PNG or SVG.',
+    primaryCta: {
+      label: 'Create Free WiFi QR Code',
+      href: '/wifi',
+    },
+    secondaryCta: {
+      label: 'View WiFi QR templates',
+      href: '/templates/wifi',
+    },
+    sections: [
+      {
+        title: 'Share cafe WiFi without repeating the password',
+        content:
+          'A WiFi QR code makes it easier for customers to connect to your guest network. Instead of writing the password on a board or telling every visitor manually, you can place a QR code on tables, counters, menus, receipts, or reception desks.',
+      },
+      {
+        title: 'Where to use a WiFi QR code',
+        content:
+          'WiFi QR codes are useful for cafes, restaurants, hotels, offices, coworking spaces, guest rooms, meeting rooms, salons, clinics, and reception areas. A printed WiFi QR card can improve the guest experience and reduce repeated password questions.',
+      },
+      {
+        title: 'Use a separate guest WiFi network',
+        content:
+          'For cafes and public places, it is better to use a separate guest WiFi network instead of your private internal network. Share the QR code only with people you want to give network access to.',
+      },
+    ],
+    steps: [
+      'Open the free WiFi QR code generator.',
+      'Enter your WiFi network name.',
+      'Choose the security type.',
+      'Enter the WiFi password if required.',
+      'Preview the QR code.',
+      'Download it as PNG or SVG and print it for your cafe or guest area.',
+    ],
+    tips: [
+      'Use a separate guest WiFi network for customers.',
+      'Place the QR code where visitors can easily scan it.',
+      'Avoid printing the QR too small on table cards.',
+      'Test the QR code with both Android and iPhone before printing many copies.',
+      'Update the QR code if you change your WiFi password.',
+    ],
+    relatedLinks: [
+      {
+        label: 'Free WiFi QR Code Generator',
+        href: '/wifi',
+        description: 'Create a WiFi QR code for guests and visitors.',
+      },
+      {
+        label: 'WiFi QR Templates',
+        href: '/templates/wifi',
+        description: 'Create a printable WiFi QR card for tables or counters.',
+      },
+      {
+        label: 'Restaurant Menu QR Code Generator',
+        href: '/restaurant-menu-qr-code-generator',
+        description: 'Create a QR code for your digital restaurant menu.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can I create a WiFi QR code for my cafe?',
+        answer:
+          'Yes. You can create a WiFi QR code for your cafe, restaurant, hotel, office, or guest network for free.',
+      },
+      {
+        question: 'Does the WiFi QR code include my password?',
+        answer:
+          'Yes. The QR code contains the WiFi details needed to connect. Share it only with people you want to give access to.',
+      },
+      {
+        question: 'Should I use a guest WiFi network?',
+        answer:
+          'Yes. For cafes, restaurants, hotels, and offices, a separate guest WiFi network is safer than sharing your private internal network.',
+      },
+      {
+        question: 'Does QRPrintly store my WiFi password?',
+        answer:
+          'No. The WiFi QR code is generated in your browser. QRPrintly does not store your network name or password.',
+      },
+    ],
+  },
+  {
+    id: 'restaurant-menu',
+    path: '/restaurant-menu-qr-code-generator',
+    eyebrow: 'Restaurant menu QR',
+    title: 'Restaurant Menu QR Code Generator',
+    metaTitle: 'Restaurant Menu QR Code Generator | QRPrintly',
+    metaDescription:
+      'Create a free QR code for your restaurant menu, cafe menu, food stall menu or cloud kitchen menu. Download PNG or use printable QR templates.',
+    intro:
+      'Create a QR code for your restaurant menu, cafe menu, food stall menu, or cloud kitchen menu. Add your online menu link, generate a QR code, and use it on table cards, posters, counters, receipts, or packaging.',
+    primaryCta: {
+      label: 'Create Menu QR Code',
+      href: '/website',
+    },
+    secondaryCta: {
+      label: 'View restaurant menu templates',
+      href: '/templates/restaurant-menu',
+    },
+    sections: [
+      {
+        title: 'Create a QR code for your restaurant menu',
+        content:
+          'A menu QR code lets customers scan and open your digital menu on their phone. You can link to a website menu, PDF menu, Google Drive menu, ordering page, or any public menu URL. This is useful for restaurants, cafes, food stalls, cloud kitchens, bakeries, bars, and hotels.',
+      },
+      {
+        title: 'Where restaurants can use menu QR codes',
+        content:
+          'You can place menu QR codes on table cards, counter displays, takeaway packaging, posters, receipts, hotel rooms, food trucks, and social media profiles. A clean printed QR template can make the menu easier to access and reduce the need for printed menu copies.',
+      },
+      {
+        title: 'Keep your menu link updated',
+        content:
+          'The QR code opens the menu link you provide. If prices or dishes change often, use a menu URL that you can update without changing the QR code, such as a website page or editable online menu link.',
+      },
+    ],
+    steps: [
+      'Create or upload your digital menu online.',
+      'Copy the public menu link.',
+      'Open the website QR code generator.',
+      'Paste the menu URL and preview the QR code.',
+      'Download the QR code as PNG or SVG.',
+      'Use a restaurant menu template for table cards, posters, or counters.',
+    ],
+    tips: [
+      'Use a public menu link that opens without login.',
+      'Test the QR code on mobile before printing.',
+      'Keep the QR code large enough for table scanning.',
+      'Use a short call-to-action like “Scan to view menu”.',
+      'Use templates for table cards and counter displays.',
+    ],
+    relatedLinks: [
+      {
+        label: 'Website QR Code Generator',
+        href: '/website',
+        description: 'Turn your restaurant menu link into a QR code.',
+      },
+      {
+        label: 'Restaurant Menu Templates',
+        href: '/templates/restaurant-menu',
+        description: 'Create printable menu QR layouts for tables and counters.',
+      },
+      {
+        label: 'WiFi QR Code for Cafe',
+        href: '/wifi-qr-code-for-cafe',
+        description: 'Create a guest WiFi QR code for your cafe or restaurant.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can I create a QR code for my restaurant menu?',
+        answer:
+          'Yes. You can create a QR code for any public restaurant menu link, website menu, PDF menu, or ordering page.',
+      },
+      {
+        question: 'Can I use this for a cafe or food stall menu?',
+        answer:
+          'Yes. Menu QR codes are useful for cafes, food stalls, cloud kitchens, bakeries, restaurants, bars, and hotels.',
+      },
+      {
+        question: 'Can I update my menu later?',
+        answer:
+          'The QR code opens the link you provide. If you use an editable website or online menu link, you can update the menu without changing the QR code.',
+      },
+      {
+        question: 'Does QRPrintly store my menu link?',
+        answer:
+          'No. The QR code is generated in your browser. QRPrintly does not store the menu link you enter.',
       },
     ],
   },
