@@ -11,8 +11,7 @@ export function PageViewTracker() {
   }, [])
 
   useEffect(() => {
-    const path = `${location.pathname}${location.search}`
-    trackPageView(path)
+    trackPageView(location.pathname)
   }, [location.pathname, location.search])
 
   return null

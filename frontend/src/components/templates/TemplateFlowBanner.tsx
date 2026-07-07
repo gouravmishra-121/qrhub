@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 
 import { templateDesignPreviews } from '@/data/templateDesignPreviews'
-import { createTemplateReturnPath, type TemplateQRType } from '@/lib/templateFlow'
+import {
+  createTemplateReturnPath,
+  saveTemplateQrValue,
+  type TemplateQRType,
+} from '@/lib/templateFlow'
 
 type TemplateFlowBannerProps = {
   templateId: string | null
@@ -26,11 +30,23 @@ export function TemplateFlowBanner({
     return null
   }
 
+  const selectedTemplateId = template.id
+
   const returnPath = createTemplateReturnPath({
-    templateId: template.id,
+    templateId: selectedTemplateId,
     qrType,
-    qrValue,
   })
+
+  function handleContinueToTemplate() {
+    if (!isValid || !qrValue) {
+      return
+    }
+
+    saveTemplateQrValue({
+      templateId: selectedTemplateId,
+      qrValue,
+    })
+  }
 
   return (
     <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
@@ -43,10 +59,15 @@ export function TemplateFlowBanner({
         builder to customize the design and download PNG.
       </p>
 
+      <p className="mt-3 text-xs leading-5 text-muted-foreground">
+        Privacy note: your QR data is kept in this browser session and is not added to the page URL.
+      </p>
+
       <div className="mt-5 flex flex-col gap-3 sm:flex-row">
         {isValid ? (
           <Link
             to={returnPath}
+            onClick={handleContinueToTemplate}
             className="inline-flex justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
           >
             Continue to template builder →
@@ -62,7 +83,7 @@ export function TemplateFlowBanner({
         )}
 
         <Link
-          to={`/templates/${template.id}`}
+          to={`/templates/${selectedTemplateId}`}
           className="inline-flex justify-center rounded-full border bg-background px-5 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
         >
           Back to template

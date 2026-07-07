@@ -12,7 +12,11 @@ import {
   trackTemplateSelect,
   type QRAnalyticsType,
 } from '@/lib/analytics'
-import { createTemplateGeneratorPath } from '@/lib/templateFlow'
+import {
+  clearTemplateQrValue,
+  createTemplateGeneratorPath,
+  getTemplateQrValue,
+} from '@/lib/templateFlow'
 
 type SelectedTemplate = (typeof templateDesignPreviews)[number]
 
@@ -38,7 +42,7 @@ export default function TemplateBuilderPage() {
   const template = templateDesignPreviews.find((item) => item.id === templateId)
 
   const qrType = searchParams.get('qrType')
-  const qrValue = searchParams.get('qrValue')
+  const connected = searchParams.get('connected')
 
   if (!template) {
     return (
@@ -66,7 +70,7 @@ export default function TemplateBuilderPage() {
       key={template.id}
       template={template}
       qrType={qrType}
-      qrValue={qrValue}
+      isConnected={connected === '1'}
     />
   )
 }
@@ -74,14 +78,21 @@ export default function TemplateBuilderPage() {
 function TemplateBuilderContent({
   template,
   qrType,
-  qrValue,
+  isConnected,
 }: {
   template: SelectedTemplate
   qrType: string | null
-  qrValue: string | null
+  isConnected: boolean
 }) {
   const templateDownloadRef = useRef<HTMLDivElement>(null)
   const [isDownloading, setIsDownloading] = useState(false)
+  const [connectedQrValue, setConnectedQrValue] = useState(() => {
+    if (!isConnected) {
+      return ''
+    }
+
+    return getTemplateQrValue(template.id)
+  })
 
   const [templateTitle, setTemplateTitle] = useState(template.title)
   const [templateSubtitle, setTemplateSubtitle] = useState(template.subtitle)
@@ -91,7 +102,7 @@ function TemplateBuilderContent({
   const hasTrackedTemplateSelect = useRef(false)
   const hasTrackedQrConnected = useRef(false)
 
-  const hasConnectedQr = Boolean(qrType && qrValue)
+  const hasConnectedQr = Boolean(qrType && connectedQrValue)
   const templateFileName = `${template.id}-qrprintly-template.png`
 
   useEffect(() => {
@@ -104,7 +115,7 @@ function TemplateBuilderContent({
   }, [template.id])
 
   useEffect(() => {
-    if (!qrValue || !isQRAnalyticsType(qrType) || hasTrackedQrConnected.current) {
+    if (!connectedQrValue || !isQRAnalyticsType(qrType) || hasTrackedQrConnected.current) {
       return
     }
 
@@ -114,7 +125,7 @@ function TemplateBuilderContent({
     })
 
     hasTrackedQrConnected.current = true
-  }, [qrType, qrValue, template.id])
+  }, [connectedQrValue, qrType, template.id])
 
   async function downloadTemplatePng() {
     if (!templateDownloadRef.current || !hasConnectedQr) return
@@ -152,6 +163,11 @@ function TemplateBuilderContent({
     setTemplateSubtitle(template.subtitle)
     setTemplateCtaText(template.ctaText)
     setTemplateFooterText(template.footerText)
+  }
+
+  function clearConnectedQr() {
+    clearTemplateQrValue(template.id)
+    setConnectedQrValue('')
   }
 
   return (
@@ -212,8 +228,9 @@ function TemplateBuilderContent({
               </div>
 
               {hasConnectedQr ? (
-                <p className="mt-4 break-all rounded-xl bg-background p-3 text-xs text-muted-foreground">
-                  QR data connected successfully.
+                <p className="mt-4 rounded-xl bg-background p-3 text-xs leading-5 text-muted-foreground">
+                  QR data connected successfully in this browser session. The QR value is not added
+                  to the page URL.
                 </p>
               ) : null}
             </div>
@@ -232,6 +249,16 @@ function TemplateBuilderContent({
               >
                 Choose another template
               </Link>
+
+              {hasConnectedQr ? (
+                <button
+                  type="button"
+                  onClick={clearConnectedQr}
+                  className="inline-flex justify-center rounded-full border px-5 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+                >
+                  Clear connected QR
+                </button>
+              ) : null}
             </div>
           </div>
 
@@ -347,13 +374,13 @@ function TemplateBuilderContent({
                   <h3 className="font-semibold">More export options</h3>
 
                   <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
-                    Coming soon
+                    Planned
                   </span>
                 </div>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  We may add more formats like PDF, higher-resolution images, and extra template
-                  styles in future updates.
+                  More export formats like PDF and higher-resolution files may be added based on
+                  user feedback.
                 </p>
 
                 <button
@@ -378,7 +405,8 @@ function TemplateBuilderContent({
 
             <p className="mt-2 text-sm text-muted-foreground">
               Your QR code is created in your browser. QRPrintly does not store the information you
-              enter while creating a QR code.
+              enter while creating a QR code, and connected QR values are kept only in your browser
+              session.
             </p>
           </div>
         </section>
@@ -391,9 +419,9 @@ function TemplateBuilderContent({
             subtitle={templateSubtitle || template.subtitle}
             ctaText={templateCtaText || template.ctaText}
             footerText={templateFooterText || template.footerText}
-            qrValue={qrValue ?? undefined}
+            qrValue={connectedQrValue || undefined}
             downloadRef={templateDownloadRef}
-            showWatermark={Boolean(qrValue)}
+            showWatermark={Boolean(connectedQrValue)}
           />
         </aside>
       </div>
