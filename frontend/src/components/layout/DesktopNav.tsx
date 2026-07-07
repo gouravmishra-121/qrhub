@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 const navItems = [
   { label: 'QR Types', href: '/qr-types' },
   { label: 'Templates', href: '/templates' },
+  { label: 'Blog', href: '/blog' },
   { label: 'How It Works', href: '/#how-it-works' },
   { label: 'FAQ', href: '/#faq' },
 ]
