@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
-
+import { TemplateFlowBanner } from '@/components/templates/TemplateFlowBanner'
 import {
   DEFAULT_BACKGROUND_COLOR,
   DEFAULT_FOREGROUND_COLOR,
@@ -43,6 +43,8 @@ function createSafeFileName(value: string) {
 }
 
 export default function WhatsAppQR() {
+  const [searchParams] = useSearchParams()
+  const templateId = searchParams.get('template')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [message, setMessage] = useState('')
 
@@ -108,6 +110,14 @@ export default function WhatsAppQR() {
           </div>
 
           <div className="mt-10 space-y-6">
+            {templateId ? (
+              <TemplateFlowBanner
+                templateId={templateId}
+                qrType="whatsapp"
+                qrValue={qrValue}
+                isValid={isValidWhatsAppQR}
+              />
+            ) : null}
             <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
               <div>
                 <h2 className="text-lg font-semibold">Enter WhatsApp Details</h2>

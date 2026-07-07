@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
+import { TemplateFlowBanner } from '@/components/templates/TemplateFlowBanner'
 
 import {
   DEFAULT_BACKGROUND_COLOR,
@@ -57,6 +58,8 @@ function createSafeFileName(value: string) {
 }
 
 export default function WiFiQR() {
+  const [searchParams] = useSearchParams()
+  const templateId = searchParams.get('template')
   const [networkName, setNetworkName] = useState('')
   const [password, setPassword] = useState('')
   const [security, setSecurity] = useState<WiFiSecurity>('WPA')
@@ -138,6 +141,14 @@ export default function WiFiQR() {
           </div>
 
           <div className="mt-10 space-y-6">
+            {templateId ? (
+              <TemplateFlowBanner
+                templateId={templateId}
+                qrType="wifi"
+                qrValue={qrValue}
+                isValid={isValidWiFiQR}
+              />
+            ) : null}
             <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
               <div>
                 <h2 className="text-lg font-semibold">Enter WiFi Details</h2>

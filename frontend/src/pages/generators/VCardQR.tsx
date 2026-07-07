@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
-
+import { TemplateFlowBanner } from '@/components/templates/TemplateFlowBanner'
 import {
   DEFAULT_BACKGROUND_COLOR,
   DEFAULT_FOREGROUND_COLOR,
@@ -105,6 +105,8 @@ function createSafeFileName(value: string) {
 }
 
 export default function VCardQR() {
+  const [searchParams] = useSearchParams()
+  const templateId = searchParams.get('template')
   const [fullName, setFullName] = useState('')
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
@@ -208,6 +210,14 @@ export default function VCardQR() {
           </div>
 
           <div className="mt-10 space-y-6">
+            {templateId ? (
+              <TemplateFlowBanner
+                templateId={templateId}
+                qrType="vcard"
+                qrValue={qrValue}
+                isValid={isValidVCardQR}
+              />
+            ) : null}
             <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
               <div>
                 <h2 className="text-lg font-semibold">Enter Contact Details</h2>

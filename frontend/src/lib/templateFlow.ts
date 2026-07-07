@@ -1,4 +1,4 @@
-export type TemplateQRType = 'upi' | 'website'
+export type TemplateQRType = 'upi' | 'website' | 'wifi' | 'whatsapp' | 'vcard'
 
 export function createTemplateGeneratorPath(baseQrPath: string, templateId: string) {
   const params = new URLSearchParams({
