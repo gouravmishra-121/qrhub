@@ -1,6 +1,8 @@
 import { Link, useSearchParams } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
 import { TemplateFlowBanner } from '@/components/templates/TemplateFlowBanner'
+import { TemplateSuggestionCard } from '@/components/templates/TemplateSuggestionCard'
+
 import {
   DEFAULT_BACKGROUND_COLOR,
   DEFAULT_FOREGROUND_COLOR,
@@ -212,6 +214,15 @@ export default function WhatsAppQR() {
               fileName={downloadFileName}
               downloadSize={qrSize}
               backgroundColor={backgroundColor}
+            />
+            <TemplateSuggestionCard
+              templateId="whatsapp"
+              qrType="whatsapp"
+              qrValue={qrValue}
+              isValid={isValidWhatsAppQR}
+              title="Want a WhatsApp contact poster?"
+              description="Use your WhatsApp QR inside a clean template for customer chats, bookings, support or inquiries."
+              ctaLabel="Use WhatsApp template"
             />
           </div>
         </section>

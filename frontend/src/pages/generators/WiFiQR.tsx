@@ -1,6 +1,7 @@
 import { Link, useSearchParams } from 'react-router-dom'
 import { useMemo, useRef, useState } from 'react'
 import { TemplateFlowBanner } from '@/components/templates/TemplateFlowBanner'
+import { TemplateSuggestionCard } from '@/components/templates/TemplateSuggestionCard'
 
 import {
   DEFAULT_BACKGROUND_COLOR,
@@ -287,6 +288,15 @@ export default function WiFiQR() {
               fileName={downloadFileName}
               downloadSize={qrSize}
               backgroundColor={backgroundColor}
+            />
+            <TemplateSuggestionCard
+              templateId="wifi"
+              qrType="wifi"
+              qrValue={qrValue}
+              isValid={isValidWiFiQR}
+              title="Want a printable WiFi card?"
+              description="Use your WiFi QR inside a guest WiFi template for cafes, hotels, offices, homes or reception areas."
+              ctaLabel="Use WiFi template"
             />
           </div>
         </section>

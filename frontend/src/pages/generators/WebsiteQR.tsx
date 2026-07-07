@@ -14,6 +14,7 @@ import {
 import { TemplateFlowBanner } from '@/components/templates/TemplateFlowBanner'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { TemplateSuggestionCard } from '@/components/templates/TemplateSuggestionCard'
 
 function createSafeFileName(value: string) {
   try {
@@ -193,6 +194,15 @@ export default function WebsiteQR() {
               fileName={downloadFileName}
               downloadSize={qrSize}
               backgroundColor={backgroundColor}
+            />
+            <TemplateSuggestionCard
+              templateId="website"
+              qrType="website"
+              qrValue={cleanUrl}
+              isValid={isValidUrl}
+              title="Want a website QR template?"
+              description="Use your website QR inside a business template for posters, flyers, counters or digital sharing."
+              ctaLabel="Use website template"
             />
           </div>
         </section>

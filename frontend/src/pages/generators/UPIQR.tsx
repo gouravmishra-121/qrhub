@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import { TemplateSuggestionCard } from '@/components/templates/TemplateSuggestionCard'
 
 import {
   DEFAULT_BACKGROUND_COLOR,
@@ -303,6 +304,15 @@ export default function UPIQR() {
               fileName={downloadFileName}
               downloadSize={qrSize}
               backgroundColor={backgroundColor}
+            />
+            <TemplateSuggestionCard
+              templateId="upi-payment"
+              qrType="upi"
+              qrValue={qrValue}
+              isValid={isValidUPIQR}
+              title="Want a printable payment board?"
+              description="Use your generated UPI QR inside a clean payment template for shops, stalls, invoices or counters."
+              ctaLabel="Use UPI payment template"
             />
           </div>
         </section>

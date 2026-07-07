@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { GeneratorSeoContent } from '@/components/generators/GeneratorSeoContent'
 import { generatorSeoContent } from '@/data/generatorSeoContent'
+import { TemplateSuggestionCard } from '@/components/templates/TemplateSuggestionCard'
 
 function escapeVCardValue(value: string) {
   return value
@@ -392,6 +393,15 @@ export default function VCardQR() {
               fileName={downloadFileName}
               downloadSize={qrSize}
               backgroundColor={backgroundColor}
+            />
+            <TemplateSuggestionCard
+              templateId="vcard-contact"
+              qrType="vcard"
+              qrValue={qrValue}
+              isValid={isValidVCardQR}
+              title="Want a contact card template?"
+              description="Use your vCard QR inside a printable contact template for business cards, events and networking."
+              ctaLabel="Use contact template"
             />
           </div>
         </section>
