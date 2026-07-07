@@ -12,7 +12,7 @@ export function PageViewTracker() {
 
   useEffect(() => {
     trackPageView(location.pathname)
-  }, [location.pathname, location.search])
+  }, [location.pathname])
 
   return null
 }
