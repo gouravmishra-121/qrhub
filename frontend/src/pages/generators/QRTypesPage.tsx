@@ -207,6 +207,65 @@ export default function QRTypesPage() {
       />
 
       <ComingSoonSection items={comingSoonQrTypes} />
+
+      <section className="mt-16 rounded-3xl border bg-muted/30 p-6 sm:p-8">
+        <h2 className="text-2xl font-semibold">Popular QR use cases</h2>
+
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">
+          Explore practical QR code guides for shops, cafes, restaurants, and small businesses.
+        </p>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <Link
+            to="/upi-qr-code-generator-for-shops"
+            className="rounded-2xl border bg-background p-5 transition hover:border-primary/50 hover:bg-muted/30"
+          >
+            <h3 className="font-semibold">UPI QR Code Generator for Shops</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              Create a UPI QR code for shop counters, stalls, invoices, and payment boards.
+            </p>
+          </Link>
+
+          <Link
+            to="/whatsapp-qr-code-for-business"
+            className="rounded-2xl border bg-background p-5 transition hover:border-primary/50 hover:bg-muted/30"
+          >
+            <h3 className="font-semibold">WhatsApp QR Code for Business</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              Let customers scan and start a WhatsApp chat with your business.
+            </p>
+          </Link>
+
+          <Link
+            to="/wifi-qr-code-for-cafe"
+            className="rounded-2xl border bg-background p-5 transition hover:border-primary/50 hover:bg-muted/30"
+          >
+            <h3 className="font-semibold">WiFi QR Code for Cafe</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              Create a guest WiFi QR code for cafes, hotels, offices, and restaurants.
+            </p>
+          </Link>
+
+          <Link
+            to="/restaurant-menu-qr-code-generator"
+            className="rounded-2xl border bg-background p-5 transition hover:border-primary/50 hover:bg-muted/30"
+          >
+            <h3 className="font-semibold">Restaurant Menu QR Code Generator</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              Create a QR code for restaurant menus, cafe menus, and table cards.
+            </p>
+          </Link>
+        </div>
+
+        <div className="mt-6">
+          <Link
+            to="/blog"
+            className="inline-flex rounded-full border px-5 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+          >
+            Read QR code guides
+          </Link>
+        </div>
+      </section>
     </main>
   )
 }
