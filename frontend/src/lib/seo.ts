@@ -1,11 +1,21 @@
 const SITE_URL = 'https://qrprintly.com'
 
-export function getCanonicalUrl(pathname: string) {
+function normalizePathname(pathname: string) {
   if (pathname === '/') {
+    return pathname
+  }
+
+  return pathname.replace(/\/+$/, '')
+}
+
+export function getCanonicalUrl(pathname: string) {
+  const normalizedPathname = normalizePathname(pathname)
+
+  if (normalizedPathname === '/') {
     return SITE_URL
   }
 
-  return `${SITE_URL}${pathname}`
+  return `${SITE_URL}${normalizedPathname}`
 }
 
 export function updateCanonicalUrl(pathname: string) {

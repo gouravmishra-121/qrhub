@@ -92,8 +92,17 @@ export const pageMetaByPath: Record<string, PageMeta> = {
   },
 }
 
+function normalizePathname(pathname: string) {
+  if (pathname === '/') {
+    return pathname
+  }
+
+  return pathname.replace(/\/+$/, '')
+}
+
 export function getPageMeta(pathname: string): PageMeta {
-  const longTailPage = longTailPagesByPath[pathname]
+  const normalizedPathname = normalizePathname(pathname)
+  const longTailPage = longTailPagesByPath[normalizedPathname]
 
   if (longTailPage) {
     return {
@@ -102,7 +111,7 @@ export function getPageMeta(pathname: string): PageMeta {
     }
   }
 
-  if (pathname.startsWith('/templates/')) {
+  if (normalizedPathname.startsWith('/templates/')) {
     return {
       title: 'Template Builder — QRPrintly',
       description:
@@ -111,7 +120,7 @@ export function getPageMeta(pathname: string): PageMeta {
   }
 
   return (
-    pageMetaByPath[pathname] ?? {
+    pageMetaByPath[normalizedPathname] ?? {
       title: 'Page Not Found — QRPrintly',
       description:
         'The page you are looking for does not exist. Browse QR types and create a free QR code on QRPrintly.',
