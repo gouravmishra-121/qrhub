@@ -3,6 +3,8 @@ export type PageMeta = {
   description: string
 }
 
+import { longTailPagesByPath } from '@/data/longTailPages'
+
 export const defaultPageMeta: PageMeta = {
   title: 'QRPrintly — Free QR Code Generator',
   description:
@@ -11,19 +13,19 @@ export const defaultPageMeta: PageMeta = {
 
 export const pageMetaByPath: Record<string, PageMeta> = {
   '/': {
-    title: 'QRPrintly — Free QR Code Generator',
+    title: 'Free QR Code Generator Online | QRPrintly',
     description:
-      'Create free QR codes for websites, WiFi, UPI payments, WhatsApp, business cards, maps and more.',
+      'Create free QR codes online for UPI, WhatsApp, WiFi, websites, vCards, email, SMS, phone, maps and text. No signup required. Download PNG or SVG instantly.',
   },
   '/qr-types': {
-    title: 'All QR Code Types — QRPrintly',
+    title: 'QR Code Generator Types | QRPrintly',
     description:
-      'Choose from website, UPI, WiFi, WhatsApp, email, vCard, phone, SMS, text and maps QR code generators.',
+      'Explore free QR code generators for UPI, WhatsApp, WiFi, websites, vCards, email, SMS, phone, maps and text. Download PNG or SVG instantly.',
   },
   '/templates': {
-    title: 'QR Code Templates — QRPrintly',
+    title: 'Printable QR Code Templates | QRPrintly',
     description:
-      'Explore QR code templates for UPI payments, restaurants, business websites, WiFi and branded QR designs.',
+      'Choose printable QR code templates for payments, menus, WiFi, business cards, websites and customer chats. Customize text and download a clean PNG design.',
   },
   '/website': {
     title: 'Free Website QR Code Generator | QRPrintly',
@@ -36,9 +38,9 @@ export const pageMetaByPath: Record<string, PageMeta> = {
       'Create a free UPI QR code online for shops, stalls, freelancers and small businesses. No signup required. Download your UPI QR code as PNG or SVG.',
   },
   '/wifi': {
-    title: 'WiFi QR Code Generator — QRPrintly',
+    title: 'Free WiFi QR Code Generator | QRPrintly',
     description:
-      'Create a free WiFi QR code so people can connect to your network without typing the password.',
+      'Create a free WiFi QR code so guests can connect without typing the password. Useful for homes, cafes, hotels, offices and guest networks.',
   },
   '/whatsapp': {
     title: 'WhatsApp QR Code Generator | QRPrintly',
@@ -91,6 +93,15 @@ export const pageMetaByPath: Record<string, PageMeta> = {
 }
 
 export function getPageMeta(pathname: string): PageMeta {
+  const longTailPage = longTailPagesByPath[pathname]
+
+  if (longTailPage) {
+    return {
+      title: longTailPage.metaTitle,
+      description: longTailPage.metaDescription,
+    }
+  }
+
   if (pathname.startsWith('/templates/')) {
     return {
       title: 'Template Builder — QRPrintly',

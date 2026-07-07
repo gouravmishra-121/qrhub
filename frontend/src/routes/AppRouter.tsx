@@ -19,6 +19,8 @@ import NotFoundPage from '@/pages/NotFoundPage'
 import ContactPage from '@/pages/ContactPage'
 import PrivacyPage from '@/pages/PrivacyPage'
 import TermsPage from '@/pages/TermsPage'
+import LongTailSeoPage from '@/pages/seo/LongTailSeoPage'
+
 export function AppRouter() {
   return (
     <BrowserRouter>
@@ -37,6 +39,16 @@ export function AppRouter() {
           <Route path="/email" element={<EmailQR />} />
 
           <Route path="/whatsapp" element={<WhatsAppQR />} />
+
+          <Route
+            path="/upi-qr-code-generator-for-shops"
+            element={<LongTailSeoPage pageId="upi-shops" />}
+          />
+
+          <Route
+            path="/whatsapp-qr-code-for-business"
+            element={<LongTailSeoPage pageId="whatsapp-business" />}
+          />
 
           <Route path="/vcard" element={<VCardQR />} />
 
