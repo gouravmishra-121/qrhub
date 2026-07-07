@@ -5,20 +5,20 @@ import { StatCard } from './StatCard'
 
 const stats = [
   {
-    value: '500K+',
-    label: 'QR Codes Generated',
+    value: '10',
+    label: 'QR code types',
   },
   {
-    value: '120+',
-    label: 'Countries Reached',
+    value: '6',
+    label: 'Printable templates',
   },
   {
-    value: '100%',
-    label: 'Privacy Focused',
+    value: 'No',
+    label: 'Signup required',
   },
   {
-    value: 'Free',
-    label: 'No Signup Required',
+    value: 'Local',
+    label: 'Browser-based generation',
   },
 ]
 

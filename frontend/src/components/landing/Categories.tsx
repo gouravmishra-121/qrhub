@@ -25,78 +25,81 @@ import { CategoryCard } from './CategoryCard'
 
 const qrCategories = [
   {
-    icon: <Globe className="h-8 w-8" />,
-    title: 'Website',
-    description: 'Convert any URL into a QR code.',
-    href: '/website',
-  },
-  {
     icon: <IndianRupee className="h-8 w-8" />,
-    title: 'UPI',
-    description: 'Accept digital payments with ease.',
+    title: 'UPI QR',
+    description: 'Create payment QR codes for shops, stalls and invoices.',
     href: '/upi',
   },
   {
-    icon: <Wifi className="h-8 w-8" />,
-    title: 'WiFi',
-    description: 'Share WiFi credentials instantly.',
-    href: '/wifi',
-  },
-  {
     icon: <MessageCircle className="h-8 w-8" />,
-    title: 'WhatsApp',
-    description: 'Start chats with one scan.',
+    title: 'WhatsApp QR',
+    description: 'Let people scan and start a WhatsApp chat.',
     href: '/whatsapp',
   },
   {
-    icon: <Mail className="h-8 w-8" />,
-    title: 'Email',
-    description: 'Generate email QR codes.',
-    href: '/email',
+    icon: <Wifi className="h-8 w-8" />,
+    title: 'WiFi QR',
+    description: 'Share guest WiFi without typing the password.',
+    href: '/wifi',
   },
   {
     icon: <User className="h-8 w-8" />,
-    title: 'vCard',
-    description: 'Share contact details instantly.',
+    title: 'vCard QR',
+    description: 'Share contact details that people can save.',
     href: '/vcard',
   },
   {
+    icon: <Globe className="h-8 w-8" />,
+    title: 'Website QR',
+    description: 'Turn any website, menu or landing page into a QR code.',
+    href: '/website',
+  },
+  {
+    icon: <MapPin className="h-8 w-8" />,
+    title: 'Maps QR',
+    description: 'Help people open your shop, office or event location.',
+    href: '/maps',
+  },
+  {
+    icon: <Mail className="h-8 w-8" />,
+    title: 'Email QR',
+    description: 'Open a ready-to-send email draft after scanning.',
+    href: '/email',
+  },
+  {
     icon: <Phone className="h-8 w-8" />,
-    title: 'Phone',
-    description: 'Open the phone dialer instantly.',
+    title: 'Phone QR',
+    description: 'Open the phone dialer with your number.',
     href: '/phone',
   },
   {
     icon: <MessageSquare className="h-8 w-8" />,
-    title: 'SMS',
-    description: 'Open prefilled text messages.',
+    title: 'SMS QR',
+    description: 'Open a prefilled text message on scan.',
     href: '/sms',
   },
   {
     icon: <FileText className="h-8 w-8" />,
-    title: 'Text',
-    description: 'Share plain text, notes or instructions.',
+    title: 'Text QR',
+    description: 'Share plain text, notes, instructions or labels.',
     href: '/text',
-  },
-  {
-    icon: <MapPin className="h-8 w-8" />,
-    title: 'Maps',
-    description: 'Navigate to any location.',
-    href: '/maps',
   },
 ]
 
 const templateIcons = {
   'upi-payment': <BadgeIndianRupee className="h-8 w-8" />,
   'restaurant-menu': <Utensils className="h-8 w-8" />,
-  'business-website': <Store className="h-8 w-8" />,
+  wifi: <Wifi className="h-8 w-8" />,
+  whatsapp: <MessageCircle className="h-8 w-8" />,
+  'vcard-contact': <User className="h-8 w-8" />,
+  website: <Store className="h-8 w-8" />,
 }
 
 export function Categories() {
   const [activeTab, setActiveTab] = useState<'qr-types' | 'templates'>('qr-types')
 
   const isQrTypesActive = activeTab === 'qr-types'
-  const availableTemplates = templateDesignPreviews.slice(0, 3)
+  const availableTemplates = templateDesignPreviews
 
   return (
     <Section id="categories" className="pt-10">
@@ -104,11 +107,11 @@ export function Categories() {
         <div id="templates" className="scroll-mt-24" />
 
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight">QR Codes for Every Need</h2>
+          <h2 className="text-4xl font-bold tracking-tight">Choose a QR Code Type or Template</h2>
 
-          <p className="mt-4 text-lg text-muted-foreground">
-            Choose a QR type to create a free QR code, or start with a ready template for a branded
-            QR design.
+          <p className="mt-4 text-lg leading-8 text-muted-foreground">
+            Start with a QR generator for your data, or choose a printable template when you need a
+            cleaner design for shops, menus, WiFi cards, posters or business cards.
           </p>
         </div>
 
@@ -166,15 +169,15 @@ export function Categories() {
         ) : (
           <>
             <div className="mt-10 rounded-2xl border bg-muted/40 p-5 text-center">
-              <p className="text-sm font-medium">Ready-to-use QR templates</p>
+              <p className="text-sm font-medium">Printable QR templates for real use cases</p>
 
               <p className="mt-1 text-sm text-muted-foreground">
-                Select a template, connect your QR data, customize the text and download a branded
-                PNG.
+                Select a template, connect your QR data, customize the text and download a clean PNG
+                design.
               </p>
             </div>
 
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {availableTemplates.map((template) => (
                 <Link
                   key={template.id}
@@ -195,7 +198,9 @@ export function Categories() {
                     </span>
                   </div>
 
-                  <p className="mt-3 text-sm text-muted-foreground">{template.footerText}</p>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    {template.footerText}
+                  </p>
 
                   <p className="mt-5 text-sm font-medium text-primary">Use template →</p>
                 </Link>
