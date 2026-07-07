@@ -489,7 +489,7 @@ function createRouteHtml(html, route) {
 
   let output = html
 
-  output = output.replace(/<html([^>]*)>/i, '<html lang="en-IN">')
+  output = output.replace(/<html\b[^>]*>/i, '<html lang="en-IN">')
 
   output = output
     .replace(/<title>[\s\S]*?<\/title>/gi, '')
@@ -516,6 +516,7 @@ function buildHeadTags(route, canonicalUrl) {
   const schema = buildSchema(route, canonicalUrl)
 
   return [
+    `    <!-- QRPrintly static prerender: ${route.path} -->`,
     `    <title>${escapeHtml(route.title)}</title>`,
     `    <meta name="description" content="${escapeHtml(route.description)}" />`,
     `    <link rel="canonical" href="${canonicalUrl}" />`,
