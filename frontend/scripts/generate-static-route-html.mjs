@@ -513,6 +513,57 @@ const routes = [
     ],
   },
   {
+    path: '/blog/how-to-create-wifi-qr-code-for-cafe',
+    title: 'How to Create a WiFi QR Code for Cafe | QRPrintly',
+    description:
+      'Learn how to create a WiFi QR code for your cafe, restaurant, hotel or guest network. Let customers connect without typing the password.',
+    h1: 'How to Create a WiFi QR Code for Your Cafe',
+    intro:
+      'Create a WiFi QR code for your cafe, restaurant, hotel, office, or guest network so customers can connect without typing the password.',
+    links: [
+      { label: 'Create Free WiFi QR Code', href: '/wifi' },
+      { label: 'WiFi QR Code for Cafe', href: '/wifi-qr-code-for-cafe' },
+      { label: 'WiFi QR Template', href: '/templates/wifi' },
+    ],
+    faqs: [
+      {
+        question: 'Can I create a WiFi QR code for my cafe for free?',
+        answer:
+          'Yes. You can create and download a WiFi QR code for your cafe for free using QRPrintly.',
+      },
+      {
+        question: 'Does QRPrintly store my WiFi password?',
+        answer:
+          'No. QRPrintly generates the WiFi QR code in your browser and does not store your network name or password.',
+      },
+    ],
+  },
+  {
+    path: '/blog/best-qr-code-size-for-printing',
+    title: 'Best QR Code Size for Printing | QRPrintly',
+    description:
+      'Learn the best QR code size for printing on business cards, posters, menus, table cards, stickers and shop boards. Get practical QR printing tips.',
+    h1: 'Best QR Code Size for Printing',
+    intro:
+      'Learn how to choose the right QR code size for business cards, menus, stickers, posters, table cards, shop boards and other printed material.',
+    links: [
+      { label: 'Create Free QR Code', href: '/qr-types' },
+      { label: 'Browse QR Templates', href: '/templates' },
+      { label: 'UPI QR Code Generator', href: '/upi' },
+    ],
+    faqs: [
+      {
+        question: 'Should I use PNG or SVG for printing?',
+        answer:
+          'Use PNG for quick printing and SVG when you need scalable quality for large designs, posters, boards or professional layouts.',
+      },
+      {
+        question: 'Can QRPrintly create print-ready QR codes?',
+        answer: 'Yes. QRPrintly lets you create QR codes and download them as PNG or SVG.',
+      },
+    ],
+  },
+  {
     path: '/privacy',
     title: 'Privacy Policy | QRPrintly',
     description:

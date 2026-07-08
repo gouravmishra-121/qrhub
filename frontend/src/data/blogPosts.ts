@@ -1,5 +1,8 @@
 export type BlogPostId =
-  'how-to-create-upi-qr-code-for-shop' | 'how-to-make-whatsapp-qr-code-for-business'
+  | 'how-to-create-upi-qr-code-for-shop'
+  | 'how-to-make-whatsapp-qr-code-for-business'
+  | 'how-to-create-wifi-qr-code-for-cafe'
+  | 'best-qr-code-size-for-printing'
 
 export type BlogPost = {
   id: BlogPostId
@@ -196,6 +199,174 @@ export const blogPosts: BlogPost[] = [
         question: 'Does QRPrintly store my WhatsApp number?',
         answer:
           'No. QRPrintly generates the WhatsApp QR code in your browser and does not store your phone number or message.',
+      },
+    ],
+  },
+  {
+    id: 'how-to-create-wifi-qr-code-for-cafe',
+    slug: 'how-to-create-wifi-qr-code-for-cafe',
+    path: '/blog/how-to-create-wifi-qr-code-for-cafe',
+    title: 'How to Create a WiFi QR Code for Your Cafe',
+    metaTitle: 'How to Create a WiFi QR Code for Cafe | QRPrintly',
+    metaDescription:
+      'Learn how to create a WiFi QR code for your cafe, restaurant, hotel or guest network. Let customers connect without typing the password.',
+    excerpt:
+      'A practical guide for cafes, restaurants and small businesses that want guests to connect to WiFi by scanning a QR code.',
+    publishedDate: '2026-07-08',
+    updatedDate: '2026-07-08',
+    readingTime: '4 min read',
+    primaryCta: {
+      label: 'Create Free WiFi QR Code',
+      href: '/wifi',
+    },
+    secondaryLinks: [
+      {
+        label: 'WiFi QR Code for Cafe',
+        href: '/wifi-qr-code-for-cafe',
+      },
+      {
+        label: 'WiFi QR Template',
+        href: '/templates/wifi',
+      },
+      {
+        label: 'Restaurant Menu QR Code Generator',
+        href: '/restaurant-menu-qr-code-generator',
+      },
+    ],
+    sections: [
+      {
+        title: 'Why cafes use WiFi QR codes',
+        content: [
+          'A WiFi QR code lets customers connect to your guest network without asking staff for the password or typing it manually. This is useful for cafes, restaurants, hotels, reception areas, coworking spaces and guest rooms.',
+          'You can place the QR code on table cards, wall posters, menu cards, billing counters, room cards or reception desks so guests can scan and connect quickly.',
+        ],
+      },
+      {
+        title: 'What you need before creating it',
+        content: [
+          'Keep your WiFi network name, password and security type ready. Most modern networks use WPA or WPA2, so choose the correct security option while creating the QR code.',
+          'Use a guest WiFi network whenever possible. Avoid sharing your main private network with customers or visitors.',
+        ],
+      },
+      {
+        title: 'How to create the WiFi QR code',
+        content: [
+          'Open the WiFi QR code generator, enter your network name, choose the security type, add the password and preview the QR code.',
+          'After the preview appears, download the QR code as PNG or SVG. PNG works well for quick printing. SVG is better when you want to use the QR code in a larger design or printable template.',
+        ],
+      },
+      {
+        title: 'Printing and placement tips',
+        content: [
+          'Test the QR code on both Android and iPhone before printing it. Confirm that the phone detects the WiFi network correctly and asks to join the network.',
+          'Keep the QR code large enough, use strong contrast and place it where customers can scan easily. A table card or small counter stand usually works better than a tiny sticker hidden near the billing area.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can I create a WiFi QR code for my cafe for free?',
+        answer:
+          'Yes. You can create and download a WiFi QR code for your cafe for free using QRPrintly.',
+      },
+      {
+        question: 'Does a WiFi QR code include the password?',
+        answer:
+          'Yes. The QR code contains the WiFi details needed to connect. Share it only with people who should have access to your network.',
+      },
+      {
+        question: 'Should I use a guest WiFi network?',
+        answer:
+          'Yes. For cafes, restaurants, hotels and offices, a separate guest network is safer than sharing your main private network.',
+      },
+      {
+        question: 'Does QRPrintly store my WiFi password?',
+        answer:
+          'No. QRPrintly generates the WiFi QR code in your browser and does not store your network name or password.',
+      },
+    ],
+  },
+  {
+    id: 'best-qr-code-size-for-printing',
+    slug: 'best-qr-code-size-for-printing',
+    path: '/blog/best-qr-code-size-for-printing',
+    title: 'Best QR Code Size for Printing',
+    metaTitle: 'Best QR Code Size for Printing | QRPrintly',
+    metaDescription:
+      'Learn the best QR code size for printing on business cards, posters, menus, table cards, stickers and shop boards. Get practical QR printing tips.',
+    excerpt:
+      'A simple guide to choosing QR code size for printing on business cards, menus, posters, stickers, table cards and shop boards.',
+    publishedDate: '2026-07-08',
+    updatedDate: '2026-07-08',
+    readingTime: '5 min read',
+    primaryCta: {
+      label: 'Create Free QR Code',
+      href: '/qr-types',
+    },
+    secondaryLinks: [
+      {
+        label: 'Browse QR Templates',
+        href: '/templates',
+      },
+      {
+        label: 'UPI QR Code Generator',
+        href: '/upi',
+      },
+      {
+        label: 'Website QR Code Generator',
+        href: '/website',
+      },
+    ],
+    sections: [
+      {
+        title: 'Why QR code size matters',
+        content: [
+          'A QR code may look correct on screen but still fail when printed too small, blurred, stretched or placed without enough white space around it.',
+          'The best QR code size depends on how far people will scan it from. A QR code on a business card can be smaller, while a QR code on a shop board, wall poster or standee should be much larger.',
+        ],
+      },
+      {
+        title: 'Simple size guide for common print use',
+        content: [
+          'For business cards, keep the QR code around 2 to 2.5 cm wide if the design has enough contrast. For table cards, invoices and small flyers, 3 to 4 cm is safer.',
+          'For posters, menu boards, shop counters and payment boards, use a larger QR code so customers can scan comfortably without moving too close.',
+        ],
+      },
+      {
+        title: 'PNG vs SVG for printing',
+        content: [
+          'PNG is easy to download and use quickly, but it can lose quality if stretched too much. For small prints and quick use, a high-resolution PNG usually works well.',
+          'SVG is scalable, which means it can be used in larger designs without becoming blurry. Use SVG when working with design tools, print shops, large posters or brand templates.',
+        ],
+      },
+      {
+        title: 'Printing checklist before final use',
+        content: [
+          'Always test the QR code before printing in bulk. Scan it from the expected distance and test it on more than one phone.',
+          'Keep strong contrast, avoid busy backgrounds, do not crop the QR code and leave enough quiet space around it. A clean QR code is better than an over-designed QR code that fails to scan.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the best QR code size for a business card?',
+        answer:
+          'For most business cards, around 2 to 2.5 cm wide is a practical minimum if the QR code has strong contrast and enough white space.',
+      },
+      {
+        question: 'What is the best QR code size for a shop payment board?',
+        answer:
+          'Use a larger QR code for payment boards so customers can scan easily from a comfortable distance. Avoid tiny QR codes on counters or walls.',
+      },
+      {
+        question: 'Should I download PNG or SVG for printing?',
+        answer:
+          'Use PNG for quick printing and sharing. Use SVG when you need scalable quality for large print designs, posters, boards or professional layouts.',
+      },
+      {
+        question: 'Can QRPrintly create print-ready QR codes?',
+        answer:
+          'Yes. QRPrintly lets you create QR codes and download them as PNG or SVG. You can also use printable templates for common business use cases.',
       },
     ],
   },
