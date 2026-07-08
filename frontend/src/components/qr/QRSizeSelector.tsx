@@ -11,16 +11,16 @@ type QRSizeSelectorProps = {
 
 export function QRSizeSelector({ value, onChange }: QRSizeSelectorProps) {
   return (
-    <div className="mt-8 space-y-3">
+    <section className="rounded-2xl border bg-muted/20 p-4">
       <div>
-        <h3 className="text-sm font-medium">Download Size</h3>
+        <h3 className="text-sm font-medium">Download size</h3>
 
-        <p className="mt-1 text-xs text-muted-foreground">
-          Choose the output size for your QR code.
+        <p className="mt-1 text-xs leading-5 text-muted-foreground">
+          Choose the output size for your QR code download.
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-2">
+      <div className="mt-4 grid grid-cols-3 gap-2">
         {QR_SIZES.map((size) => (
           <Button
             key={size}
@@ -28,16 +28,16 @@ export function QRSizeSelector({ value, onChange }: QRSizeSelectorProps) {
             size="sm"
             variant={value === size ? 'default' : 'outline'}
             onClick={() => onChange(size)}
-            className="w-full"
+            className="w-full px-2 text-xs sm:text-sm"
           >
             {size}px
           </Button>
         ))}
       </div>
 
-      <p className="text-xs text-muted-foreground">
-        PNG will download as {value} × {value}px. SVG is scalable.
+      <p className="mt-3 text-xs leading-5 text-muted-foreground">
+        PNG downloads as {value} × {value}px. SVG stays scalable for design and print work.
       </p>
-    </div>
+    </section>
   )
 }

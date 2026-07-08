@@ -28,35 +28,40 @@ export function QRCustomizationPanel({
   tipDescription = 'Keep strong contrast between the QR color and background. Black on white gives the best scanning reliability.',
 }: QRCustomizationPanelProps) {
   return (
-    <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+    <section className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h2 className="text-lg font-semibold">Customize QR</h2>
+          <p className="text-sm font-medium text-muted-foreground">Optional customization</p>
 
-          <p className="mt-1 text-sm text-muted-foreground">
-            Adjust size and colors before downloading.
+          <h2 className="mt-1 text-lg font-semibold">Customize QR</h2>
+
+          <p className="mt-1 text-sm leading-6 text-muted-foreground">
+            Adjust size and colors before downloading. Keep the QR easy to scan, especially for
+            printed use.
           </p>
         </div>
 
-        <Button variant="outline" size="sm" onClick={onReset}>
+        <Button variant="outline" size="sm" onClick={onReset} className="w-full sm:w-auto">
           Reset
         </Button>
       </div>
 
-      <QRSizeSelector value={qrSize} onChange={onSizeChange} />
+      <div className="mt-6 space-y-6">
+        <QRSizeSelector value={qrSize} onChange={onSizeChange} />
 
-      <QRColorPicker
-        foregroundColor={foregroundColor}
-        backgroundColor={backgroundColor}
-        onForegroundChange={onForegroundChange}
-        onBackgroundChange={onBackgroundChange}
-      />
+        <QRColorPicker
+          foregroundColor={foregroundColor}
+          backgroundColor={backgroundColor}
+          onForegroundChange={onForegroundChange}
+          onBackgroundChange={onBackgroundChange}
+        />
+      </div>
 
-      <div className="mt-6 rounded-xl bg-muted/40 p-4">
+      <div className="mt-6 rounded-2xl border bg-muted/30 p-4">
         <p className="text-sm font-medium">{tipTitle}</p>
 
-        <p className="mt-1 text-sm text-muted-foreground">{tipDescription}</p>
+        <p className="mt-1 text-sm leading-6 text-muted-foreground">{tipDescription}</p>
       </div>
-    </div>
+    </section>
   )
 }
