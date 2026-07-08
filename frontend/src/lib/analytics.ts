@@ -136,8 +136,8 @@ export function trackTemplateDownload({
   })
 }
 
-export function trackPremiumExportClick(templateId: string) {
-  trackEvent('premium_export_click', {
+export function trackMoreExportOptionsClick(templateId: string) {
+  trackEvent('more_export_options_click', {
     template_id: templateId,
   })
 }

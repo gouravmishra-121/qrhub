@@ -6,7 +6,7 @@ import { TemplateDesignPreview } from '@/components/templates/TemplateDesignPrev
 import { Input } from '@/components/ui/input'
 import { templateDesignPreviews } from '@/data/templateDesignPreviews'
 import {
-  trackPremiumExportClick,
+  trackMoreExportOptionsClick,
   trackTemplateDownload,
   trackTemplateQrConnected,
   trackTemplateSelect,
@@ -155,7 +155,7 @@ function TemplateBuilderContent({
   }
 
   function handleMoreExportOptionsClick() {
-    trackPremiumExportClick(template.id)
+    trackMoreExportOptionsClick(template.id)
   }
 
   function resetTemplateText() {
