@@ -35,14 +35,20 @@ export const QRPreview = forwardRef<HTMLDivElement, QRPreviewProps>(function QRP
   }, [isValid, value])
 
   return (
-    <>
-      <h2 className="mb-6 text-center text-lg font-semibold sm:mb-8 sm:text-xl">Live Preview</h2>
+    <section aria-label="QR code preview">
+      <div className="mb-5 text-center sm:mb-6">
+        <h2 className="text-lg font-semibold sm:text-xl">Live Preview</h2>
 
-      <div className="flex min-h-[250px] items-center justify-center sm:min-h-[270px]">
+        <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
+          Your QR code updates automatically when the details are valid.
+        </p>
+      </div>
+
+      <div className="flex min-h-[220px] items-center justify-center sm:min-h-[270px]">
         {isValid ? (
           <div
             ref={ref}
-            className="flex w-full max-w-[240px] items-center justify-center rounded-xl p-3 sm:p-4"
+            className="flex w-full max-w-[220px] items-center justify-center rounded-2xl p-3 shadow-sm sm:max-w-[240px] sm:p-4"
             style={{ backgroundColor }}
           >
             <QRCode
@@ -58,17 +64,17 @@ export const QRPreview = forwardRef<HTMLDivElement, QRPreviewProps>(function QRP
             />
           </div>
         ) : (
-          <div className="flex h-[220px] w-full max-w-[240px] flex-col items-center justify-center rounded-xl border-2 border-dashed border-muted px-4 text-center sm:h-[240px]">
+          <div className="flex h-[210px] w-full max-w-[240px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-muted px-4 text-center sm:h-[240px]">
             <div className="mb-4 text-5xl sm:text-6xl">🌐</div>
 
             <h3 className="font-semibold">QR Preview</h3>
 
-            <p className="mt-2 max-w-[220px] text-sm text-muted-foreground">
+            <p className="mt-2 max-w-[220px] text-sm leading-6 text-muted-foreground">
               {placeholderDescription}
             </p>
           </div>
         )}
       </div>
-    </>
+    </section>
   )
 })

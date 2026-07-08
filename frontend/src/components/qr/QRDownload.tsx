@@ -119,24 +119,39 @@ export function QRDownload({
   }
 
   return (
-    <div className="mt-8 grid gap-3 sm:flex sm:justify-center">
-      <Button
-        variant="outline"
-        disabled={!isValid}
-        onClick={downloadPNG}
-        className="w-full sm:w-auto"
-      >
-        Download PNG
-      </Button>
+    <section className="mt-7 rounded-2xl border bg-muted/30 p-4 sm:mt-8 sm:p-5">
+      <div className="text-center">
+        <h2 className="text-base font-semibold">Download QR code</h2>
 
-      <Button
-        variant="outline"
-        disabled={!isValid}
-        onClick={downloadSVG}
-        className="w-full sm:w-auto"
-      >
-        Download SVG
-      </Button>
-    </div>
+        <p className="mt-1 text-xs leading-5 text-muted-foreground sm:text-sm">
+          Download as PNG for quick use or SVG for scalable print/design work.
+        </p>
+      </div>
+
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        <Button disabled={!isValid} onClick={downloadPNG} className="w-full">
+          Download PNG
+        </Button>
+
+        <Button
+          variant="outline"
+          disabled={!isValid}
+          onClick={downloadSVG}
+          className="w-full bg-background"
+        >
+          Download SVG
+        </Button>
+      </div>
+
+      {!isValid ? (
+        <p className="mt-3 text-center text-xs text-muted-foreground">
+          Enter valid details to enable downloads.
+        </p>
+      ) : (
+        <p className="mt-3 text-center text-xs text-muted-foreground">
+          Export size: {downloadSize}px
+        </p>
+      )}
+    </section>
   )
 }
