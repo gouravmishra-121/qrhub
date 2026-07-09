@@ -28,6 +28,21 @@ const useCases = [
   },
 ]
 
+const blogGuides = [
+  {
+    title: 'How to Create a WiFi QR Code for Your Cafe',
+    description:
+      'Learn how to create, test, download and print a WiFi QR code for cafe or guest networks.',
+    href: '/blog/how-to-create-wifi-qr-code-for-cafe',
+  },
+  {
+    title: 'Best QR Code Size for Printing',
+    description:
+      'Choose the right QR code size for business cards, menus, posters, stickers and shop boards.',
+    href: '/blog/best-qr-code-size-for-printing',
+  },
+]
+
 export function PopularUseCases() {
   return (
     <Section id="popular-use-cases">
@@ -61,13 +76,34 @@ export function PopularUseCases() {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
-          <Link
-            to="/blog"
-            className="inline-flex rounded-full border px-5 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
-          >
-            Read QR code guides →
-          </Link>
+        <div className="mt-12 rounded-3xl border bg-muted/30 p-6 sm:p-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Helpful QR guides</p>
+
+              <h3 className="mt-2 text-2xl font-semibold">Learn before you print or share</h3>
+            </div>
+
+            <Link to="/blog" className="text-sm font-medium text-primary hover:underline">
+              View all guides →
+            </Link>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {blogGuides.map((guide) => (
+              <Link
+                key={guide.href}
+                to={guide.href}
+                className="rounded-2xl border bg-background p-5 transition hover:border-primary/50 hover:bg-muted/30"
+              >
+                <h4 className="font-semibold">{guide.title}</h4>
+
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{guide.description}</p>
+
+                <p className="mt-4 text-sm font-medium text-primary">Read guide →</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </Container>
     </Section>

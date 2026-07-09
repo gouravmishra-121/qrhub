@@ -182,6 +182,50 @@ export default function TemplatesPage() {
           </div>
         </div>
       </section>
+      <section className="mt-16 rounded-3xl border bg-muted/30 p-6 sm:p-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-medium text-muted-foreground">Printing guides</p>
+
+          <h2 className="mt-2 text-3xl font-bold tracking-tight">
+            Make your QR templates easier to scan
+          </h2>
+
+          <p className="mt-3 text-sm leading-7 text-muted-foreground">
+            Before printing QR codes on cards, posters, menus, shop boards or WiFi table cards,
+            check these practical guides.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <Link
+            to="/blog/best-qr-code-size-for-printing"
+            className="rounded-2xl border bg-background p-5 transition hover:border-primary/50 hover:bg-muted/20"
+          >
+            <h3 className="font-semibold">Best QR Code Size for Printing</h3>
+
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              Learn practical QR code sizes for business cards, posters, menus, stickers, table
+              cards and payment boards.
+            </p>
+
+            <p className="mt-4 text-sm font-medium text-primary">Read printing guide →</p>
+          </Link>
+
+          <Link
+            to="/blog/how-to-create-wifi-qr-code-for-cafe"
+            className="rounded-2xl border bg-background p-5 transition hover:border-primary/50 hover:bg-muted/20"
+          >
+            <h3 className="font-semibold">How to Create a WiFi QR Code for Your Cafe</h3>
+
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              Create a WiFi QR code, test it, and use it on cafe tables, counters, hotel rooms or
+              guest areas.
+            </p>
+
+            <p className="mt-4 text-sm font-medium text-primary">Read WiFi guide →</p>
+          </Link>
+        </div>
+      </section>
 
       <section className="mt-16 rounded-3xl bg-foreground p-8 text-center text-background">
         <h2 className="text-3xl font-bold tracking-tight">

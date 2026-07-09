@@ -96,6 +96,12 @@ export const longTailPages: LongTailPage[] = [
         description: 'Create a printable payment board design for your shop.',
       },
       {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+        description:
+          'Learn how large your QR code should be for counters, posters, boards and printed material.',
+      },
+      {
         label: 'WhatsApp QR Code Generator',
         href: '/whatsapp',
         description: 'Let customers scan and start a WhatsApp chat.',
@@ -179,6 +185,12 @@ export const longTailPages: LongTailPage[] = [
         label: 'WhatsApp QR Code Generator',
         href: '/whatsapp',
         description: 'Create a QR code that opens a WhatsApp chat.',
+      },
+      {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+        description:
+          'Choose the right QR size before printing on cards, posters, packaging or counters.',
       },
       {
         label: 'vCard QR Code Generator',
@@ -276,6 +288,17 @@ export const longTailPages: LongTailPage[] = [
         description: 'Create a printable WiFi QR card for tables or counters.',
       },
       {
+        label: 'How to Create a WiFi QR Code for Your Cafe',
+        href: '/blog/how-to-create-wifi-qr-code-for-cafe',
+        description:
+          'A practical step-by-step guide for creating and printing a WiFi QR code for cafes.',
+      },
+      {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+        description: 'Learn QR code size tips for table cards, posters, menus and WiFi signs.',
+      },
+      {
         label: 'Restaurant Menu QR Code Generator',
         href: '/restaurant-menu-qr-code-generator',
         description: 'Create a QR code for your digital restaurant menu.',
@@ -369,6 +392,12 @@ export const longTailPages: LongTailPage[] = [
         label: 'WiFi QR Code for Cafe',
         href: '/wifi-qr-code-for-cafe',
         description: 'Create a guest WiFi QR code for your cafe or restaurant.',
+      },
+      {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+        description:
+          'Learn how large your menu QR code should be for table cards, posters and counter displays.',
       },
     ],
     faqs: [

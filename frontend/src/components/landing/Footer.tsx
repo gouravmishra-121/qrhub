@@ -25,7 +25,7 @@ const resources = [
   { label: 'Contact', href: '/contact' },
 ]
 
-const seoLinks = [
+const popularGuides = [
   { label: 'UPI QR for Shops', href: '/upi-qr-code-generator-for-shops' },
   {
     label: 'WhatsApp QR for Business',
@@ -35,6 +35,14 @@ const seoLinks = [
   {
     label: 'Restaurant Menu QR',
     href: '/restaurant-menu-qr-code-generator',
+  },
+  {
+    label: 'WiFi QR Cafe Guide',
+    href: '/blog/how-to-create-wifi-qr-code-for-cafe',
+  },
+  {
+    label: 'QR Code Print Size',
+    href: '/blog/best-qr-code-size-for-printing',
   },
 ]
 
@@ -70,7 +78,7 @@ export function Footer() {
             <h4 className="font-semibold">Popular Guides</h4>
 
             <ul className="mt-4 space-y-2">
-              {seoLinks.map((item) => (
+              {popularGuides.map((item) => (
                 <li key={item.href}>
                   <Link to={item.href} className="text-sm text-muted-foreground hover:text-primary">
                     {item.label}

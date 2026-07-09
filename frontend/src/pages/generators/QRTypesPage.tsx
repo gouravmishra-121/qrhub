@@ -87,6 +87,20 @@ const comingSoonQrTypes = [
     icon: '🔗',
   },
 ]
+const helpfulGuides = [
+  {
+    title: 'How to Create a WiFi QR Code for Your Cafe',
+    description:
+      'Learn how to create, test and print a WiFi QR code for cafe customers and guest networks.',
+    href: '/blog/how-to-create-wifi-qr-code-for-cafe',
+  },
+  {
+    title: 'Best QR Code Size for Printing',
+    description:
+      'Understand QR code sizing for business cards, menus, stickers, posters and shop boards.',
+    href: '/blog/best-qr-code-size-for-printing',
+  },
+]
 
 type QRType = {
   title: string
@@ -255,6 +269,35 @@ export default function QRTypesPage() {
               Create a QR code for restaurant menus, cafe menus, and table cards.
             </p>
           </Link>
+        </div>
+        <div className="mt-8 rounded-2xl border bg-background p-5">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Helpful guides</p>
+
+              <h3 className="mt-1 text-xl font-semibold">QR printing and WiFi setup tips</h3>
+            </div>
+
+            <Link to="/blog" className="text-sm font-medium text-primary hover:underline">
+              View all guides →
+            </Link>
+          </div>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {helpfulGuides.map((guide) => (
+              <Link
+                key={guide.href}
+                to={guide.href}
+                className="rounded-2xl border bg-muted/30 p-5 transition hover:border-primary/50 hover:bg-background"
+              >
+                <h4 className="font-semibold">{guide.title}</h4>
+
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{guide.description}</p>
+
+                <p className="mt-4 text-sm font-medium text-primary">Read guide →</p>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="mt-6">
