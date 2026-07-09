@@ -24,6 +24,14 @@ const routes = [
       { label: 'WhatsApp QR Code Generator', href: '/whatsapp' },
       { label: 'WiFi QR Code Generator', href: '/wifi' },
       { label: 'QR Code Templates', href: '/templates' },
+      {
+        label: 'WiFi QR Cafe Guide',
+        href: '/blog/how-to-create-wifi-qr-code-for-cafe',
+      },
+      {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+      },
     ],
     faqs: [
       {
@@ -178,6 +186,14 @@ const routes = [
       { label: 'Create Free WiFi QR Code', href: '/wifi' },
       { label: 'WiFi QR Templates', href: '/templates/wifi' },
       { label: 'Restaurant Menu QR Code Generator', href: '/restaurant-menu-qr-code-generator' },
+      {
+        label: 'How to Create a WiFi QR Code for Your Cafe',
+        href: '/blog/how-to-create-wifi-qr-code-for-cafe',
+      },
+      {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+      },
     ],
     faqs: [
       {
@@ -204,6 +220,10 @@ const routes = [
       { label: 'Create Menu QR Code', href: '/website' },
       { label: 'Restaurant Menu Templates', href: '/templates/restaurant-menu' },
       { label: 'WiFi QR Code for Cafe', href: '/wifi-qr-code-for-cafe' },
+      {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+      },
     ],
     faqs: [
       {
@@ -409,6 +429,14 @@ const routes = [
       { label: 'UPI Payment Templates', href: '/templates/upi-payment' },
       { label: 'Restaurant Menu Templates', href: '/templates/restaurant-menu' },
       { label: 'WiFi Templates', href: '/templates/wifi' },
+      {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+      },
+      {
+        label: 'How to Create a WiFi QR Code for Cafe',
+        href: '/blog/how-to-create-wifi-qr-code-for-cafe',
+      },
     ],
     faqs: [
       {
@@ -430,6 +458,14 @@ const routes = [
       { label: 'UPI QR Code Generator', href: '/upi' },
       { label: 'WhatsApp QR Code Generator', href: '/whatsapp' },
       { label: 'WiFi QR Code Generator', href: '/wifi' },
+      {
+        label: 'WiFi QR Cafe Guide',
+        href: '/blog/how-to-create-wifi-qr-code-for-cafe',
+      },
+      {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+      },
     ],
     faqs: [
       {
@@ -457,6 +493,22 @@ const routes = [
         href: '/blog/how-to-make-whatsapp-qr-code-for-business',
       },
       { label: 'All QR Code Types', href: '/qr-types' },
+      {
+        label: 'How to Create a UPI QR Code for Your Shop',
+        href: '/blog/how-to-create-upi-qr-code-for-shop',
+      },
+      {
+        label: 'How to Make a WhatsApp QR Code for Business',
+        href: '/blog/how-to-make-whatsapp-qr-code-for-business',
+      },
+      {
+        label: 'How to Create a WiFi QR Code for Your Cafe',
+        href: '/blog/how-to-create-wifi-qr-code-for-cafe',
+      },
+      {
+        label: 'Best QR Code Size for Printing',
+        href: '/blog/best-qr-code-size-for-printing',
+      },
     ],
     faqs: [],
   },
